@@ -4327,7 +4327,7 @@ function paintThread(){
 function turnHTML(t,i){
   const body=t.err&&!t.a?`<div class="err">${esc(t.err)}</div>`:t.a?md(t.a)+(t.err?`<div class="err">${esc(t.err)}</div>`:''):(t.stage?`<div class="wait"><span class="spin"></span>${esc(t.stage)}</div>`:'');
   const srcs=t.sources&&t.sources.length?`<details class="srcs"${t.noAsst?' open':''}><summary>${t.sources.length} passages consultés</summary>${t.sources.map(s=>`<a class="src" href="${hrefDoc(s.d.k,s.p,t.q)}">${stampOf(s.d)}<span class="t">${esc(s.d.t)} (p. ${s.p})</span><span class="x">${snippet(s.p,s.re,200)}</span></a>`).join('')}</details>`:'';
-  const acts=!t.stage&&t.a?`<div class="tact"><button data-a="copy" data-i="${i}">${ic('copy','style="width:18px;height:18px"')}Copier</button><button data-a="export" data-i="${i}">${ic('dl','style="width:18px;height:18px"')}Exporter</button><button data-a="redo" data-i="${i}">${ic('redo','style="width:18px;height:18px"')}Relancer</button></div>`:'';
+  const acts=!t.stage&&t.a?`<div class="tact"><button data-a="copy" data-i="${i}">${ic('copy','style="width:18px;height:18px"')}Copier</button><button data-a="redo" data-i="${i}">${ic('redo','style="width:18px;height:18px"')}Relancer</button></div>`:'';
   const sc=t.scope&&S.byKey[t.scope]?`<div class="fine" style="margin-top:4px">Dans ${esc(t.scope)} uniquement</div>`:'';
   return`<div class="turn" id="turn-${i}"><div class="q">${esc(t.q)}</div>${sc}<div class="a">${body}</div>${srcs}${acts}</div>`;
 }
@@ -4952,7 +4952,7 @@ function viewHistoire(){
   <ol class="toc">${HIST.map((h,i)=>`<li><button data-jump="${h.id}"><span class="n">${i+1}</span><span>${esc(h.title)}</span></button></li>`).join('')}</ol>
   ${HIST.map((h,i)=>`<section class="hs" id="h-${h.id}"><h2><span class="n">${i+1}</span><span>${esc(h.title)}</span></h2><div class="hcols"><div class="hb">${h.body.map(p=>`<p>${withCites(p)}</p>`).join('')}${h.id==='signal'?sigHTML():''}<div class="askrow"><button class="btn" data-hq="${esc(h.q)}">${ic('spark')}Poser une question à l’assistant sur cette période</button></div></div>
    ${h.ev.length?`<div class="tl" role="list" aria-label="Chronologie">${h.ev.map(e=>`<div class="ev" role="listitem"><span class="d">${esc(e[0])}</span><span class="t">${esc(e[1])}</span><span class="cs">${e[2].map(citeLink).join('')}</span></div>`).join('')}</div>`:''}</div></section>`).join('')}
-  <div class="chapfoot"><button class="btn" id="chapdl">${ic('dl')}Exporter le chapitre (.md)</button><button class="btn" id="chapcopy">${ic('copy')}Copier le texte</button></div>
+  <div class="chapfoot"><button class="btn" id="chapcopy">${ic('copy')}Copier le texte</button></div>
   <p class="foot">Ce chapitre résume des textes présentés comme provenant des Oummites. Il ne prouve rien sur leur authenticité, qui reste discutée : vérifiez les passages dans les documents.</p></article>`;
   try{acSweep(view,'.hb > p,.tl .t')}catch(e){console.error('acSweep',e)}
   bindFrise();try{sigInit()}catch(e){console.error('sig',e)}
