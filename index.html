@@ -1507,6 +1507,7 @@ a.gx.chl svg{width:.95em;height:.95em;margin-right:.18em;vertical-align:-.12em;f
 .tc-stats>div{padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:var(--sheet)}
 .tc-stats b{display:block;font-family:var(--disp);font-size:30px;font-weight:500;color:var(--violet);line-height:1}.tc-stats span{font-size:13px;color:var(--ink2)}
 .tc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;align-items:start}
+.tc-img{margin:4px 0 4px}.tc-img img{display:block;width:100%;height:200px;object-fit:cover;border-radius:14px;background:#0e1330}.tc-img.sch img{object-fit:contain;background:#f3f1ea}.tc-img figcaption{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink2)}
 .tc-card{padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:var(--sheet);display:flex;flex-direction:column;gap:6px}
 .tc-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .tc-cat{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
@@ -9406,11 +9407,25 @@ const TECR=[
  {n:'Lentilles de contact photochromes',l:2003,ps:[1394,1395],
   e:2018,x:'autorisation américaine (2018)',src:'American Academy of Ophthalmology',u:'https://www.aao.org/headline/fda-clears-first-light-adaptive-contact-lenses'}];
 const TECS={c:'tout',st:'tout',q:''};
+const TEC_IMG2={"dome":"img/e-c265a3ab8bde63.webp","uuluuewaa":"img/e-30fc99cc905537.webp","oemmii":"img/e-f51a280e4a80a0.webp","toroides":"img/e-f5469c901c1fa6.webp","helium":"img/e-e782dc3cdeb73c.webp","xanmoo":"img/e-6483af3a644da6.webp"};
+function tecImg(x){let r=null;try{r=({
+ goonioadoo:()=>[GOON_IMG,'Interprétation d’artiste du GOONIIOADOO UEWA, glissant au ras d’une prairie','Interprétation d’artiste, d’après le dessin de la lettre D41-6','uewa','Vaisseaux',[111],0],
+ goonni:()=>[UW_VEH[1][2],'Schéma original du BUUTZ de GOONNIAOADOO, lettre D41-6','Schéma original de la lettre D41-6 (image 17)','uewa','Vaisseaux',[114],1],
+ xaabi:()=>[UQ_IMG.ext,'Interprétation d’artiste d’une maison-tour XAABI','Interprétation d’artiste','journee','Une journée',[],0],
+ dome:()=>[TEC_IMG2.dome,'Interprétation d’artiste d’une pièce-écran UULODAXAABI : la paroi voûtée affiche un paysage lointain','Interprétation d’artiste','journee','Une journée',[85],0],
+ uuluuewaa:()=>[TEC_IMG2.uuluuewaa,'Interprétation d’artiste de petites sphères-espionnes volant dans un bureau, près d’une bibliothèque et d’une machine à écrire','Interprétation d’artiste',null,null,[946,1058],0],
+ oemmii:()=>[TEC_IMG2.oemmii,'Interprétation d’artiste d’un Oummite volant au-dessus d’une plaine avec son équipement de vol individuel','Interprétation d’artiste',null,null,[110],0],
+ toroides:()=>[TEC_IMG2.toroides,'Interprétation d’artiste d’une rangée de toroïdes gigantesques alignés sur une plaine','Interprétation d’artiste',null,null,[812],0],
+ helium:()=>[TEC_IMG2.helium,'Interprétation d’artiste de la salle de la cérémonie : un éclair bleu et l’hélium parfumé qui se diffuse','Interprétation d’artiste','sante','Santé',[1393],0],
+ xanmoo:()=>[TEC_IMG2.xanmoo,'Interprétation d’artiste d’un XANMOO : l’énoncé est posé sur la console, le résultat sort en image 3D, sur bande imprimée et sur compteurs en base 12','Interprétation d’artiste','xanmoo','XANMOO',[504],0],
+ uewa:()=>[UW_ART_IMG,'Interprétation d’artiste d’un UEWA en vol stationnaire au-dessus d’une plaine','Vue d’artiste','uewa','Vaisseaux',[],0]}[x.id]||(()=>null))()}catch(e){r=null}
+ if(!r||!r[0])return'';const[src,alt,cap,rt,rl,ps,sch]=r;
+ return`<figure class="tc-img${sch?' sch':''}"><img src="${src}" alt="${esc(alt)}" loading="lazy"><figcaption>${esc(cap)}${ps.length?' '+ps.map(citeLink).join(' '):''}${rt?` · chapitre <a href="#/${rt}">${esc(rl)}</a>`:''}</figcaption></figure>`}
 function tecCard(x){
   const st=TEC_ST[x.t.st],cat=(TEC_CATS.find(c=>c[0]===x.c)||[,''])[1];
   let chip='';if(x.gi!==undefined){const r=gapCompute(GAPS.nn).rows[x.gi];chip=`<span class="tc-gap" title="Écart entre la date oummite convertie et la date terrestre, d’après le calcul du chapitre Histoire">avance d’Oummo : + ${nf(Math.round(r.gap/10)*10)} ans</span>`}
   return `<article class="tc-card" data-id="${x.id}"><div class="tc-top"><span class="tc-cat">${esc(cat)}</span><span class="tc-st st-${st[1]}">${esc(st[0])}</span></div>
-   <h3>${esc(x.n)}</h3><p class="tc-fr">${esc(x.fr)}</p><p class="tc-s">${esc(x.s)}</p>${chip}
+   ${tecImg(x)}<h3>${esc(x.n)}</h3><p class="tc-fr">${esc(x.fr)}</p><p class="tc-s">${esc(x.s)}</p>${chip}
    <details><summary>Comment ça marche, et sur Terre</summary><ul class="tc-h">${x.h.map(h=>`<li>${esc(h)}</li>`).join('')}</ul><div class="tc-earth"><b>Sur Terre.</b> ${esc(x.t.x)}</div>${x.link?`<a class="btn" href="#/${x.link[0]}" style="margin-top:8px">${esc(x.link[1])}</a>`:''}</details>
    <div class="tc-src">${x.ps.map(citeLink).join(' ')}</div></article>`}
 function tecList(){
