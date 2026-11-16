@@ -2423,6 +2423,25 @@ a.gx:hover,a.gx:focus-visible{color:var(--acc,#FFB547)}
 .why .why-mail a:hover,.why .why-mail a:focus-visible{border-bottom-color:var(--violet)}
 .heroacts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
 .heroacts+.maj{margin-top:16px}
+.vcs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+.vcs[hidden]{display:none}
+.vcs+.mj3{margin-top:14px}
+.vc-c{display:inline-flex;align-items:center;gap:10px;min-height:44px;box-sizing:border-box;padding:7px 14px;border:1px solid var(--line);border-radius:12px;background:var(--sheet);color:var(--ink);font:inherit}
+.vc-c svg{width:19px;height:19px;flex:none;fill:none;stroke:var(--violet);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vc-tx{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.vc-tx b{font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
+.vc-tx span{font-size:12px;color:var(--ink2)}
+.vc-like{--lk:#FF6B8A;border-color:color-mix(in srgb,var(--lk) 45%,transparent);background:color-mix(in srgb,var(--lk) 8%,var(--sheet));cursor:pointer}
+:root[data-theme="light"] .vc-like{--lk:#C2185B}
+.vc-like svg{stroke:var(--lk)}
+.vc-like .vc-tx span{color:var(--lk)}
+.vc-like:hover:not([disabled]),.vc-like:focus-visible{border-color:var(--lk)}
+.vc-like.on svg{fill:var(--lk)}
+.vc-like[disabled]{cursor:default}
+.vc-like.pop svg{animation:vcpop .4s ease-out}
+@keyframes vcpop{0%{transform:scale(1)}40%{transform:scale(1.4)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.vc-like.pop svg{animation:none}}
+
 .mj3{margin-top:18px;max-width:1100px;border-radius:16px;background:linear-gradient(180deg,rgba(255,181,71,.10),rgba(16,22,49,.94) 70px);animation:mj3e 2.4s ease-in-out infinite}
 @keyframes mj3e{0%,100%{box-shadow:0 0 0 0 rgba(255,181,71,0),inset 0 0 0 1px rgba(255,181,71,.45)}50%{box-shadow:0 0 26px 2px rgba(255,181,71,.35),inset 0 0 0 1px rgba(255,181,71,.95)}}
 @keyframes mj3s{0%,100%{transform:scale(.85) rotate(0deg);opacity:.85}50%{transform:scale(1.2) rotate(45deg);opacity:1}}
@@ -3521,6 +3540,24 @@ window.ummoMot=ummoMot;
 function majShort(d){return majFmt(d).replace(/\s\d{4}$/,'').replace(/(\S+)$/,m=>m.length>4?m.slice(0,3)+'.':m)}
 function majSplit(t){const m=/^(.*?)\s?:\s(.*)$/.exec(t||'');return m?[m[1],m[2]]:[t,'']}
 function mj3T(b){const w=b.closest('.mj3'),l=w&&w.querySelector('.mj3-list');if(!l)return;const o=l.hidden;l.hidden=!o;b.setAttribute('aria-expanded',String(o));w.classList.toggle('open',o);const s=b.querySelector('.mj3-tl');if(s)s.textContent=o?'Masquer':'Précédentes ('+(MAJ_LOG.length-1)+')'}
+const VC={n:null,l:null,t:0,busy:0};
+function vcFmt(n){return n.toLocaleString('fr-FR')}
+function vcNum(j){const m=String(j&&j.count!=null?j.count:'').replace(/[^0-9]/g,'');return m?parseInt(m,10):null}
+function vcGc(){return !!(window.goatcounter&&typeof window.goatcounter.count==='function')}
+function vcLiked(){return !!store.get('jaime',false)}
+function vcInner(){const lk=vcLiked();
+ const eye='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+ const hrt='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.7 3.8 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.4 0 5.6 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg>';
+ let h=`<span class="vc-c vc-v">${eye}<span class="vc-tx"><b>${vcFmt(VC.n)}</b><span>visites depuis l’ouverture</span></span></span>`;
+ if(vcGc())h+=`<button type="button" class="vc-c vc-like${lk?' on':''}" onclick="vcLike(this)" aria-pressed="${lk}"${lk?' disabled':''}>${hrt}<span class="vc-tx"><b>${vcFmt(VC.l||0)}</b><span>${lk?'Merci !':'J’aime'}</span></span></button>`;
+ return h}
+function vcPaint(){const el=document.getElementById('vcs');if(!el)return;if(VC.n==null){el.hidden=true;return}el.innerHTML=vcInner();el.hidden=false}
+function vcLoad(){const now=Date.now();if(VC.busy||now-VC.t<600000){vcPaint();return}VC.busy=1;VC.t=now;
+ const base='https://metasciences.goatcounter.com/counter/',get=p=>fetch(base+p+'.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
+ Promise.all([get('TOTAL'),get('jaime')]).then(([a,b])=>{VC.busy=0;const n=vcNum(a);if(n!=null){VC.n=n;const l=vcNum(b);VC.l=Math.max(VC.l||0,l||0,vcLiked()?store.get('jaimeN',0):0)}vcPaint();setTimeout(vcPaint,2500)}).catch(()=>{VC.busy=0})}
+function vcHTML(){setTimeout(vcLoad,0);return`<div class="vcs" id="vcs" aria-live="polite"${VC.n==null?' hidden':''}>${VC.n==null?'':vcInner()}</div>`}
+function vcLike(b){if(vcLiked()||!vcGc())return;try{window.goatcounter.count({path:'jaime',title:'J’aime',event:true})}catch(e){return}
+ store.set('jaime',true);VC.l=(VC.l||0)+1;store.set('jaimeN',VC.l);vcPaint();const nb=document.querySelector('#vcs .vc-like');if(nb)nb.classList.add('pop')}
 function majHTML(){const[d,t,h]=MAJ_LOG[0],[ti,su]=majSplit(t);const fresh=(Date.now()-new Date(d+'T12:00:00').getTime())<45*864e5;const rest=MAJ_LOG.slice(1);
  return`<div class="mj3" data-noxref="1"><div class="mj3-top"><svg class="mj3-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5l2.4 7.1 7.1 2.4-7.1 2.4L12 22.5l-2.4-7.1L2.5 13l7.1-2.4z"/></svg><span class="mj3-k">${fresh?'Nouveau':'Mise à jour'} · ${majShort(d)}</span><span class="mj3-sep" aria-hidden="true"></span><span class="mj3-t"><b>${esc(ti)}</b>${su?`<span> · ${esc(su)}</span>`:''}</span><span class="mj3-acts">${h?`<a class="mj3-go" href="${h}">Lire ›</a>`:''}${rest.length?`<button type="button" class="mj3-tg" aria-expanded="false" onclick="mj3T(this)"><span class="mj3-tl">Précédentes (${rest.length})</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>`:''}</span></div>
  <div class="mj3-list" hidden>${rest.map(([d2,t2,h2])=>{const[a,b]=majSplit(t2);return`<a class="mj3-row" href="${h2||'#/maj'}"><i aria-hidden="true"></i><time datetime="${d2}">${majFmt(d2)}</time><span><b>${esc(a)}</b>${b?`<span> · ${esc(b)}</span>`:''}</span><em aria-hidden="true">›</em></a>`}).join('')}<p class="mj3-src">Compilation Ummo-Sciences du 21 avril 2025</p></div></div>`}
@@ -3598,6 +3635,7 @@ function viewExplorer(){
     <h1>Voyager dans les archives d’<em>un autre monde</em></h1>
     <p class="lede">${S.docs.length} documents répartis sur ${nf(NPG())} pages : lettres, conversations, courriers et publications, à parcourir par période, par thème ou par recherche.</p>
     <div class="heroacts"><button type="button" class="motbtn" onclick="ummoMot()"><i>✎</i>Le mot de l’auteur</button><button type="button" class="motbtn intro2" onclick="window.ummoIntro&&ummoIntro()"><i>▶</i>Revoir l’ouverture</button></div>
+    ${vcHTML()}
     ${majHTML()}
     <div class="askhome"><p class="lab">${ic('spark')}Interroger les ${S.docs.length} documents avec l’assistant</p>
       <form id="homeask"><label class="sr" for="hq">Votre question</label><textarea id="hq" rows="1" placeholder="Ex. : Que disent les lettres sur la réincarnation ?" enterkeyhint="send"></textarea><button class="go" type="submit" aria-label="Poser la question">${ic('send')}<span>Demander</span></button></form>
