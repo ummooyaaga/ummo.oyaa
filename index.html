@@ -2272,6 +2272,19 @@ a.xref{color:var(--violet);text-decoration:underline;text-decoration-thickness:1
 .maj-list a{color:var(--ink);text-decoration:underline color-mix(in srgb,var(--violet) 45%,transparent);text-underline-offset:3px}
 @media(max-width:560px){.maj-list li{grid-template-columns:1fr}}
 
+/* ── chapitre La société en réseau ── */
+.cz-sec[id^="rs-"] blockquote{margin:14px 0;padding:8px 0 8px 16px;border-left:3px solid var(--violet);font:italic 500 18px/1.5 var(--disp);color:var(--ink);max-width:62ch}
+.cz-sec[id^="rs-"] h3{font:600 17px/1.3 var(--ui);margin:1.4em 0 .4em;color:var(--ink)}
+.cz-sec[id^="rs-"]>p{max-width:72ch;line-height:1.62}
+.rs-steps{list-style:none;padding:0;margin:14px 0;display:grid;gap:8px;max-width:78ch}
+.rs-steps li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--sheet);line-height:1.55}
+.rs-steps li>b{font:600 13.5px/1.45 var(--ui);color:#F08FB0}
+@media(max-width:560px){.rs-steps li{grid-template-columns:1fr;gap:2px}}
+.rs-fig{overflow-x:auto}.rs-fig svg{display:block;width:100%;height:auto}@media(max-width:560px){.rs-fig svg{min-width:600px}}.rs-fig svg path:not([fill]){fill:none}.rs-fig svg text{font-family:var(--ui)}
+.rs-fig figcaption b{color:var(--ink);font-weight:600}
+.rs-img img{display:block;width:100%;height:auto;border-radius:12px}
+.rs-tw table{min-width:620px}
+
 /* ── chapitre Espace, temps et logique ── */
 .et3{margin:18px 0;max-width:900px}
 .et3-st{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(120% 90% at 30% 20%,#1b2350 0%,#0e1330 55%,#090c1d 100%)}
@@ -2787,6 +2800,7 @@ const I={
  fab:'<rect x="3.5" y="13" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.5"/><rect x="8.25" y="3.5" width="7.5" height="7.5" rx="1.5"/>',
  lab:'<path d="M9 3h6M10 3v6L4.6 18.6A1.6 1.6 0 0 0 6 21h12a1.6 1.6 0 0 0 1.4-2.4L14 9V3M7.2 15h9.6"/>',
  dna:'<path d="M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9M9 7h6M9 17h6"/>',
+ reseau:'<circle cx="6" cy="6.5" r="2.4"/><circle cx="18" cy="7.5" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8.4 6.7l7.2.6M7.2 8.6l3.6 7.3M16.8 9.6l-3.6 6.3"/>',
  espt:'<path d="M4 20H20"/><path d="M4 20L15 5"/><path d="M10.5 20a6.5 6.5 0 0 0-2.2-4.9"/><circle cx="18" cy="8" r="1.6"/>',
  cosmos:'<circle cx="12" cy="12" r="2.4"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/>',
  ship:'<ellipse cx="12" cy="12.5" rx="10" ry="3"/><path d="M7.5 11.5a4.5 3 0 0 1 9 0"/><path d="M8 15.5l-1.5 3.5M16 15.5l1.5 3.5M12 15.5V19"/>',
@@ -2931,7 +2945,7 @@ function toggleFav(k){S.favs.has(k)?S.favs.delete(k):S.favs.add(k);saveFavs()}
 /* ───────── routeur ───────── */
 const view=$('#view');
 const NAV=[['explore','#/','Explorer','archive'],['histoire','#/histoire','Histoire','book'],['ummo','#/ummo','Oummo','globe'],['search','#/search','Recherche','search']];
-const NAV_RAIL=[['_h','','I · L’affaire'],['histoire','#/histoire','Histoire','book'],['acteurs','#/acteurs','Acteurs','people'],['lieux','#/lieux','Carte des lieux','pin'],['galaxie','#/galaxie','Galaxie des lettres','spark'],['coulisses','#/coulisses','Les coulisses','coulisses'],['_h','','II · Oummo selon les lettres'],['_s','','La planète'],['ummo','#/ummo','Encyclopédie','globe'],['ciel','#/ciel','Le ciel d’Oummo','star'],['journee','#/journee','Une journée','clock'],['_s','','Les êtres'],['bio','#/biologie','Méta-biologie','dna'],['evo','#/evolution','Évolution','evo'],['sante','#/sante','Santé','sante'],['tele','#/telepathie','Télépathie','tele'],['_s','','La société'],['edu','#/education','Éducation','edu'],['couple','#/couple','Couple et sexualité','couple'],['travail','#/travail','Travail et économie','travail'],['justice','#/justice','Justice','justice'],['spirit','#/spiritualite','Spiritualité','soul'],['_s','','Les savoirs'],['cosmos','#/cosmologie','Cosmologie','cosmos'],['espt','#/espace-temps','Espace, temps et logique','espt'],['maths','#/maths','Mathématiques','sigma'],['tech','#/technologies','Technologies','chip'],['xanmoo','#/xanmoo','XANMOO','cryst'],['uewa','#/uewa','Vaisseaux','ship'],['_s','','La langue'],['ecriture','#/ecriture','Écriture','glyph'],['mots','#/mots','La fabrique des mots','fab'],['_h','','III · Regards croisés'],['terre','#/terre','La Terre vue d’Oummo','regard'],['regards','#/regards','Vus par les Terriens','regards'],['jesus','#/jesus','Jésus selon les lettres','jesus'],['parapsy','#/parapsy','Parapsychologie','parapsy'],['autres','#/autres-mondes','Autres mondes','planet'],['_h','','Outils'],['explore','#/','Explorer','archive'],['search','#/search','Recherche','search'],['parcours','#/parcours','Parcours','archive'],['faq','#/faq','FAQ','gloss'],['quiz','#/quiz','Vrai ou faux ?','check'],['galerie','#/galerie','Galerie','image'],['gloss','#/glossaire','Glossaire','gloss'],['labo','#/labo','Laboratoire du style','lab'],['_h','','Divers'],['maj','#/maj','Mises à jour','clock']];
+const NAV_RAIL=[['_h','','I · L’affaire'],['histoire','#/histoire','Histoire','book'],['acteurs','#/acteurs','Acteurs','people'],['lieux','#/lieux','Carte des lieux','pin'],['galaxie','#/galaxie','Galaxie des lettres','spark'],['coulisses','#/coulisses','Les coulisses','coulisses'],['_h','','II · Oummo selon les lettres'],['_s','','La planète'],['ummo','#/ummo','Encyclopédie','globe'],['ciel','#/ciel','Le ciel d’Oummo','star'],['journee','#/journee','Une journée','clock'],['_s','','Les êtres'],['bio','#/biologie','Méta-biologie','dna'],['evo','#/evolution','Évolution','evo'],['sante','#/sante','Santé','sante'],['tele','#/telepathie','Télépathie','tele'],['_s','','La société'],['edu','#/education','Éducation','edu'],['couple','#/couple','Couple et sexualité','couple'],['travail','#/travail','Travail et économie','travail'],['justice','#/justice','Justice','justice'],['spirit','#/spiritualite','Spiritualité','soul'],['reseau','#/reseau','La société en réseau','reseau'],['_s','','Les savoirs'],['cosmos','#/cosmologie','Cosmologie','cosmos'],['espt','#/espace-temps','Espace, temps et logique','espt'],['maths','#/maths','Mathématiques','sigma'],['tech','#/technologies','Technologies','chip'],['xanmoo','#/xanmoo','XANMOO','cryst'],['uewa','#/uewa','Vaisseaux','ship'],['_s','','La langue'],['ecriture','#/ecriture','Écriture','glyph'],['mots','#/mots','La fabrique des mots','fab'],['_h','','III · Regards croisés'],['terre','#/terre','La Terre vue d’Oummo','regard'],['regards','#/regards','Vus par les Terriens','regards'],['jesus','#/jesus','Jésus selon les lettres','jesus'],['parapsy','#/parapsy','Parapsychologie','parapsy'],['autres','#/autres-mondes','Autres mondes','planet'],['_h','','Outils'],['explore','#/','Explorer','archive'],['search','#/search','Recherche','search'],['parcours','#/parcours','Parcours','archive'],['faq','#/faq','FAQ','gloss'],['quiz','#/quiz','Vrai ou faux ?','check'],['galerie','#/galerie','Galerie','image'],['gloss','#/glossaire','Glossaire','gloss'],['labo','#/labo','Laboratoire du style','lab'],['_h','','Divers'],['maj','#/maj','Mises à jour','clock']];
 function drawNav(){
   $('#bnav').innerHTML=NAV.map(([k,h,l,i])=>`<a href="${h}" data-nav="${k}">${ic(i)}<span>${l}</span></a>`).join('')+`<button class="bmore" data-act="more" data-nav="more" aria-haspopup="dialog">${ic('more')}<span>Plus</span></button>`;
   $('#railnav').innerHTML=railHTML();
@@ -3401,7 +3415,7 @@ function route(){
   else if(parts[0]==='evolution')viewEvolution();
   else if(parts[0]==='mots')viewMots();
   else if(parts[0]==='autres-mondes')viewAutres();
-  else if(parts[0]==='spiritualite')viewSpirit();else if(parts[0]==='lieux')viewLieux();else if(parts[0]==='telepathie')viewTelepathie();else if(parts[0]==='education')viewEducation();else if(parts[0]==='sante')viewSante();else if(parts[0]==='justice')viewJustice();else if(parts[0]==='travail')viewTravail();else if(parts[0]==='terre')viewTerre();else if(parts[0]==='jesus')viewJesus();else if(parts[0]==='parapsy')viewParapsy();else if(parts[0]==='couple')viewSexualite();else if(parts[0]==='coulisses')viewCoulisses();else if(parts[0]==='regards')viewRegards();else if(parts[0]==='espace-temps')viewEspaceTemps();
+  else if(parts[0]==='spiritualite')viewSpirit();else if(parts[0]==='reseau')viewReseau();else if(parts[0]==='lieux')viewLieux();else if(parts[0]==='telepathie')viewTelepathie();else if(parts[0]==='education')viewEducation();else if(parts[0]==='sante')viewSante();else if(parts[0]==='justice')viewJustice();else if(parts[0]==='travail')viewTravail();else if(parts[0]==='terre')viewTerre();else if(parts[0]==='jesus')viewJesus();else if(parts[0]==='parapsy')viewParapsy();else if(parts[0]==='couple')viewSexualite();else if(parts[0]==='coulisses')viewCoulisses();else if(parts[0]==='regards')viewRegards();else if(parts[0]==='espace-temps')viewEspaceTemps();
   else if(parts[0]==='themes')viewThemes();else if(parts[0]==='glossaire')viewGlossaire(decodeURIComponent(parts[1]||''));
   else if(parts[0]==='search')viewSearch(P.get('q'));
   else if(parts[0]==='ask'){history.replaceState(null,'','#/faq');viewFaq(0)}
@@ -3439,8 +3453,9 @@ function matchDoc(d,skipYear){
   return true;
 }
 let YMIN=1964,YMAX=2020;
-const SITE_MAJ='2026-11-14';
+const SITE_MAJ='2026-11-16';
 const MAJ_LOG=[
+ ['2026-11-16','Nouveau chapitre « La société en réseau » : l’homme comme nœud d’un réseau, le langage « standardisé », la morale ajustée à chaque cerveau, le remodelage du cerveau abandonné, le plan IGIAAYUYISAA, le jeu OXUO et ses fosses, comparés avec la Terre.','#/reseau'],
  ['2026-11-14','Version anglaise du site : chapitres, légendes, glossaire et menus traduits ; choix de la langue avec un drapeau sur l’écran d’ouverture et dans la navigation. Les lettres restent en français.',null],
  ['2026-11-13','Nouveau chapitre « Espace, temps et logique » : le raisonnement des lettres sur l’espace, la dimension, le mouvement, le temps et le nombre d’univers ; deux sections ajoutées à Spiritualité sur le cosmos comme organisme.','#/espace-temps'],
  ['2026-11-09','Mise en ligne du site',null]];
@@ -11252,8 +11267,331 @@ function viewTravail(){
  soBind();
 }
 
+/* ── Chapitre La société en réseau (lot 2) ── */
+const RS_FOSSE='img/e-6628e2819a0da6.webp';
+/* ── La société en réseau : schémas animés en relief (three.js, moteur ET3 du chapitre Espace, temps et logique) ── */
+let RS_GTX=null;
+const rsC=h=>new THREE.Color(h).convertSRGBToLinear();
+function rsKit(c){const{T}=c;
+ if(!RS_GTX){const cv=document.createElement('canvas');cv.width=cv.height=64;const g=cv.getContext('2d');const gr=g.createRadialGradient(32,32,0,32,32,32);
+  gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.22,'rgba(255,255,255,.6)');gr.addColorStop(.55,'rgba(255,255,255,.14)');gr.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gr;g.fillRect(0,0,64,64);RS_GTX=cv}
+ const tex=new T.CanvasTexture(RS_GTX);
+ const glow=(col,s,o=1)=>{const sp=new T.Sprite(new T.SpriteMaterial({map:tex,color:col,transparent:true,opacity:o,blending:T.AdditiveBlending,depthWrite:false}));sp.scale.set(s,s,1);return sp};
+ const Y=new T.Vector3(0,1,0);
+ const bar=(a,b,r,m)=>{const d=b.clone().sub(a),L=d.length();const o=new T.Mesh(new T.CylinderGeometry(r,r,1,10,1,true),m);o.scale.y=L;o.position.copy(a).add(b).multiplyScalar(.5);o.quaternion.setFromUnitVectors(Y,d.normalize());return o};
+ const node=(p,r,col,gs,eI=.9)=>{const g=new T.Group();const m=new T.Mesh(new T.SphereGeometry(r,24,16),new T.MeshStandardMaterial({color:col,emissive:col,emissiveIntensity:eI*.45,roughness:.35,metalness:.1}));const h=glow(col,gs,.75);g.add(m,h);g.position.copy(p);g.userData={m,h};return g};
+ const stars=(n,R)=>{const ps=new Float32Array(n*3);for(let i=0;i<n;i++){const u=Math.random()*2-1,a=Math.random()*6.283,r=R*(.6+Math.random()*.4),s=Math.sqrt(1-u*u);ps.set([r*s*Math.cos(a),r*u,r*s*Math.sin(a)],i*3)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(ps,3));return new T.Points(g,new T.PointsMaterial({color:rsC(0xaab4ff),size:.05,transparent:true,opacity:.55,depthWrite:false}))};
+ const pulse=(col,s)=>glow(col,s,1);
+ const along=(sp,a,b,u)=>{sp.position.copy(a).lerp(b,u)};
+ return {glow,bar,node,stars,pulse,along,V:(x,y,z)=>new T.Vector3(x,y,z)}}
+const rsE=u=>u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+const rsS=(t,a,b)=>Math.min(1,Math.max(0,(t-a)/(b-a)));
+const RS3B={
+/* 1 · trois réseaux emboîtés : la société, le corps (OEMII), le cerveau */
+rsnest(c){const{T,sc,cam,lab}=c;const K=rsKit(c);c.gnd.visible=false;cam.near=.004;c.still=3;
+ sc.add(K.stars(420,40));
+ const PK=rsC(0xF08FB0),TL=rsC(0x5EE0D0),BL=rsC(0x7DB8FF);
+ /* niveau 3 : la société */
+ const soc=[];const N=13;for(let i=0;i<N;i++){const a=i*2.399,y=(i%3-1)*1.3+Math.sin(i*1.7)*.5,r=3.6+(i%4)*.55;soc.push(K.V(Math.cos(a)*r,y,Math.sin(a)*r))}
+ const sE=[];soc.forEach((p,i)=>{const d=soc.map((q,j)=>[p.distanceTo(q),j]).filter(x=>x[1]!==i).sort((a,b)=>a[0]-b[0]);d.slice(0,2).forEach(([,j])=>{if(!sE.some(e=>(e[0]===j&&e[1]===i)))sE.push([i,j])})});
+ const sMat=new T.MeshBasicMaterial({color:PK,transparent:true,opacity:.42});
+ const O=K.V(0,0,0);const hub=[0,2,4,6,8,11];
+ const sG=new T.Group();sc.add(sG);sMat.depthWrite=false;sE.forEach(([i,j])=>sG.add(K.bar(soc[i],soc[j],.022,sMat)));const HB=i=>soc[i].clone().setLength(.64);hub.forEach(i=>sG.add(K.bar(HB(i),soc[i],.026,sMat)));
+ soc.forEach(p=>sc.add(K.node(p,.2,PK,1.3)));
+ const pers=new T.Mesh(new T.SphereGeometry(.62,40,28),c.glass(rsC(0x9fe8ff),{opacity:.16}));sc.add(pers);
+ const ring=new T.Mesh(new T.TorusGeometry(.7,.025,10,64),new T.MeshBasicMaterial({color:TL,transparent:true,opacity:.9}));sc.add(ring);
+ const halo=K.glow(TL,2.4,.35);sc.add(halo);
+ const bodyG=new T.Group();sc.add(bodyG);
+ /* niveau 2 : le corps (OEMII) */
+ const B=[[0,.3,0],[0,.18,0],[-.13,.15,0],[.13,.15,0],[-.21,.0,.02],[.21,.0,.02],[0,.0,0],[0,-.08,0],[-.08,-.24,.01],[.08,-.24,.01],[-.1,-.4,.02],[.1,-.4,.02]].map(a=>K.V(...a));
+ const bE=[[0,1],[1,2],[1,3],[2,4],[3,5],[1,6],[6,7],[7,8],[7,9],[8,10],[9,11],[2,6],[3,6]];
+ const bMat=new T.MeshBasicMaterial({color:TL,transparent:true,opacity:.6});
+ bE.forEach(([i,j])=>bodyG.add(K.bar(B[i],B[j],.0045,bMat)));B.forEach((p,i)=>{if(i)bodyG.add(K.node(p,.016,TL,.09))});
+ const head=new T.Mesh(new T.SphereGeometry(.075,32,22),c.glass(rsC(0x7DB8FF),{opacity:.2}));head.position.copy(B[0]);bodyG.add(head);
+ /* niveau 1 : le cerveau */
+ const br=[];for(let i=0;i<18;i++){const u=Math.random()*2-1,a=Math.random()*6.283,r=.05*Math.cbrt(Math.random()),s=Math.sqrt(1-u*u);br.push(B[0].clone().add(K.V(r*s*Math.cos(a),r*u*.85,r*s*Math.sin(a))))}
+ const brE=[];br.forEach((p,i)=>{br.map((q,j)=>[p.distanceTo(q),j]).filter(x=>x[1]>i).sort((a,b)=>a[0]-b[0]).slice(0,2).forEach(([,j])=>brE.push([i,j]))});
+ const brMat=new T.MeshBasicMaterial({color:BL,transparent:true,opacity:.75});
+ brE.forEach(([i,j])=>bodyG.add(K.bar(br[i],br[j],.0009,brMat)));br.forEach(p=>bodyG.add(K.node(p,.0038,BL,.022)));
+ /* impulsions */
+ const P=[];const addP=(a,b,col,s,sp,so,gr)=>{const g=K.pulse(col,s);(gr||sc).add(g);P.push({g,a,b,ph:Math.random(),sp,soc:so})};
+ sE.forEach(([i,j])=>addP(soc[i],soc[j],PK,.42,.35,1));hub.forEach(i=>addP(soc[i],HB(i),rsC(0xffd0e0),.5,.45,1));
+ bE.forEach(([i,j])=>addP(B[i],B[j],TL,.05,.7,0,bodyG));brE.forEach(([i,j])=>addP(br[i],br[j],rsC(0xbfe0ff),.014,1.1,0,bodyG));
+ /* trajectoire de la caméra */
+ const ST=[{d:12.5,t:K.V(0,0,0),txt:'<b>Le réseau social.</b> Chaque personne est un nœud, uni aux autres « par de multiples arcs ou connexions ».'},
+           {d:1.45,t:K.V(0,-.02,0),txt:'<b>L’OEMII, le corps.</b> Un second réseau, « unité physiologicomentale » : la personne entière est un nœud du premier.'},
+           {d:.24,t:B[0].clone(),txt:'<b>Le cerveau.</b> Le réseau neuronal, lui-même relié au réseau du corps : on ne touche pas une partie sans toucher le tout.'}];
+ const CY=27,seg=[[0,6.5,0],[6.5,9.5,'01'],[9.5,15,1],[15,18,'12'],[18,23,2],[23,27,'20']];
+ const tg=K.V(),pos=K.V();let lastTxt='';
+ return (t,dt)=>{const u=((t%CY)+CY)%CY;let d,tgt,txt;const az=t*.11,el=.28+.06*Math.sin(t*.2);
+  for(const[a,b,k]of seg){if(u<a||u>=b)continue;const e=rsE(rsS(u,a,b));
+   if(typeof k==='number'){d=ST[k].d;tgt=ST[k].t;txt=ST[k].txt}
+   else{const A=ST[+k[0]],Bb=ST[+k[1]];d=Math.exp(Math.log(A.d)*(1-e)+Math.log(Bb.d)*e);tgt=tg.copy(A.t).lerp(Bb.t,e);txt=(e<.5?A:Bb).txt}}
+  pos.set(Math.cos(az)*Math.cos(el),Math.sin(el),Math.sin(az)*Math.cos(el)).multiplyScalar(d).add(tgt);cam.position.copy(pos);cam.lookAt(tgt);
+  const dp=cam.position.length();pers.material.opacity=.16*Math.min(1,Math.max(0,(dp-.75)/.6));ring.material.opacity=.9*Math.min(1,Math.max(0,(dp-1.2)/1.5));halo.material.opacity=.35*Math.min(1,Math.max(0,(dp-1.5)/2));
+  ring.lookAt(cam.position);bodyG.rotation.y=Math.atan2(cam.position.x,cam.position.z);const fo=Math.min(1,Math.max(0,(dp-2.2)/3));sMat.opacity=.42*fo;sG.visible=fo>.02;P.forEach(p=>{if(p.soc)p.g.material.opacity=fo});const dh=cam.position.distanceTo(B[0]);head.material.opacity=.2*Math.min(1,Math.max(0,(dh-.1)/.25));
+  P.forEach(p=>K.along(p.g,p.a,p.b,(t*p.sp+p.ph)%1));
+  if(txt!==lastTxt){lab.innerHTML=txt;lastTxt=txt}}},
+/* 2 · le même réseau, organisé puis désorganisé */
+rsnet(c){const{T,sc,cam,lab,tag,place}=c;const K=rsKit(c);c.gnd.visible=false;c.still=3;sc.add(K.stars(260,30));
+ const TL=rsC(0x5EE0D0),OR=rsC(0xF2905E),PK=rsC(0xF08FB0);
+ const pts=[[0,0,0],[-3.4,1.3,.4],[-1.2,2.5,-.6],[1.7,2.1,.5],[3.6,.4,-.4],[2.4,-1.9,.6],[-.4,-2.6,-.3],[-2.9,-1.5,.5],[.9,-.2,1.6],[-1.6,.2,-1.6],[1.4,.9,-1.8]].map(a=>K.V(...a));
+ const E=[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,1],[0,8],[0,9],[0,10],[8,5],[9,1],[10,3],[8,3],[9,7]];
+ const BRK=new Set([1,6,8,12,13,19]),DEF=new Set([9,20]),ISO=6;
+ const nodes=pts.map((p,i)=>{const n=K.node(p,i?.22:.32,TL,i?1.1:1.6);sc.add(n);return n});
+ const ringM=new T.MeshBasicMaterial({color:PK,transparent:true,opacity:0});const ring=new T.Mesh(new T.TorusGeometry(.45,.03,10,48),ringM);sc.add(ring);
+ const L=E.map(([i,j],k)=>{const mA=new T.MeshStandardMaterial({color:TL,emissive:TL,emissiveIntensity:.8,transparent:true,opacity:.85});
+  const h1=new T.Mesh(new T.CylinderGeometry(.035,.035,1,10,1,true),mA),h2=new T.Mesh(new T.CylinderGeometry(.035,.035,1,10,1,true),mA);sc.add(h1,h2);
+  const g=K.pulse(TL,.5);sc.add(g);return {i,j,k,h1,h2,mA,g,ph:Math.random()}});
+ const Yv=K.V(0,1,0),tmp=K.V(),tA=K.V(),tB=K.V();
+ const half=(m,a,b,f)=>{tmp.copy(b).sub(a);const len=tmp.length()*.5*f;m.scale.y=Math.max(.001,len);m.position.copy(a).addScaledVector(tmp.normalize(),len*.5);m.quaternion.setFromUnitVectors(Yv,tmp)};
+ const tg=tag('seul, incompris','pk');const cO=new T.Color(TL),cD=new T.Color(OR);
+ const CY=16;let lastTxt='';
+ return (t,dt)=>{const u=((t%CY)+CY)%CY;const k=rsE(rsS(u,5.5,7.5))*(1-rsE(rsS(u,14,16)));
+  cam.position.set(Math.sin(t*.12)*11,2.2+Math.sin(t*.09)*.8,Math.cos(t*.12)*11);cam.lookAt(0,0,0);
+  const pI=pts[ISO].clone().add(K.V(1.3*k,-1.2*k,.9*k));nodes[ISO].position.copy(pI);
+  ring.position.copy(pI);ring.lookAt(cam.position);ringM.opacity=k*.95;ring.scale.setScalar(1+.08*Math.sin(t*4));
+  L.forEach(l=>{const a=l.i===ISO?pI:pts[l.i],b=l.j===ISO?pI:pts[l.j];const brk=BRK.has(l.k)||l.i===ISO||l.j===ISO,def=DEF.has(l.k);
+   const f=brk?1-.62*k:1;half(l.h1,a,b,f);half(l.h2,b,a,f);
+   l.mA.opacity=brk?.85-.55*k:.85;l.mA.color.copy(cO).lerp(cD,def?k:0);l.mA.emissive.copy(l.mA.color);l.mA.emissiveIntensity=def?.8+k*.6*(.5+.5*Math.sin(t*9)):.8;
+   if(brk&&k>.3){l.g.visible=false}else{l.g.visible=true;const s=def&&k>.3?(.5+.5*Math.sin(t*3+l.ph*6)):(t*.45+l.ph)%1;tA.copy(a);tB.copy(b);l.g.position.copy(tA).lerp(tB,s);l.g.material.color.copy(l.mA.color)}});
+  nodes.forEach((n,i)=>{const s=1+.08*Math.sin(t*2+i);n.userData.h.scale.setScalar((i?1.1:1.6)*s)});
+  place(tg,pI.clone().add(K.V(0,-.75,0)));tg.style.opacity=k>.5?1:0;
+  const txt=k>.5?'<b>Réseau désorganisé.</b> Des liaisons se rompent ou sont mal comprises, d’autres deviennent des « actes de défense » (en orange), et un nœud reste « seul, incompris ».':'<b>Réseau organisé.</b> Chaque liaison transmet : les impulsions circulent d’un nœud à l’autre dans tout le réseau.';
+  if(txt!==lastTxt){lab.innerHTML=txt;lastTxt=txt}}},
+/* 3 · les trois équilibres du cône */
+rscone(c){const{T,sc,cam,lab,tag,place,mat}=c;const K=rsKit(c);c.still=4.6;
+ cam.position.set(0,4.2,12.5);cam.lookAt(0,1.1,0);
+ const plat=new T.Mesh(new T.CylinderGeometry(9.5,9.8,.18,72),mat(rsC(0x151c3d),{roughness:.6}));plat.position.y=-.09;plat.receiveShadow=true;sc.add(plat);
+ const H=2.2,R=1;const cg=new T.ConeGeometry(R,H,64);
+ const mk=col=>{const m=new T.Mesh(cg,mat(col,{roughness:.3,metalness:.15,emissive:col,emissiveIntensity:.12}));m.castShadow=true;return m};
+ const A=mk(rsC(0x5EE0D0));A.position.set(-4.4,H/2,0);sc.add(A);
+ /* cône couché : sommet au sol, génératrice au sol, axe incliné de l’angle du cône */
+ const ha=Math.atan(R/H);const lay=new T.Group();const inner=mk(rsC(0x7DB8FF));inner.position.y=-H/2;lay.add(inner);lay.rotation.z=Math.PI/2+ha;
+ const rollG=new T.Group();rollG.add(lay);rollG.position.set(-1,0,0);sc.add(rollG);
+ const Cp=new T.Group();Cp.position.set(4.4,0,0);sc.add(Cp);const Cc=mk(rsC(0xF2905E));Cc.rotation.x=Math.PI;Cc.position.y=H/2;Cp.add(Cc);
+ const puffs=[];for(let i=0;i<26;i++){const g=K.glow(rsC(0xdfe6ff),.5,0);sc.add(g);puffs.push({g,o:Math.random(),y:1.1+Math.random()*1.3,z:(Math.random()-.5)*1.2})}
+ const t1=tag('Stable · posé sur sa base'),t2=tag('Indifférent · couché sur le côté'),t3=tag('Instable · sur la pointe','am');
+ const t4=tag('l’OEMBUUAW à la naissance'),t5=tag('après la transformation','am');
+ c.onSize=as=>{const m=as<1.5;t1.textContent=m?'Stable':'Stable · posé sur sa base';t2.textContent=m?'Indifférent':'Indifférent · couché sur le côté';t3.textContent=m?'Instable':'Instable · sur la pointe';t4.textContent=m?'à la naissance':'l’OEMBUUAW à la naissance';t5.textContent=m?'après l’opération':'après la transformation'};
+ const CY=9;let lastTxt='';
+ return (t,dt)=>{const u=((t%CY)+CY)%CY;
+  cam.position.set(Math.sin(t*.07)*2.2,4.2,12.5);cam.lookAt(0,1.1,0);
+  rollG.rotation.y=Math.sin(t*.8)*.35;inner.rotation.y=Math.sin(t*.8)*1.1;
+  const blow=rsS(u,4,5.4),fall=rsE(rsS(u,5,6.1)),back=rsS(u,7.6,8.6);
+  const wob=.035*Math.sin(t*5.3)*(1-fall);Cp.rotation.z=-(fall*(Math.PI/2-ha))+wob;Cp.rotation.x=.02*Math.cos(t*4.1)*(1-fall);
+  const op=u<.6?u/.6:(back>0?Math.max(0,1-back*1.4):1);Cc.material.transparent=op<1;Cc.material.opacity=op;if(u<.6)Cp.rotation.z=wob;
+  A.rotation.z=.04*Math.sin(t*6)*blow*(1-blow)*4;
+  puffs.forEach(p=>{const s=(blow>0&&blow<1)?((u-4)/1.4+p.o*.35):-1;if(s<0||s>1){p.g.material.opacity=0;return}p.g.position.set(-6.5+s*10.5,p.y,p.z);p.g.material.opacity=.55*Math.sin(s*Math.PI)})
+  place(t1,K.V(-4.4,-.55,0));place(t2,K.V(0,-.55,0));place(t3,K.V(4.4,-.55,0));place(t4,K.V(-4.4,H+.55,0));place(t5,K.V(4.4,H+.55,0));
+  const txt=u>4&&u<7.6?'<b>Un souffle suffit.</b> Le cône posé sur sa pointe tombe ; celui posé sur sa base se redresse. C’est l’image de la lettre : l’opération a laissé l’OEMBUUAW dans un équilibre « INSTABLE ».':'<b>Trois équilibres.</b> À la naissance, l’OEMBUUAW est « parfaitement équilibré et stabilisé », comme un cône posé sur sa base ; après la transformation, comme un cône posé sur sa pointe.';
+  if(txt!==lastTxt){lab.innerHTML=txt;lastTxt=txt}}},
+/* 4 · une petite fosse OXUO GAADII à l’échelle (1 unité = 10 m) */
+rspit(c){const{T,sc,cam,lab,tag,place,mat,glass}=c;const K=rsKit(c);c.still=2;cam.far=400;
+ const W=8.6,D=4.1,Hh=2.2,px=2.6;
+ const sh=new T.Shape();sh.moveTo(-22,-14);sh.lineTo(22,-14);sh.lineTo(22,14);sh.lineTo(-22,14);sh.lineTo(-22,-14);
+ const hole=new T.Path();hole.moveTo(px-W/2,-D/2);hole.lineTo(px-W/2,D/2);hole.lineTo(px+W/2,D/2);hole.lineTo(px+W/2,-D/2);hole.lineTo(px-W/2,-D/2);sh.holes.push(hole);
+ const gm=new T.Mesh(new T.ShapeGeometry(sh),mat(rsC(0x1c2f37),{roughness:.95}));gm.rotation.x=-Math.PI/2;gm.receiveShadow=true;sc.add(gm);
+ const wm=mat(rsC(0x55658c),{roughness:.8,side:T.DoubleSide});const fl=mat(rsC(0x1f2740),{roughness:.9});
+ const wall=(w,h,x,y,z,ry)=>{const m=new T.Mesh(new T.PlaneGeometry(w,h),wm);m.position.set(x,y,z);m.rotation.y=ry;m.receiveShadow=true;sc.add(m)};
+ wall(W,Hh,px,-Hh/2,-D/2,0);wall(W,Hh,px,-Hh/2,D/2,Math.PI);wall(D,Hh,px-W/2,-Hh/2,0,Math.PI/2);wall(D,Hh,px+W/2,-Hh/2,0,-Math.PI/2);
+ const flo=new T.Mesh(new T.PlaneGeometry(W,D),fl);flo.rotation.x=-Math.PI/2;flo.position.set(px,-Hh,0);flo.receiveShadow=true;sc.add(flo);
+ const rim=new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(W,.001,D)),new T.LineBasicMaterial({color:rsC(0xF08FB0)}));rim.position.set(px,.02,0);sc.add(rim);
+ const metal=mat(rsC(0xc9d2e6),{metalness:.85,roughness:.25});
+ const rnd=(a,b)=>a+Math.random()*(b-a);const P=()=>K.V(px+rnd(-W/2+.15,W/2-.15),rnd(-Hh+.1,-.1),rnd(-D/2+.15,D/2-.15));
+ for(let i=0;i<22;i++){const b=K.bar(P(),P(),.045,metal);b.castShadow=true;sc.add(b)}
+ const walk=mat(rsC(0x6b7490),{metalness:.6,roughness:.4});for(let i=0;i<5;i++){const w=new T.Mesh(new T.BoxGeometry(rnd(2.5,6),.035,.18),walk);w.position.set(px+rnd(-1.5,1.5),rnd(-1.6,-.25),rnd(-1.4,1.4));w.rotation.y=rnd(-.6,.6);sc.add(w)}
+ const tubes=[];for(let i=0;i<3;i++){const pts=[0,1,2,3].map(k=>K.V(px-W/2+.3+k*(W-.6)/3,rnd(-1.8,-.4),rnd(-1.6,1.6)));const cur=new T.CatmullRomCurve3(pts);const tb=new T.Mesh(new T.TubeGeometry(cur,48,.16,14,false),glass(rsC(0xffe9b8),{opacity:.3}));sc.add(tb)}
+ const gel=[];for(let i=0;i<11;i++){const r=rnd(.18,.42);const m=new T.Mesh(new T.SphereGeometry(r,28,18),glass(rsC(0xfff1cc),{opacity:.5,emissive:rsC(0x8a6a30),emissiveIntensity:.6}));const p=P();m.position.copy(p);const gg=K.glow(rsC(0xffd59a),r*4.2,.55);m.add(gg);sc.add(m);gel.push({m,p,ph:Math.random()*6})}
+ const vap=[];for(let i=0;i<5;i++){const g=K.glow(rsC(0xffffff),1.6,.0);const p=P();g.position.copy(p);sc.add(g);vap.push({g,p,ph:Math.random()*6})}
+ const lamp=new T.PointLight(rsC(0xffd99a),.9,9);lamp.position.set(px,-1,0);sc.add(lamp);
+ const pool=new T.Group();const wat=new T.Mesh(new T.BoxGeometry(5,.06,2.5),new T.MeshStandardMaterial({color:rsC(0x2f7fd6),emissive:rsC(0x0d3a6e),emissiveIntensity:.6,roughness:.15,metalness:.1}));wat.position.y=.03;pool.add(wat);
+ const coping=new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(5,.001,2.5)),new T.LineBasicMaterial({color:rsC(0xBFE0FF)}));coping.position.y=.07;pool.add(coping);
+ for(let i=1;i<8;i++){const l=new T.Mesh(new T.BoxGeometry(4.8,.01,.02),new T.MeshBasicMaterial({color:rsC(0x9cc7ff)}));l.position.set(0,.07,-1.25+i*2.5/8);pool.add(l)}
+ pool.position.set(-6.2,0,-.2);sc.add(pool);
+ const field=new T.Group();const grass=new T.Mesh(new T.PlaneGeometry(10.5,6.8),mat(rsC(0x2f6b45),{roughness:.9}));grass.rotation.x=-Math.PI/2;grass.position.y=.01;grass.receiveShadow=true;field.add(grass);
+ const lm=new T.LineBasicMaterial({color:rsC(0xffffff),transparent:true,opacity:.75});const ln=a=>{const g=new T.BufferGeometry().setFromPoints(a.map(([x,z])=>K.V(x,.02,z)));field.add(new T.Line(g,lm))};
+ ln([[-5.25,-3.4],[5.25,-3.4],[5.25,3.4],[-5.25,3.4],[-5.25,-3.4]]);ln([[0,-3.4],[0,3.4]]);const ci=[];for(let i=0;i<=40;i++){const a=i/40*6.283;ci.push([Math.cos(a)*.915,Math.sin(a)*.915])}ln(ci);
+ ln([[-5.25,-2.02],[-3.6,-2.02],[-3.6,2.02],[-5.25,2.02]]);ln([[5.25,-2.02],[3.6,-2.02],[3.6,2.02],[5.25,2.02]]);
+ field.position.set(-1.2,0,-8.6);sc.add(field);
+ const t1=tag('Piscine olympique · 50 × 25 m'),t2=tag('Petite fosse OXUO GAADII · 86 × 41 m','pk big'),t3=tag('22 m de fond','pk'),t4=tag('Terrain de football · 105 × 68 m');
+ let RR=19.5;c.onSize=as=>{const m=as<1.5;RR=m?15.5:19.5;t1.textContent=m?'Piscine olympique':'Piscine olympique · 50 × 25 m';t2.textContent=m?'Fosse OXUO GAADII':'Petite fosse OXUO GAADII · 86 × 41 m';t2.className='et3-tag pk'+(m?'':' big');t4.textContent=m?'Football · 105 m':'Terrain de football · 105 × 68 m'};
+ lab.innerHTML='<b>Une petite fosse OXUO GAADII, à l’échelle.</b> 22 × 46 ENMOO sur 12 de profondeur, soit environ 41 × 86 m et 22 m de fond. La plus grande atteint 2,9 km : environ 34 petites fosses bout à bout. L’intérieur est une interprétation.';
+ return (t,dt)=>{const a=.55+t*.07,r=RR;cam.position.set(px-2+Math.sin(a)*r,10.5+Math.sin(t*.15)*1.2,-2+Math.cos(a)*r);cam.lookAt(px-2.2,-.4,-2.2);
+  gel.forEach(g=>{g.m.position.y=g.p.y+Math.sin(t*.9+g.ph)*.12;g.m.position.x=g.p.x+Math.cos(t*.5+g.ph)*.08});
+  vap.forEach(v=>{const k=(t*.25+v.ph)%1;v.g.position.set(v.p.x,v.p.y+k*1.2,v.p.z);v.g.material.opacity=.32*Math.sin(k*Math.PI);v.g.scale.setScalar(1+k*1.6)});
+  lamp.intensity=.8+.25*Math.sin(t*3.1);
+  place(t1,K.V(-6.2,.2,1.75));place(t2,K.V(px,.3,D/2+.75));place(t3,K.V(px+W/2+.35,-Hh*.55,-D/2));place(t4,K.V(-1.2,.2,-5.0))}}
+};
+const rsReg=()=>{if(typeof ET3B!=='undefined')Object.assign(ET3B,RS3B)};
+const rsCmp=a=>`<div class="ed-cmp">${a.map(([p,ps,th,an])=>`<article class="ed-cmpc"><p class="ed-cmpo"><span>Dans les lettres</span>${p} ${SPP(ps)}</p><ul>${th.map(([w,x])=>`<li><b>${w}</b>${x}</li>`).join('')}</ul><p class="ed-an"><b>Analyse.</b> ${an}</p></article>`).join('')}</div>`;
+function viewReseau(){
+ setNav('reseau');
+ view.innerHTML=`<header class="chaphead"><p class="kicker">Chapitre</p><h1>${chIc('reseau')}La société en réseau</h1>
+  <p class="lede">Ce que les lettres de 1966 disent de l’homme comme nœud d’un réseau, de ce qui fait souffrir la société terrestre, du raccourci chirurgical qu’Oummo a abandonné, et du jeu qui entretient le réseau.</p></header>
+ ${soStats([['3','réseaux emboîtés : le cerveau, le corps, la société',[202,203]],['258','personnes opérées en l’an 5722, puis toutes effondrées',[217,219]],['1','seul jeu, l’OXUO, aux règles propres à chaque joueur',[125]],['86 × 41 m','une petite fosse OXUO GAADII, 22 m de fond',[128]]])}
+ ${soToc('rs',['reseau|L’homme, nœud d’un réseau','langage|Un langage « standardisé »','malheur|Pourquoi l’homme est malheureux','tutelle|Ni apparition ni tutelle','morale|Une morale ajustée à chaque cerveau','remodel|Le raccourci qui a échoué','plan|La voie longue : IGIAAYUYISAA','robots|« Des robots ? »','jeu|Le jeu qui entretient le réseau','fosses|Les fosses OXUO GAADII','terre|En regard : la Terre','omb|Zones d’ombre'])}
+
+ <section class="cz-sec" id="rs-reseau"><h2><span class="n">1</span>L’homme, nœud d’un réseau</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Pour les auteurs, tout est réseau, à trois niveaux emboîtés : les neurones du cerveau, le corps entier (l’OEMII), et la société, dont chaque personne est un nœud.</p>
+<p>La lettre le dit comme une insistance : « Nous avons plusieurs fois réitéré que l’OEMII est un réseau et ce concept nous le jugeons si transcendantal que nous préférons le répéter » ${SPP([202])}.</p>
+<p>Le premier niveau est le cerveau. La vie mentale « étant une fonction du réseau neuronal de l’encéphale, et ce réseau à son tour étant lié au RÉSEAU général de l’OEMII », on ne peut agir sur une partie sans toucher au tout ${SPP([203])}. La lettre récuse deux positions terrestres à la fois : la conception « animiste », pour qui le souvenir serait l’œuvre de l’âme seule, et celle des « psychologues matérialistes » qui réduisent la pensée au cortex ${SPP([203])}.</p>
+<p>Le dernier niveau est la société. L’homme s’y voit « comme noeud uni à d’autres noeuds par de multiples arcs ou connexions » ${SPP([208,209])}. Le corps humain « se développe dans son environnement en s’intégrant dans un autre Réseau beaucoup plus complexe (le Réseau social) » ${SPP([123])}.</p>
+<p>Pour donner une idée de la complexité du premier niveau, la lettre décrit un écran de laboratoire, à EWO IAAU IU, qui représente le cerveau en 405 sections réparties dans autant de salles, sur « 516.600 mètres carrés » environ ${SPP([204])}. C’est un peu plus de 70 terrains de football.</p>
+
+${et3dHTML('rsnest','Figure 1 · Trois réseaux emboîtés.',`Schéma animé, d’après D47 et D41-7. La caméra plonge du réseau social dans la personne, puis dans son cerveau : chaque niveau est un réseau, et une atteinte à un niveau se répercute sur les autres ${SPP([123])}.`)}</section>
+
+ <section class="cz-sec" id="rs-langage"><h2><span class="n">2</span>Le défaut de la Terre : un langage « standardisé »</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Les doctrines terrestres n’échouent pas parce qu’elles sont fausses, mais parce que le langage qui devrait les transmettre est trop pauvre, et le même pour tous.</p>
+<blockquote>« VOUS EMPLOYEZ UN LANGAGE STANDARDISÉ. Les mêmes formes orales pour tous, comme si les esprits récepteurs étaient tous identiques. » ${SPP([201])}</blockquote>
+<p>Le lien de communication, « LE LANGAGE », serait « d’une pauvreté effrayante » : il ne transmet fidèlement ni les émotions ni les idées ${SPP([201])}. On voit alors des gens discuter des heures pour s’apercevoir qu’ils défendent « le même concept masqué par des mots inadéquats » ${SPP([201])}. La lettre étend le constat aux guerres : en écoutant vraiment l’adversaire, on découvrirait souvent « une totale incompréhension des motivations » ${SPP([201])}.</p>
+<p>Elle passe en revue le marxisme, l’existentialisme, le libéralisme économique, le protestantisme et l’Église catholique. Chaque camp connaîtrait mal la doctrine qu’il méprise, et ignorerait « la merveilleuse fraction de vérité que toutes contiennent » ${SPP([201,202])}. Un lien commun leur échapperait : « L’ESPÉRANCE DANS UNE HUMANITÉ TERRESTRE FUTURE PLUS JUSTE » ${SPP([202])}.</p>
+<blockquote>« Ce n’est pas parce que les doctrines terrestres sont erronées qu’elles ont échoué. C’est l’impossibilité de trouver des moyens d’INFORMATION qui soient accessibles à tous les humains […] » ${SPP([202])}</blockquote>
+<p>La lettre ne propose pas de solution rapide. Elle juge « utopique » qu’un tel langage naisse d’une réunion à l’UNESCO : il faudrait des années d’analyse et d’adaptation ${SPP([202])}.</p>
+<p>Elle donne en attendant trois conseils pratiques ${SPP([202])} :</p>
+<ul class="cz-facts">
+  <li>écouter les arguments de l’autre et chercher ses motivations ;</li>
+  <li>ne jamais se moquer de ses idées ;</li>
+  <li>inviter les autres à formuler « leurs critiques rigoureuses contre vous ».</li>
+</ul>
+<p>Ces conseils rejoignent ceux de la lecture en groupe, déjà présentés dans <a href="#/education">Éducation</a>, section 8.</p></section>
+
+ <section class="cz-sec" id="rs-malheur"><h2><span class="n">3</span>Pourquoi l’homme est malheureux : un réseau désorganisé</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Le malheur humain ne viendrait ni d’une nature mauvaise ni du seul milieu, mais d’un réseau où les connexions entre les personnes fonctionnent mal, et où les défauts se transmettent d’une génération à l’autre.</p>
+<p>La question est posée sans détour : « quelle est la raison pour laquelle l’homme est malheureux sur TERRE ? » ${SPP([206])}. Le vieil adage « l’homme est un loup pour l’homme » est écarté comme une explication simpliste ${SPP([206])}.</p>
+<h3>La parabole de l’horloge</h3>
+<p>Une horloge en or, démontée et déréglée par des générations d’enfants, finit dans un bassin de boue. Un « certain Monsieur Rousseau » passe et conclut : « L’horloge est bonne ; c’est l’eau sale et la boue qui l’empêche de fonctionner ». Un compagnon répond qu’elle a un défaut de construction et que l’horloger est responsable ${SPP([208])}. Pour la lettre, les deux ont tort de raisonner en « hommes bons et mauvais » : les facteurs sont multiples ${SPP([208])}.</p>
+<h3>Trois causes enchaînées</h3>
+<ol class="rs-steps">
+  <li><b>L’hérédité</b><span>L’homme hérite de ses parents des réflexes nerveux (les instincts), des souvenirs qui affleurent dans les rêves, et « tout un réseau de connexions nerveuses ou synapses conditionnelles » ${SPP([208])}.</span></li>
+  <li><b>Le réseau</b><span>Il naît nœud d’un réseau dont les arcs « fonctionnent d’une manière désastreuse » : « C’est le système de communication qui est en faute » ${SPP([209])}.</span></li>
+  <li><b>La défense</b><span>Entouré de milliards de semblables, il se sent « terriblement seuls, incompris » (la lettre parle des hommes au pluriel), et se défend contre les autres, « bouleversant encore plus le réseau » ${SPP([209])}.</span></li>
+</ol>
+<p>La boucle se referme : les cerveaux des ancêtres ont été viciés par « cette même désorganisation du réseau social » ${SPP([209])}. La lettre D47-4 décrit le même cercle pour l’Oummo d’autrefois : les « réflexes agressifs » nés de la tension sociale « SE TRANSMETTENT PAR HÉRÉDITÉ A SES ENFANTS » ${SPP([221])}.</p>
+<p>Le « fil coupé » du poste de radio, qui suffit à rendre tout le réseau muet, vient de la même lettre ${SPP([210])}. Il est présenté dans le chapitre <a href="#/education">Éducation</a>, section 4, et dans la figure interactive de l’<a href="#/ummo">Encyclopédie</a>.</p>
+
+${et3dHTML('rsnet','Figure 2 · Le même réseau, organisé puis désorganisé.',`Schéma animé, d’après D47-2 ${SPP([209])}. La lettre ne donne pas de schéma : le titre « Graphes » vient des compilateurs.`)}</section>
+
+ <section class="cz-sec" id="rs-tutelle"><h2><span class="n">4</span>Ni apparition publique ni tutelle</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Les auteurs refusent de se montrer, parce que cela ne servirait qu’une curiosité nourrie de science-fiction, et de soigner la Terre par la force, parce que ce serait une tutelle immorale.</p>
+<p>Le texte, destiné à être lu au café Léon, imagine la scène d’une apparition : autographes, vêtements arrachés, le café rebaptisé « café de l’espace », des cartes postales à l’effigie de Fernando Sesma ${SPP([206])}. Puis il pose la question : les idées auraient-elles plus de valeur énoncées « vêtu d’un costume fluorescent, devant deux cents microphones » ${SPP([207])} ? Le préjudice, ajoute-t-il, serait pour les Terriens, exposés au « choc aveugle des masses hystériques face au sensationnel » ${SPP([207])}.</p>
+<p>Sur l’intervention, la lettre est précise. Une thérapie « à une échelle macro sociale » existerait, mais il faudrait « de 250 à 300 ans terrestres » pour en voir les effets ${SPP([209])}. Et elle supposerait :</p>
+<blockquote>« une espèce de dictature paternaliste, régie par des technocrates venant d’une autre planète, qui vous traiteraient comme des enfants. » ${SPP([209])}</blockquote>
+<p>Ils jugent « immoral » de l’imposer par la force. Ils ajoutent qu’ils n’ont pas « la certitude absolue » que la Terre finira en « hécatombe nucléaire » ${SPP([209])}. Ils promettent plutôt des normes « qui vous aideront individuellement » ${SPP([209])}.</p>
+<p>Le défaut qu’ils reprochent le plus aux lecteurs est l’impatience : « Le TEMPS est nécessaire pour assimiler des concepts » ${SPP([209])}. Aucune méthode ne tient en « une vingtaine de pages dactylographiées » ${SPP([210])}. La même idée revient en D47-4, qui juge « DESTRUCTRICE et DANGEREUSE » l’attente d’une « FORMULE SIMPLE ET FACILE » ${SPP([223,224])}.</p>
+<p>Ce refus d’intervenir sera repris en 1988 dans le plan pour sauver la Terre (D1378).</p></section>
+
+ <section class="cz-sec" id="rs-morale"><h2><span class="n">5</span>Une morale ajustée à chaque cerveau</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> La morale d’Oummo évolue avec la société, et les obligations de chacun varient, dans certaines limites, selon la structure de son cerveau.</p>
+<p>Les auteurs disent prévenir une idée qui « scandalisera sûrement certaines personnes » ${SPP([215])}. Leur morale ressemble beaucoup à celle du christianisme, mais elle est « beaucoup plus flexible », pour deux raisons ${SPP([215])} :</p>
+<ul class="cz-facts">
+  <li>leurs théologiens, les WOALAOLOO, estiment que la morale évolue avec la société ;</li>
+  <li>les « NORMES MORALES DE L’INDIVIDU sont fonction de leur structure neurocérébrale et physiologique ».</li>
+</ul>
+<p>L’enfant est évalué tôt, et on lui transmet le code moral qui convient à un cerveau semblable au sien ${SPP([215])}. La conséquence est formulée nettement : « ce qui est transgression pour l’un ne l’est pas pour le frère » ${SPP([215])}.</p>
+<p>La lettre écarte tout de suite la lecture laxiste : ce n’est ni « l’amoralité » ni la « liberté morale ». Ces normes sont « rigides » et obligent chacun à respecter les droits des autres ${SPP([215])}. Elle y voit au contraire un remède aux complexes nés quand la société « montre hypocritement du doigt » celui qui ne peut pas suivre une norme commune ${SPP([215])}.</p>
+<p>Voir aussi le chapitre <a href="#/justice">Justice</a>, où les machines évaluent la responsabilité de chacun, et le chapitre <a href="#/spiritualite">Spiritualité</a>.</p></section>
+
+ <section class="cz-sec" id="rs-remodel"><h2><span class="n">6</span>Le raccourci qui a échoué : remodeler le cerveau</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Oummo a cru pouvoir fabriquer un homme meilleur en réécrivant le réseau de son cerveau ; tous les sujets se sont effondrés, et la société a renoncé à cette voie.</p>
+<p>La lettre raconte cet épisode sur cinq pages, avec une conclusion de principe.</p>
+<ol class="rs-steps">
+  <li><b>La technique</b><span>Image en trois dimensions du cortex par l’UULWAAGAA ; modèle mathématique d’un réseau « amélioré » ; maquette métallique du cortex à l’échelle 144/1 ${SPP([216])}. Un double faisceau de rayons gamma détruit une cellule précise sans ouvrir le crâne ; d’autres cellules sont transformées en neurones ; une machine guidée par la maquette exécute le plan ${SPP([216,217])}.</span></li>
+  <li><b>L’expérience</b><span>En l’an 5722 du Second Temps, ORIAAU 6 opère « 78 délinquants adultes et 180 enfants » jugés « retardés mentaux » ${SPP([217])}.</span></li>
+  <li><b>Le succès apparent</b><span>Les sujets ressortent sans mémoire, comme des nouveau-nés. Leur rééducation ne prend qu’environ « 15% » du temps normal ${SPP([218])}. Un ancien condamné devient un cosmophysicien reconnu, UROO 866 ${SPP([218])}.</span></li>
+  <li><b>L’effondrement</b><span>Des années plus tard, UROO 38 est trouvée « comme un robot », incapable de vouloir. C’est l’ODAWAA. « Pas un seul ne put échapper » au même sort ${SPP([219])}.</span></li>
+  <li><b>L’explication</b><span>En 1336 du Troisième Temps, GAAA 9 montre que le réseau des atomes de krypton de l’OEMBUUAW, qui relie l’âme au corps, s’était désintégré ${SPP([219])}.</span></li>
+</ol>
+<p>Pour l’expliquer, la lettre prend l’image d’un cône ${SPP([220])}. L’homme naît avec son OEMBUUAW « parfaitement équilibré et stabilisé ». L’opération l’a figé dans un équilibre « INSTABLE », à la merci de la moindre perturbation ${SPP([220])}.</p>
+
+${et3dHTML('rscone','Figure 3 · Les trois équilibres du cône.',`Schéma animé, d’après la comparaison de D47-3 ${SPP([220])}, que la lettre qualifie elle-même de « grossière ».`)}
+
+<blockquote>« Nous pouvons donc altérer la nature jusqu’à certaines limites. Passé ce seuil, la lésion provoquée par cette transformation est largement supérieure aux bénéfices […] » ${SPP([220])}</blockquote>
+<p>L’échec réunit théologiens, psychiatres, neurophysiologistes et pédagogues. Ils conclurent qu’il était « très dangereux » de vouloir perfectionner l’homme en agissant mécaniquement sur l’encéphale : « La perspective est trop effroyable » ${SPP([220])} ${SPP([221])}. Ils se tournèrent alors vers « les immenses réserves de l’homme » tel que WOA l’a fait ${SPP([221])}.</p>
+<p>Voir aussi les chapitres <a href="#/biologie">Méta-biologie</a>, pour le krypton et l’OEMBUUAW, <a href="#/technologies">Technologies</a>, pour la fiche du remodelage, et <a href="#/histoire">Histoire</a>.</p></section>
+
+ <section class="cz-sec" id="rs-plan"><h2><span class="n">7</span>La voie longue : le plan IGIAAYUYISAA</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Faute de raccourci, Oummo a choisi de rééduquer les générations à venir : à partir de l’an 5902, une nouvelle société a été élevée à part, sur 30 % du continent.</p>
+<p>Les savants recensent d’abord les causes du malheur, et la liste reprend celle de la section 3 ${SPP([221])} :</p>
+<ul class="cz-facts">
+  <li>une structure cérébrale souvent « insuffisante et déséquilibrée » à la naissance, mais réformable dans la petite enfance ;</li>
+  <li>des adultes privés d’éducation de base, qui lèsent les droits des autres ;</li>
+  <li>des « réflexes agressifs » transmis aux enfants.</li>
+</ul>
+<p>La lettre insiste sur un point : ce constat fut fait dans une société « plus avancée que la vôtre en 1966 ». La tyrannie avait pris fin après la mort de WIE 1, en 1368,11 du Second Temps. Surtout, « LA PROPRIÉTÉ PRIVÉE N’ÉXISTAIT PAS ET QUE L’ON NE CONNAISSAIT PAS LA FAIM » ${SPP([221])}. La société n’en était pas plus heureuse.</p>
+<p>Le réseau social était « trop abîmé pour essayer de le réparer en une seule génération » ${SPP([222])}. Les ancêtres renoncèrent donc à en voir les fruits eux-mêmes. La lettre compare leur situation à celle d’un survivant qui sort d’une caverne après une guerre nucléaire et voit sa ville en ruines ${SPP([222])}.</p>
+<ol class="rs-steps">
+  <li><b>Le lieu</b><span>« 30% du Continent » est mis à part pour que se développe « le premier germe d’une société du futur » ${SPP([222])}.</span></li>
+  <li><b>La date</b><span>En l’an 5902 du Second Temps commence le plan IGIAAYUYISAA ${SPP([222])}.</span></li>
+  <li><b>La méthode</b><span>Les enfants sont élevés dès la naissance « EN DEHORS DE L’INFLUENCE ET DES CONTACTS DES PARENTS », par une éducation fondée sur la réforme des réflexes. Le lien avec l’ancienne société passe par des échanges culturels confiés à des « personnes qualifiées » ${SPP([222])}.</span></li>
+  <li><b>La justification</b><span>La mesure était « nécessaire à cette époque », parce que les parents n’étaient pas encore formés pour élever eux-mêmes leurs enfants comme aujourd’hui ${SPP([222])}.</span></li>
+</ol>
+<p>Le récit s’arrête au titre « STRUCTURE (AYUUBAA) (RÉSEAU) DU PLAN ÉDUCATIONNEL » ${SPP([222])}. La suite décrit les défauts de l’éducation terrestre plutôt que le plan lui-même. Le résultat du plan n’est pas raconté dans ces lettres. La chronologie du chapitre <a href="#/histoire">Histoire</a> le cite d’après une lettre plus tardive ${SPP([812])}.</p></section>
+
+ <section class="cz-sec" id="rs-robots"><h2><span class="n">8</span>« Des robots ? » : la réponse des lettres</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> À ceux qui voient en eux les rouages d’une machine sociale, les auteurs répondent que les Terriens sont plus esclaves de leurs habitudes qu’eux de leurs ordinateurs.</p>
+<p>La lettre formule elle-même l’objection. Le lecteur pourrait les imaginer en « véritables monstres mécanisés, sans vie intérieure », coordonnés par les ordinateurs XANMOO AYUBAA comme les pièces d’une « Horloge Terrestre » ${SPP([118])}. Elle répond en trois temps.</p>
+<ul class="cz-facts">
+  <li><b>La liberté terrestre est illusoire.</b> Tabac, publicité, séries télévisées, presse partisane, tabous et préjugés tiendraient les Terriens dans « un cadre mental sclérosé et rigide » ${SPP([118,119])}.</li>
+  <li><b>Leur morale vient de l’intérieur.</b> Sur Terre, le respect d’autrui tiendrait souvent à la peur de la loi, « une conduite imposée de L’EXTÉRIEUR ». Chez eux, à la conscience qu’il est fou de « faire une voie d’eau dans le navire sur lequel nous voyageons » ${SPP([119])}.</li>
+  <li><b>La technique n’est qu’un outil.</b> Les machines sont « simplement des MOYENS AUXILIAIRES ». Les Oummites s’habituent aussi à s’en passer, au contact de la nature ${SPP([119])}.</li>
+</ul>
+<p>La lettre retourne enfin l’image. Ce qui les aurait « le plus peiné » en arrivant sur Terre : « Vous nous apparaissez comme des marionnettes, bougeant avec des gestes étudiés, convulsifs, artificiels » ${SPP([120])}.</p>
+<p>La lettre ne nie pas les réflexes conditionnés : elle reconnaît que les Oummites en ont acquis qui dirigent leur conduite, mais les dit « rationnelles et logiques » ${SPP([119,120])}.</p></section>
+
+ <section class="cz-sec" id="rs-jeu"><h2><span class="n">9</span>Le jeu qui entretient le réseau</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> L’OXUO KEAIA n’est pas un sport parmi d’autres : c’est un seul art du jeu pour toute la planète, dont les règles sont calculées pour chaque joueur et à chaque instant.</p>
+<p>Le chapitre <a href="#/sante">Santé</a> présente le jeu comme prévention. On trouve ici la critique des jeux terrestres, l’histoire de l’OXUO, ses règles et ses fonctions.</p>
+<h3>Pourquoi les jeux terrestres ne suffisent pas</h3>
+<p>Un jeu aux règles fixes ne peut pas convenir à tous ni à tout moment. Pour la lettre, il n’est pas seulement insuffisant : « NON SEULEMENT C’EST INSUFFISANT MAIS PROBABLEMENT NUISIBLE » ${SPP([203])}. Les échecs ne font travailler qu’« une fraction infinitésimale des neurones » ${SPP([204])}. Les grands joueurs ne se seraient d’ailleurs jamais illustrés en philosophie, en physique théorique ou en topologie ${SPP([128])}.</p>
+<p>La lettre relève aussi un paradoxe. Les Terriens chronomètrent leurs compétitions à la microseconde, mais restent « si ANARCHIQUES » dans les affaires qui comptent : la vie sociale, la santé, l’économie ${SPP([127])}. Elle propose d’inverser cette échelle de valeurs ${SPP([127])}. Elle rejette aussi les jeux de hasard, loteries et paris, qui aggraveraient l’injustice dans la répartition du revenu ${SPP([127])}.</p>
+<h3>Une histoire en deux temps</h3>
+<ol class="rs-steps">
+  <li><b>Autrefois</b><span>On conseillait 30 UIW par jour d’exercices physico-mentaux en pleine nature, entre trois équipes, en partie sous l’eau, avec de l’oxygène solidifié. Près de 70 % de la population l’adopta ${SPP([205])}.</span></li>
+  <li><b>Aujourd’hui</b><span>Quand les ordinateurs XANMOO purent évaluer en un instant l’état de tout le réseau nerveux d’une personne, ils purent lui indiquer l’exercice exact à faire. « C’est ainsi que naquit l’actuel OXUO KEAIA » ${SPP([205])}.</span></li>
+</ol>
+<h3>Des règles que personne ne connaît en entier</h3>
+<p>Il n’existe sur Oummo qu’« une seule [variété d’OXUO] pour toute notre OYAA ». Mais ses règles sont « distinctes pour chaque joueur » et « fonction du temps » ${SPP([125])}. Elles sont si complexes qu’elles sont programmées par le XANMOO AYUBAA, et que « jamais les joueurs n’arrivent à connaître toute l’énorme complexité de la stratégie » ${SPP([127,128])}. La lettre compare le joueur au soldat, qui connaît son secteur mais pas le plan de l’état-major ${SPP([128])}.</p>
+<h3>Quatre fonctions</h3>
+<p>Selon D41-7, l’OXUO sert à ${SPP([126])} :</p>
+<ul class="cz-facts">
+  <li>développer le corps entier ;</li>
+  <li>stimuler la perception et le raisonnement ;</li>
+  <li>« augmenter les tendances grégaires et sociales de l’individu » ;</li>
+  <li>former des réflexes conditionnés adaptés à l’âge.</li>
+</ul>
+<p>Chacun en prend l’habitude dès l’enfance, « sans qu’intervienne aucune pression » de la famille ou du conseil, et la garde « jusqu’à la mort » ${SPP([126])}.</p></section>
+
+ <section class="cz-sec" id="rs-fosses"><h2><span class="n">10</span>Les fosses OXUO GAADII</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> L’OXUO se joue dans des fosses rectangulaires creusées dans le sol, remplies d’une structure en mouvement que la lettre peine à décrire.</p>
+<p>Les fosses ont la forme d’une piscine, sans taille normalisée ${SPP([128])}. Les plus grandes atteignent « 0,3 KOAE (environ 2,9 km de longueur) ». Celles des petites colonies mesurent 22 × 46 ENMOO sur 12 ENMOO de profondeur, l’ENMOO valant 1,87 m ${SPP([128])}. Cela fait environ 41 × 86 m, et 22 m de profondeur.</p>
+<p>Un observateur terrestre y verrait « un réseau embrouillé de grandes barres métalliques », des passerelles irrégulières, des masses gélatineuses translucides qui semblent flotter, des tubes flexibles où une personne peut passer, et des tourbillons de vapeur en forme de sphères. « Depuis une UEWA (NEF VOLANTE) toute cette masse métallique semble bouillir » ${SPP([128])}.</p>
+<figure class="so-fig rs-img"><img src="${RS_FOSSE}" alt="Vue aérienne d’une fosse OXUO GAADII : passerelles, barres métalliques, masses translucides et tourbillons de vapeur" loading="lazy" decoding="async" width="1200" height="900"><figcaption>Interprétation d’artiste, d’après la description de ${SPP([128])}. Le schéma promis par la lettre ne figure pas dans la compilation.</figcaption></figure>
+<p>La lettre promet un schéma pour le rapport suivant ${SPP([128])}. Il ne figure pas dans la compilation.</p>
+
+${et3dHTML('rspit','Figure 4 · Les dimensions données par la lettre.',`Maquette animée à l’échelle, d’après D41-8 ${SPP([128])}, avec 1 ENMOO = 1,87 m. Le contenu de la fosse est une interprétation.`)}</section>
+
+ <section class="cz-sec" id="rs-terre"><h2><span class="n">11</span>En regard : la Terre</h2>
+<p class="cz-idea"><b>L’idée en une phrase.</b> Les idées de ces lettres ont toutes des équivalents terrestres datés ; certaines leur sont antérieures, une les suit d’un an, et une est contredite par la biologie actuelle.</p>
+<p>Chaque carte rapproche une idée des lettres de ses équivalents terrestres datés. La comparaison ne conclut pas : elle ne dit ni que les lettres ont « devancé » la science terrestre, ni qu’elles l’ont copiée.</p>
+${rsCmp([['La société comme réseau de nœuds et d’arcs',[209,204],[['Leonhard Euler, 1736 ; Dénes König, 1936','La théorie des graphes, puis son premier traité.'],['Jacob Moreno, 1934','La sociométrie ; la lettre emploie elle-même le mot « Sociométrie ».'],['Stanley Milgram, 1967','L’expérience du « petit monde » ; la science des réseaux se développe à partir des années 1990.']],'Les outils existent avant 1966, mais l’analyse des réseaux sociaux ne se développe vraiment qu’après. La lettre emploie le vocabulaire de son époque.'],['Un langage pauvre et « standardisé », des disputes sur les mots',[201],[['Alfred Korzybski, 1933','La sémantique générale : « la carte n’est pas le territoire ».'],['Claude Shannon, 1948','La théorie de l’information.']],'L’idée d’adapter le message à chaque récepteur rejoint des pratiques actuelles (pédagogie différenciée, communication adaptée). Rien ne permet de juger s’il existe un langage qui supprimerait les malentendus.'],['Des réflexes conditionnés transmis par hérédité',[208,221],[['Ivan Pavlov, 1903-1927','Les réflexes conditionnés.'],['La génétique du XX<sup>e</sup> siècle','Elle rejette l’hérédité des caractères acquis, chère à Lamarck.']],'Un réflexe appris ne se transmet pas aux enfants par les gènes. Des études récentes sur l’animal montrent des effets d’une génération à l’autre (épigénétique), mais leur portée chez l’homme reste débattue.'],['Remodeler le cerveau pour corriger la personne, puis y renoncer',[216,221],[['Egas Moniz, 1935','La lobotomie, prix Nobel en 1949, largement abandonnée dans les années 1950 à 1970.']],'Le parallèle est historique : une chirurgie du cerveau qui promettait de changer la conduite, puis rejetée pour ses dommages. Les lettres l’attribuent à une cause, le krypton, que la science ne connaît pas.'],['Détruire une cellule à distance par un double faisceau gamma, crâne fermé',[216],[['Lars Leksell, 1967','La radiochirurgie : premier patient traité au Gamma Knife le 2 novembre 1967.']],'La lettre date de 1966. Le Gamma Knife vise un volume de tissu de quelques millimètres, pas une cellule isolée.'],['Élever une génération à part, loin des parents',[222],[['Platon, IV<sup>e</sup> siècle av. J.-C.','<i>La République</i>, livre V : les enfants des gardiens élevés en commun.'],['B. F. Skinner, 1948','<i>Walden Two</i>, une société fondée sur le conditionnement.']],'Ce sont des projets de pensée. Aucune expérience terrestre de cette ampleur n’a été menée.'],['Le jeu pour prévenir, pas pour soigner',[117],[['Anna Freud, Melanie Klein, années 1920-1930 ; Virginia Axline, 1947','La ludothérapie.'],['Aujourd’hui','La prescription d’activité physique et le sport adapté.']],'Le bénéfice de l’activité physique et du jeu sur la santé mentale est bien établi. Un jeu unique, recalculé en continu pour chaque personne, n’a pas d’équivalent.']])}</section>
+
+ <section class="cz-sec" id="rs-omb"><h2><span class="n">12</span>Zones d’ombre</h2>
+<ul class="cz-facts">
+  <li><b>Les graphes promis par le titre.</b> Les quatre lettres D47 sont intitulées « Graphes » par les compilateurs, mais ne contiennent aucun graphe dessiné.</li>
+  <li><b>Le schéma des fosses.</b> Annoncé pour le rapport suivant, il n’est pas dans la compilation ${SPP([128])}.</li>
+  <li><b>Une coupure dans D41-7.</b> Le texte s’interrompt à la p.125, au moment de décrire l’OXUO, et la p.126 commence par un nouvel en-tête.</li>
+  <li><b>La chronologie.</b> L’expérience date de l’an 5722 du Second Temps, le plan IGIAAYUYISAA de l’an 5902 du Second Temps, l’explication par le krypton de l’an 1336 du Troisième Temps ${SPP([217,219,222])}. Le plan a donc été lancé avant que l’échec soit compris. La lettre ne le commente pas.</li>
+  <li><b>Une corrélation sans chiffre.</b> Les troubles mentaux décroîtraient quand la planification du réseau augmente (« coefficient de corrélation est NÉGATIF »), mais aucune donnée n’est donnée ${SPP([117])}.</li>
+  <li><b>Le résultat du plan.</b> Ces lettres ne disent pas ce que la « nouvelle société » est devenue.</li>
+</ul></section>
+ <p class="foot">Le chapitre rapporte ce que disent les lettres sur la société en réseau, sans juger de leur exactitude ni de leur valeur.</p>`;
+ soBind();rsReg();try{et3Mount()}catch(e){console.error('rs3',e)}
+}
+
 /* ── liens automatiques « chapitre X » vers le chapitre cité ── */
-const XREF=[['Jésus selon les lettres','jesus'],['Parapsychologie','parapsy'],['Couple et sexualité','couple'],['Les coulisses du dossier','coulisses'],['Les Oummites vus par les Terriens','regards'],['La Terre vue d’Oummo','terre'],['La galaxie des lettres','galaxie'],['Le BAAYIODUU et l’évolution','evolution'],['Les XANMOO','xanmoo'],['Mathématiques et pensée logique','maths'],['Parcours guidés','parcours'],['Questions fréquentes','faq'],['La fabrique des mots','mots'],['Le ciel d’Oummo','ciel'],['Vaisseaux d’Oummo','uewa'],['Carte des lieux','lieux'],['Autres mondes','autres-mondes'],['Laboratoire du style','labo'],['Une journée','journee'],['Travail et économie','travail'],['Santé et médecine','sante'],['Justice et peines','justice'],['Méta-biologie','biologie'],['Biologie','biologie'],['Mathématiques','maths'],['Écriture','ecriture'],['Vaisseaux','uewa'],['UEWA','uewa'],['vaisseaux','uewa'],['Lieux','lieux'],['Télépathie','telepathie'],['Justice','justice'],['Santé','sante'],['Travail','travail'],['Éducation','education'],['Histoire','histoire'],['Cosmologie','cosmologie'],['Spiritualité','spiritualite'],['XANMOO','xanmoo'],['Technologies','technologies'],['Évolution','evolution'],['Encyclopédie','ummo'],['Glossaire','glossaire'],['Prononcer','ecriture?t=prononcer'],['Parcours','parcours'],['Acteurs','acteurs'],['FAQ','faq'],['Galerie','galerie']];
+const XREF=[['La société en réseau','reseau'],['Jésus selon les lettres','jesus'],['Parapsychologie','parapsy'],['Couple et sexualité','couple'],['Les coulisses du dossier','coulisses'],['Les Oummites vus par les Terriens','regards'],['La Terre vue d’Oummo','terre'],['La galaxie des lettres','galaxie'],['Le BAAYIODUU et l’évolution','evolution'],['Les XANMOO','xanmoo'],['Mathématiques et pensée logique','maths'],['Parcours guidés','parcours'],['Questions fréquentes','faq'],['La fabrique des mots','mots'],['Le ciel d’Oummo','ciel'],['Vaisseaux d’Oummo','uewa'],['Carte des lieux','lieux'],['Autres mondes','autres-mondes'],['Laboratoire du style','labo'],['Une journée','journee'],['Travail et économie','travail'],['Santé et médecine','sante'],['Justice et peines','justice'],['Méta-biologie','biologie'],['Biologie','biologie'],['Mathématiques','maths'],['Écriture','ecriture'],['Vaisseaux','uewa'],['UEWA','uewa'],['vaisseaux','uewa'],['Lieux','lieux'],['Télépathie','telepathie'],['Justice','justice'],['Santé','sante'],['Travail','travail'],['Éducation','education'],['Histoire','histoire'],['Cosmologie','cosmologie'],['Spiritualité','spiritualite'],['XANMOO','xanmoo'],['Technologies','technologies'],['Évolution','evolution'],['Encyclopédie','ummo'],['Glossaire','glossaire'],['Prononcer','ecriture?t=prononcer'],['Parcours','parcours'],['Acteurs','acteurs'],['FAQ','faq'],['Galerie','galerie']];
 const XS='[\\s\\u00a0\\u202f]';const XREF_RX=new RegExp('(?:chapitres?|page)'+XS+'(?:sur'+XS+'(?:les'+XS+'|le'+XS+'|la'+XS+'|l’)?)?(?:«'+XS+'?)?('+XREF.map(x=>x[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ /g,XS)).join('|')+')(?![\\p{L}\\p{N}])(?:'+XS+'?»)?','u');
 const XREF_SKIP=new Set(['d','search','ask']);
 function xrefSweep(root){
@@ -11276,7 +11614,8 @@ function chlDecorate(root){const V=(typeof view!=='undefined'&&view)||document.q
   const ic0=M.get(r)[1];a.className='gx chl';a.title='Chapitre : '+M.get(r)[0];a.innerHTML=chlIcon(ic0)+esc(t);if(t.length>26)a.style.whiteSpace='normal'});
  V.querySelectorAll('.gl-e .gl-ch').forEach(g=>{const e=g.closest('.gl-e');let left=0;g.querySelectorAll('a.chip').forEach(c=>{if(e.querySelector('a.chl[href="'+c.getAttribute('href')+'"]'))c.remove();else left++});if(!left)g.remove()})}
 /* liens ajoutés dans les anciens chapitres vers les nouveaux : [route, contexte, expression, chapitre] */
-const KEYLINK=[['cosmologie','Un référentiel doit toujours être apporté','Un IBOZOO UU isolé n’a pas de sens','espace-temps'],
+const KEYLINK=[['education','doit se défaire psychiquement','un nœud du réseau social','reseau'],['education','ORIAAU 6 opère le cerveau','refaire le réseau neuronal','reseau'],['sante','OXUO KEAIA se traduit mal','l’art d’entraîner simultanément','reseau'],
+ ['cosmologie','Un référentiel doit toujours être apporté','Un IBOZOO UU isolé n’a pas de sens','espace-temps'],
  ['histoire','Onze documents de la compilation','documents externes','regards'],['acteur','Dactylographe qui dit avoir tapé','documents externes','regards'],['technologies','décrit de son côté','une sphère de 2,19 cm de diamètre','regards'],['coulisses','souvent de médecins nordiques','médecins nordiques','regards'],
  ['histoire','figure divine de Jésus','Jésus de Galilée','jesus'],['histoire','Saint Suaire','fraude du Saint Suaire de Turin','jesus'],['histoire','refuges souterrains','menace de guerre nucléaire','terre'],['histoire','tumeur de l’estomac','guérison d’une tumeur de l’estomac','sante'],['histoire','selon ses aptitudes','en le rémunérant selon son rendement','travail'],
  ['ummo','biens d’équipement','pas de monnaie comme la nôtre','travail'],['ummo','liberté de croyance','l’assistance médicale','sante'],['ummo','puberté et le mariage','le mariage','couple'],['ummo','liberté de croyance','à l’éducation','education'],
@@ -12598,6 +12937,7 @@ const CH=[
  ['travail','travail','Travail et économie','travail','soc','Trois heures par jour, sans argent, un Conseil de quatre'],
  ['justice','justice','Justice','justice','soc','Une justice qui éduque, des machines qui évaluent'],
  ['spirit','spiritualite','Spiritualité','soul','soc','WOA, l’âme, l’âme collective'],
+ ['reseau','reseau','La société en réseau','reseau','soc','L’homme nœud d’un réseau, le cerveau remodelé, le jeu OXUO'],
  ['cosmos','cosmologie','Cosmologie','cosmos','sav','Plis de l’espace, IBOZOO UU, temps : en animations'],['espt','espace-temps','Espace, temps et logique','espt','sav','Le raisonnement des lettres : dimension, mouvement, univers'],
  ['maths','maths','Mathématiques','sigma','sav','Base 12, réseaux, logique à quatre valeurs, hasard et atome'],
  ['tech','technologies','Technologies','chip','sav','Ordinateurs, image, énergie, armes : l’inventaire'],
@@ -12627,7 +12967,7 @@ const DIVERS=[
 const CH_REL={histoire:['ummo','coulisses','ciel'],acteurs:['coulisses','regards','histoire'],lieux:['histoire','ciel','regards'],galaxie:['histoire','labo','acteurs'],coulisses:['regards','labo','acteurs'],
  ummo:['journee','travail','histoire'],ciel:['uewa','cosmologie','lieux'],journee:['ummo','sante','education'],
  biologie:['evolution','spiritualite','regards'],evolution:['biologie','cosmologie','terre'],sante:['biologie','regards','couple'],telepathie:['spiritualite','biologie','parapsy'],
- education:['couple','telepathie','journee'],couple:['education','sante','biologie'],travail:['xanmoo','justice','ummo'],justice:['travail','xanmoo','terre'],spiritualite:['jesus','telepathie','cosmologie'],
+ education:['couple','telepathie','journee'],couple:['education','sante','biologie'],travail:['xanmoo','justice','ummo'],justice:['travail','xanmoo','terre'],spiritualite:['jesus','telepathie','cosmologie'],reseau:['education','sante','justice'],
  cosmologie:['espace-temps','maths','uewa'],'espace-temps':['cosmologie','maths','spiritualite'],maths:['cosmologie','xanmoo','ecriture'],technologies:['xanmoo','uewa','regards'],xanmoo:['technologies','travail','maths'],uewa:['ciel','technologies','lieux'],
  ecriture:['mots','glossaire','maths'],mots:['ecriture','glossaire','labo'],
  terre:['regards','jesus','autres-mondes'],regards:['terre','coulisses','acteurs'],jesus:['spiritualite','terre','parapsy'],parapsy:['telepathie','jesus','coulisses'],'autres-mondes':['terre','ciel','uewa']};
@@ -12821,11 +13161,11 @@ function viewTelepathie(){
 /* ───────── glossaire global ───────── */
 const GLST={q:'',cat:'tout',pop:null,built:null,obs:null,busy:false,tm:null,seen:{}};
 const GLMAP=/*GLMAP*/{"UMMOWOA": ["histoire", "technologies", "autres-mondes", "spiritualite", "telepathie"], "OEMII": ["histoire", "cosmologie", "ummo", "autres-mondes", "spiritualite"], "IUMMA": ["histoire", "cosmologie", "ummo", "autres-mondes"], "TAAU": ["histoire", "spiritualite"], "UMMOAELEWE": ["histoire"], "OAWOOLEAIDAA": ["histoire", "cosmologie"], "UEWA": ["uewa", "cosmologie", "ummo", "technologies", "autres-mondes"], "OAWOOLEAUEWAOEMM": ["uewa", "technologies", "autres-mondes"], "OAWOO": ["uewa", "cosmologie"], "ENMOO": ["uewa", "technologies"], "XANMOO": ["xanmoo", "uewa", "ummo", "technologies"], "AAXOO": ["uewa", "technologies", "spiritualite"], "UULODOO": ["uewa", "technologies"], "IBOZOOUU": ["cosmologie", "technologies", "spiritualite"], "WAAM": ["cosmologie", "spiritualite", "telepathie"], "UWAAM": ["cosmologie", "spiritualite"], "WOA": ["cosmologie", "ummo", "autres-mondes", "spiritualite"], "IOAWOO": ["cosmologie"], "OXOOIAEE": ["cosmologie"], "WAAMWAAM": ["cosmologie", "spiritualite"], "BB": ["cosmologie", "spiritualite"], "OEMBUUAUW": ["cosmologie"], "IISUIW": ["cosmologie"], "XEE": ["ummo", "autres-mondes"], "OMGEEYIE": ["ummo"], "AYUYISAA": ["ummo"], "UAA": ["ummo", "spiritualite"], "UIW": ["ummo", "technologies", "spiritualite", "telepathie"], "XAABII": ["ummo", "technologies"], "XOODINAA": ["technologies"], "OEMMIIWOA": ["spiritualite"], "AIOOYA": ["spiritualite"], "BUUAWA": ["spiritualite"], "UBOO": ["spiritualite"], "BUAWAAMIROIR": ["spiritualite"], "WOODOO": ["spiritualite"], "OIXIOOWOA": ["spiritualite"], "LEIYOOWAAM": ["spiritualite"], "EEWAOO": ["spiritualite"], "UIWEEXII": ["spiritualite"], "WOAAWUUYAA": ["spiritualite"], "EBAYAA": ["spiritualite"], "OEMBUUAW": ["spiritualite"], "OYAGAAWOA": ["spiritualite"], "ASNEIIBIAEOO": ["spiritualite"], "AMMIEYIISAIABUUAWA": ["spiritualite"], "EIDOAYUEE": ["spiritualite"], "AADOAUGOO": ["spiritualite"], "OANEEAIAWAOAI": ["telepathie"], "OANEEAOIYOOYO": ["telepathie"], "OANNEAOIYOYOO": ["telepathie"], "OANEEAOIIYOIO": ["telepathie"], "OANEEAOIYOIYOOO": ["telepathie"], "BUUAWEBIEE": ["telepathie"], "BUUAXUU": ["telepathie"], "AAXOOUAXOO": ["telepathie"], "ISIAGEEIA": ["telepathie"]};
-const GLCH={evolution:['Évolution','#/evolution'],xanmoo:['XANMOO','#/xanmoo'],histoire:['Histoire','#/histoire'],uewa:['Vaisseaux','#/uewa'],cosmologie:['Cosmologie','#/cosmologie'],'espace-temps':['Espace, temps et logique','#/espace-temps'],biologie:['Méta-biologie','#/biologie'],ummo:['Encyclopédie','#/ummo'],technologies:['Technologies','#/technologies'],'autres-mondes':['Autres mondes','#/autres-mondes'],spiritualite:['Spiritualité','#/spiritualite'],lieux:['Lieux','#/lieux'],telepathie:['Télépathie','#/telepathie'],education:['Éducation','#/education'],sante:['Santé','#/sante'],justice:['Justice','#/justice'],travail:['Travail et économie','#/travail'],terre:['La Terre vue d’Oummo','#/terre'],jesus:['Jésus selon les lettres','#/jesus'],parapsy:['Parapsychologie','#/parapsy'],couple:['Couple et sexualité','#/couple'],coulisses:['Les coulisses du dossier','#/coulisses'],regards:['Les Oummites vus par les Terriens','#/regards'],themes:['Thèmes','#/themes'],ecriture:['Écriture','#/ecriture']};
+const GLCH={evolution:['Évolution','#/evolution'],xanmoo:['XANMOO','#/xanmoo'],histoire:['Histoire','#/histoire'],uewa:['Vaisseaux','#/uewa'],cosmologie:['Cosmologie','#/cosmologie'],'espace-temps':['Espace, temps et logique','#/espace-temps'],biologie:['Méta-biologie','#/biologie'],ummo:['Encyclopédie','#/ummo'],technologies:['Technologies','#/technologies'],'autres-mondes':['Autres mondes','#/autres-mondes'],spiritualite:['Spiritualité','#/spiritualite'],reseau:['La société en réseau','#/reseau'],lieux:['Lieux','#/lieux'],telepathie:['Télépathie','#/telepathie'],education:['Éducation','#/education'],sante:['Santé','#/sante'],justice:['Justice','#/justice'],travail:['Travail et économie','#/travail'],terre:['La Terre vue d’Oummo','#/terre'],jesus:['Jésus selon les lettres','#/jesus'],parapsy:['Parapsychologie','#/parapsy'],couple:['Couple et sexualité','#/couple'],coulisses:['Les coulisses du dossier','#/coulisses'],regards:['Les Oummites vus par les Terriens','#/regards'],themes:['Thèmes','#/themes'],ecriture:['Écriture','#/ecriture']};
 const GLCAT={tout:'Tout',cle:'Concepts clés',cosmos:'Cosmos',âme:'Âme','personnes':'Personnes',lieux:'Lieux',société:'Société',technique:'Technique',mesures:'Mesures',matières:'Matières',biologie:'Biologie','vie quotidienne':'Vie quotidienne',autres:'Autres mots'};
 const glNorm=t=>String(t).toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Z0-9]/g,'');
 const glFold=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-const GL_EXTRA=[["ummo", "XOODIUMMOO DUU OII", "Les neuf « strates connectées » de la structure géologique d’Oummo.", [524]], ["ummo", "OAKEDEEI", "Bouches d’une activité « que vous appelleriez volcanique », qui projettent dans l’atmosphère de grandes colonnes enflammées de méthane et de propane.", [525]], ["ummo", "OUDEXIENOO", "Anciens monolithes de roche tendre où les ancêtres gravaient recettes et conseils thérapeutiques.", [542]], ["ummo", "IGOONOOI", "Dans une ancienne légende, ouragan chargé de sables abrasifs venu des « déserts ».", [542]], ["ummo", "WIIWIIAA", "Grandes tempêtes où le vent arrache jusqu’aux petites particules de roche ; elles empêchent de dormir à ciel ouvert.", [92]], ["ummo", "GIIDII", "Mammifère des mers polaires qui rappelle de loin le dauphin ; son lait sert à assaisonner.", [107]], ["ummo", "OERUU IIOSSAUUIGAA", "Vertébré qui se confond avec les roches couvertes de lichens de la région volcanique d’UUIDDAO UYOAA IIO.", [107, 305]], ["ummo", "UUXAO", "Lichen toxique dont l’essence grasse contient un alcaloïde hallucinogène.", [188]], ["ummo", "IEGOOSSAA (AAGA IEGOOSSAA, AAGA IEGOSAA)", "Anthropoïdes bipèdes à pilosité blanche ou dorée, vivant en groupes hiérarchisés dans une réserve de la colonie WOAROO.", [1405, 1406]], ["ummo", "XEEOUMMO", "Cycle de dix-huit XEE au bout duquel NAWEE et Oummo retrouvent la même configuration.", [1407, 1409]], ["ummo", "SAAXEE", "La révolution d’Oummo autour de son étoile ; il n’existe pas de mot propre pour « année ».", [1408]], ["ummo", "NAWEE (NAUEE)", "Géante gazeuse plus proche de l’étoile qu’Oummo, visible à l’aube et au crépuscule ; le calendrier repose sur ses passages derrière IUMMA.", [1407, 1408, 198]], ["ummo", "GOSEEE", "Unité de longueur cosmique : la distance d’IUMMA à NAUEE à son apogée.", [198]], ["ummo", "AGOO", "Organes d’inspection contrôlés par le conseil général.", [433]], ["ummo", "UOOAMAII", "« Un genre de police », dirigé par le conseil général.", [433]], ["ummo", "DOUIAMOO", "Jardin qui entoure l’habitation ; les membres du conseil général y reçoivent chaque matin.", [432]], ["ummo", "OXUO KEAIA", "« Art d’entraîner simultanément le corps et les facultés mentales » : le jeu oummite, planifié pour chacun.", [117, 126]], ["ummo", "UNAUO UEEE", "Centre où les adolescents, séparés de leurs parents vers 13,7 ans, vivent en petit réseau social autonome pendant leur formation.", [605, 608]], ["ummo", "UULODAXAABI", "Écran en coupole ; pour le nourrisson, images, sons et odeurs y sont réglés selon son âge.", [122, 85]], ["ummo", "OBFUOVAA", "Salles de musée sur Oummo ; D393 y destine des écritures manuscrites terriennes sur bristol.", [760]], ["ummo", "BIEEWIGUU (BIEWIGUU)", "Psychobiologie.", [124, 205]], ["uewa", "OAWOOLEIIDAA", "Moment où les particules du vaisseau et de l’équipage changent d’orientation : le vaisseau passe dans un autre cadre et semble disparaître.", [351, 396]], ["uewa", "OXOEOIADUU", "Gravimètre-altimètre des vaisseaux, fondé sur la chute d’une molécule ionisée dans un capillaire vide.", [386]], ["uewa", "XOIMMA UGII", "Appareil ellipsoïdal récupérable, employé en Inde pour sonder le sous-sol.", [373]], ["uewa", "AOXIBOO AGODAA", "Produit synthétique en lames, blanc et vert cendré, très résistant à la traction.", [357]], ["cosmologie", "IAGIAAIAOO", "Nébuleuses en anneau d’hydrogène cristallisé, dont le refroidissement brutal annonce un pli de l’espace favorable aux voyages.", [395, 397]], ["ecriture", "AÏOOYAOU", "État d’un phénomène indéterminé, perceptible ou prévisible, dont plusieurs réalisations restent possibles ; c’est le cas « A et B » de la logique à quatre valeurs.", [1399, 1400]], ["ecriture", "AÏOOYA AMMIÈ", "Existence invérifiable hors d’une conscience : idées abstraites, empathie ; le cas « ni A ni B ».", [1400]], ["ecriture", "IBOSZOO IOUBOO", "« Point d’incertitude » où un raisonnement se ramifie en branches suivies chacune jusqu’au bout.", [1401]], ["cosmologie", "AADAGIOOU", "« Pression critique » d’environ 15,4 millions d’atmosphères, qui inverserait toutes les sous-particules : la masse deviendrait énergie.", [436]], ["ummo", "GOOYOODOO", "Partie du cerveau, comparée au polygone de Willis, très développée chez les Oummites et liée à « l’intelligence sensitive ».", [951]]];
+const GL_EXTRA=[ ["reseau", "UULWAAGAA", "Appareil qui donne une image en trois dimensions du cortex ; il servit à préparer le remodelage du cerveau.", [216]], ["reseau", "ORIAAU 6", "Savant qui, en l’an 5722 du Second Temps, opéra le cerveau de 78 délinquants adultes et de 180 enfants pour en refaire le réseau.", [217]], ["reseau", "WOALAOLOO", "Théologiens d’Oummo ; ils estiment que la morale évolue avec la société.", [215]],["ummo", "XOODIUMMOO DUU OII", "Les neuf « strates connectées » de la structure géologique d’Oummo.", [524]], ["ummo", "OAKEDEEI", "Bouches d’une activité « que vous appelleriez volcanique », qui projettent dans l’atmosphère de grandes colonnes enflammées de méthane et de propane.", [525]], ["ummo", "OUDEXIENOO", "Anciens monolithes de roche tendre où les ancêtres gravaient recettes et conseils thérapeutiques.", [542]], ["ummo", "IGOONOOI", "Dans une ancienne légende, ouragan chargé de sables abrasifs venu des « déserts ».", [542]], ["ummo", "WIIWIIAA", "Grandes tempêtes où le vent arrache jusqu’aux petites particules de roche ; elles empêchent de dormir à ciel ouvert.", [92]], ["ummo", "GIIDII", "Mammifère des mers polaires qui rappelle de loin le dauphin ; son lait sert à assaisonner.", [107]], ["ummo", "OERUU IIOSSAUUIGAA", "Vertébré qui se confond avec les roches couvertes de lichens de la région volcanique d’UUIDDAO UYOAA IIO.", [107, 305]], ["ummo", "UUXAO", "Lichen toxique dont l’essence grasse contient un alcaloïde hallucinogène.", [188]], ["ummo", "IEGOOSSAA (AAGA IEGOOSSAA, AAGA IEGOSAA)", "Anthropoïdes bipèdes à pilosité blanche ou dorée, vivant en groupes hiérarchisés dans une réserve de la colonie WOAROO.", [1405, 1406]], ["ummo", "XEEOUMMO", "Cycle de dix-huit XEE au bout duquel NAWEE et Oummo retrouvent la même configuration.", [1407, 1409]], ["ummo", "SAAXEE", "La révolution d’Oummo autour de son étoile ; il n’existe pas de mot propre pour « année ».", [1408]], ["ummo", "NAWEE (NAUEE)", "Géante gazeuse plus proche de l’étoile qu’Oummo, visible à l’aube et au crépuscule ; le calendrier repose sur ses passages derrière IUMMA.", [1407, 1408, 198]], ["ummo", "GOSEEE", "Unité de longueur cosmique : la distance d’IUMMA à NAUEE à son apogée.", [198]], ["ummo", "AGOO", "Organes d’inspection contrôlés par le conseil général.", [433]], ["ummo", "UOOAMAII", "« Un genre de police », dirigé par le conseil général.", [433]], ["ummo", "DOUIAMOO", "Jardin qui entoure l’habitation ; les membres du conseil général y reçoivent chaque matin.", [432]], ["ummo", "OXUO KEAIA", "« Art d’entraîner simultanément le corps et les facultés mentales » : le jeu oummite, planifié pour chacun.", [117, 126]], ["ummo", "UNAUO UEEE", "Centre où les adolescents, séparés de leurs parents vers 13,7 ans, vivent en petit réseau social autonome pendant leur formation.", [605, 608]], ["ummo", "UULODAXAABI", "Écran en coupole ; pour le nourrisson, images, sons et odeurs y sont réglés selon son âge.", [122, 85]], ["ummo", "OBFUOVAA", "Salles de musée sur Oummo ; D393 y destine des écritures manuscrites terriennes sur bristol.", [760]], ["ummo", "BIEEWIGUU (BIEWIGUU)", "Psychobiologie.", [124, 205]], ["uewa", "OAWOOLEIIDAA", "Moment où les particules du vaisseau et de l’équipage changent d’orientation : le vaisseau passe dans un autre cadre et semble disparaître.", [351, 396]], ["uewa", "OXOEOIADUU", "Gravimètre-altimètre des vaisseaux, fondé sur la chute d’une molécule ionisée dans un capillaire vide.", [386]], ["uewa", "XOIMMA UGII", "Appareil ellipsoïdal récupérable, employé en Inde pour sonder le sous-sol.", [373]], ["uewa", "AOXIBOO AGODAA", "Produit synthétique en lames, blanc et vert cendré, très résistant à la traction.", [357]], ["cosmologie", "IAGIAAIAOO", "Nébuleuses en anneau d’hydrogène cristallisé, dont le refroidissement brutal annonce un pli de l’espace favorable aux voyages.", [395, 397]], ["ecriture", "AÏOOYAOU", "État d’un phénomène indéterminé, perceptible ou prévisible, dont plusieurs réalisations restent possibles ; c’est le cas « A et B » de la logique à quatre valeurs.", [1399, 1400]], ["ecriture", "AÏOOYA AMMIÈ", "Existence invérifiable hors d’une conscience : idées abstraites, empathie ; le cas « ni A ni B ».", [1400]], ["ecriture", "IBOSZOO IOUBOO", "« Point d’incertitude » où un raisonnement se ramifie en branches suivies chacune jusqu’au bout.", [1401]], ["cosmologie", "AADAGIOOU", "« Pression critique » d’environ 15,4 millions d’atmosphères, qui inverserait toutes les sous-particules : la masse deviendrait énergie.", [436]], ["ummo", "GOOYOODOO", "Partie du cerveau, comparée au polygone de Willis, très développée chez les Oummites et liée à « l’intelligence sensitive ».", [951]]];
 function glBuild(){
   if(GLST.built)return GLST.built;
   const E=new Map(),idx=new Map();
