@@ -9506,6 +9506,7 @@ const TECR=[
  {n:'Lentilles de contact photochromes',l:2003,ps:[1394,1395],
   e:2018,x:'autorisation américaine (2018)',src:'American Academy of Ophthalmology',u:'https://www.aao.org/headline/fda-clears-first-light-adaptive-contact-lenses'}];
 const TECS={c:'tout',st:'tout',q:''};
+const TEC_IMG3={"titane":"img/e-62eded0e93bbe5.webp","uulaxaa":"img/e-10804cf4ae3729.webp","xoodinaa":"img/e-a45a4d6be8d1b3.webp","plasma":"img/e-d154bf23b16d28.webp","reseau":"img/e-fdff4443269194.webp"};
 const TEC_IMG2={"dome":"img/e-c265a3ab8bde63.webp","uuluuewaa":"img/e-30fc99cc905537.webp","oemmii":"img/e-f51a280e4a80a0.webp","toroides":"img/e-f5469c901c1fa6.webp","helium":"img/e-e782dc3cdeb73c.webp","xanmoo":"img/e-6483af3a644da6.webp"};
 function tecImg(x){let r=null;try{r=({
  goonioadoo:()=>[GOON_IMG,'Interprétation d’artiste du GOONIIOADOO UEWA, glissant au ras d’une prairie','Interprétation d’artiste, d’après le dessin de la lettre D41-6','uewa','Vaisseaux',[111],0],
@@ -9517,6 +9518,11 @@ function tecImg(x){let r=null;try{r=({
  toroides:()=>[TEC_IMG2.toroides,'Interprétation d’artiste d’une rangée de toroïdes gigantesques alignés sur une plaine','Interprétation d’artiste',null,null,[812],0],
  helium:()=>[TEC_IMG2.helium,'Interprétation d’artiste de la salle de la cérémonie : un éclair bleu et l’hélium parfumé qui se diffuse','Interprétation d’artiste','sante','Santé',[1393],0],
  xanmoo:()=>[TEC_IMG2.xanmoo,'Interprétation d’artiste d’un XANMOO : l’énoncé est posé sur la console, le résultat sort en image 3D, sur bande imprimée et sur compteurs en base 12','Interprétation d’artiste','xanmoo','XANMOO',[504],0],
+ titane:()=>[TEC_IMG3.titane,'Interprétation d’artiste d’une mémoire de titane : trois faisceaux perpendiculaires se croisent sur un seul atome du cristal','Interprétation d’artiste','xanmoo','XANMOO',[506],0],
+ uulaxaa:()=>[TEC_IMG3.uulaxaa,'Interprétation d’artiste d’un objectif gazeux UULAXAA : une lentille faite de gaz chauffé, sans verre','Interprétation d’artiste',null,null,[401],0],
+ xoodinaa:()=>[TEC_IMG3.xoodinaa,'Interprétation d’artiste de la membrane XOODINAA : modules hexagonaux, lithium qui transpire et lueur du vert au carmin','Interprétation d’artiste','uewa','Vaisseaux',[464],0],
+ 'plasma-tuy':()=>[TEC_IMG3.plasma,'Interprétation d’artiste d’un conduit de plasma souterrain vu en coupe, avec ses enveloppes de gaz','Interprétation d’artiste',null,null,[112],0],
+ reseau:()=>[TEC_IMG3.reseau,'Interprétation d’artiste du réseau XANMOO AYUBAA : des centres de calcul reliés entre eux et à chaque foyer','Interprétation d’artiste','xanmoo','XANMOO',[178],0],
  uewa:()=>[UW_ART_IMG,'Interprétation d’artiste d’un UEWA en vol stationnaire au-dessus d’une plaine','Vue d’artiste','uewa','Vaisseaux',[],0]}[x.id]||(()=>null))()}catch(e){r=null}
  if(!r||!r[0])return'';const[src,alt,cap,rt,rl,ps,sch]=r;
  return`<figure class="tc-img${sch?' sch':''}"><img src="${src}" alt="${esc(alt)}" loading="lazy"><figcaption>${esc(cap)}${ps.length?' '+ps.map(citeLink).join(' '):''}${rt?` · chapitre <a href="#/${rt}">${esc(rl)}</a>`:''}</figcaption></figure>`}
