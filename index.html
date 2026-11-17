@@ -1116,6 +1116,7 @@ input[type=range]{width:100%;accent-color:var(--violet);min-height:32px}
 .mh-br{fill:none;stroke-width:2;stroke-linecap:round}.mh-bt{font-size:11.5px;font-weight:600}
 .mh-br1{stroke:#5EE0D0}.mh-br1t{fill:#5EE0D0}.mh-br2{stroke:#FFB547}.mh-br2t{fill:#FFB547}.mh-br3{stroke:#A99BFF}.mh-br3t{fill:#A99BFF}
 .mh-tw{width:100%;max-width:420px;display:block;margin:0 auto;height:auto}
+.mh-et3{margin:6px 0 0;max-width:none}
 .mh-c1{fill:rgba(125,184,255,.18);stroke:#7DB8FF;stroke-width:1.6}.mh-c2{fill:rgba(255,143,177,.18);stroke:#FF8FB1;stroke-width:1.6}
 .mh-c3{fill:rgba(169,155,255,.15);stroke:#A99BFF;stroke-width:1;stroke-dasharray:3 3}.mh-ring2{fill:none;stroke:#A99BFF;stroke-width:1;stroke-dasharray:2 4;opacity:.7}
 #mhcv{display:block;margin:10px auto;width:100%;max-width:320px;height:auto;border-radius:16px;border:1px solid var(--line2)}
@@ -3274,11 +3275,9 @@ function viewMaths(){
    <h3 class="mh-h3">Deux cosmos jumeaux, et peut-être davantage</h3>
    <p>${'Notre univers, le WAAM, a un jumeau de charge électrique inverse, l’UWAAM. Comme les lois physiques auraient pu être autres, d’autres univers devraient exister, régis par d’autres lois : c’est l’hypothèse du pluricosmos, le WAAMWAAM. [[43]] Les deux jumeaux interagissent par des forces que, selon une autre lettre, nos physiciens n’ont pas encore découvertes. [[28]]'}</p>
    ${mhW('Le WAAM, l’UWAAM et le pluricosmos','e',
-     'Les deux cercles sont notre univers et son jumeau. Le trait pointillé qui bouge figure les forces qui les relient.',
+     'Les deux bulles sont notre univers et son jumeau, chacun avec sa galaxie qui tourne en sens inverse. Les traits lumineux figurent les forces qui les relient.',
      'Touchez le bouton pour faire apparaître le WAAMWAAM : le pluricosmos qui englobe notre univers, son jumeau et les autres univers possibles.',
-     `<svg viewBox="0 0 320 150" class="mh-tw" role="img" aria-label="Deux cosmos jumeaux reliés par des forces"><g id="mhmulti" style="opacity:0;transition:opacity .4s"><ellipse cx="160" cy="76" rx="154" ry="71" class="mh-ring2" style="fill:rgba(169,155,255,.07)"/><circle cx="58" cy="42" r="13" class="mh-c3"/><circle cx="262" cy="42" r="13" class="mh-c3"/><circle cx="58" cy="110" r="13" class="mh-c3"/><circle cx="262" cy="110" r="13" class="mh-c3"/><text x="160" y="138" text-anchor="middle" class="mh-tl">WAAMWAAM</text></g>
-       <circle cx="110" cy="75" r="36" class="mh-c1"/><circle cx="210" cy="75" r="36" class="mh-c2"/><text x="110" y="79" text-anchor="middle" class="mh-nt">WAAM</text><text x="210" y="79" text-anchor="middle" class="mh-nt">UWAAM</text>
-       <line x1="148" y1="75" x2="172" y2="75" stroke="#FFB547" stroke-width="2.4" stroke-dasharray="3 3"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></line></svg>
+     `<div class="et3 mh-et3"><div class="et3-st" id="et3-waam" data-et3="waam"><div class="et3-ld">Chargement du schéma…</div><div class="et3-lab" aria-live="off"></div></div></div>
       <div class="mh-seg mh-seg1"><button class="mh-sb" id="mhmu" aria-pressed="false">Montrer le pluricosmos</button></div>`,
      'Les noms viennent des lettres. [[43]] [[28]] La forme, les positions et le nombre d’univers sont une image du site. Voir aussi le chapitre <a href="#/cosmologie">Cosmologie</a>.')}
   </section>
@@ -3320,7 +3319,67 @@ function viewMaths(){
   ${typeof topBtn==='function'?topBtn():''}`);
   mhInit();
 }
+/* ── Mathématiques : le WAAM, l’UWAAM et le pluricosmos, en relief (moteur ET3) ── */
+const MH3B={
+waam(c){const{T,sc,cam,tag,place,lab,el}=c;c.gnd.visible=false;c.still=7;
+ const L=h=>new T.Color(h).convertSRGBToLinear();
+ const cv=document.createElement('canvas');cv.width=cv.height=64;{const g=cv.getContext('2d'),gr=g.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.55)');gr.addColorStop(.6,'rgba(255,255,255,.12)');gr.addColorStop(1,'rgba(255,255,255,0)');g.fillStyle=gr;g.fillRect(0,0,64,64)}
+ const tex=new T.CanvasTexture(cv);
+ const glow=(col,s,o)=>{const m=new T.SpriteMaterial({map:tex,color:col,transparent:true,opacity:o,blending:T.AdditiveBlending,depthWrite:false});const sp=new T.Sprite(m);sp.scale.set(s,s,1);return sp};
+ /* bulle à bord lumineux (effet de Fresnel) */
+ const shell=(col,r,k=1)=>{const m=new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,side:T.DoubleSide,
+   uniforms:{c:{value:col},k:{value:k},o:{value:1}},
+   vertexShader:'varying vec3 n;varying vec3 v;void main(){vec4 p=modelViewMatrix*vec4(position,1.0);n=normalize(normalMatrix*normal);v=normalize(-p.xyz);gl_Position=projectionMatrix*p;}',
+   fragmentShader:'uniform vec3 c;uniform float k;uniform float o;varying vec3 n;varying vec3 v;void main(){float f=pow(1.0-abs(dot(n,v)),2.6);gl_FragColor=vec4(c*(.05+f*1.5)*k,(.04+f*.9)*o);}'});
+  const s=new T.Mesh(new T.SphereGeometry(r,64,48),m);return s};
+ /* galaxie spirale en points ; dir = sens de rotation */
+ const galaxy=(n,R,cA,cB,dir,arms=2)=>{const ps=new Float32Array(n*3),cs=new Float32Array(n*3),a=new T.Color(),b=new T.Color();a.copy(cA);b.copy(cB);
+  for(let i=0;i<n;i++){const r=Math.pow(Math.random(),.6)*R,arm=(i%arms)*Math.PI*2/arms,ang=arm+dir*r*3.1+(Math.random()-.5)*(.55-.3*r/R),h=(Math.random()-.5)*.16*(1-r/R+.25);
+   ps.set([Math.cos(ang)*r,h,Math.sin(ang)*r],i*3);const m=a.clone().lerp(b,r/R);cs.set([m.r,m.g,m.b],i*3)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(ps,3));g.setAttribute('color',new T.BufferAttribute(cs,3));
+  return new T.Points(g,new T.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,blending:T.AdditiveBlending,depthWrite:false}))};
+ const cloud=(n,R,col,sq=1)=>{const ps=new Float32Array(n*3);for(let i=0;i<n;i++){const u=Math.random()*2-1,a=Math.random()*6.283,r=R*Math.cbrt(Math.random()),s=Math.sqrt(1-u*u);ps.set([r*s*Math.cos(a),r*u*sq,r*s*Math.sin(a)],i*3)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(ps,3));return new T.Points(g,new T.PointsMaterial({color:col,size:.05,transparent:true,opacity:.9,blending:T.AdditiveBlending,depthWrite:false}))};
+ /* fond étoilé */
+ {const n=900,ps=new Float32Array(n*3);for(let i=0;i<n;i++){const u=Math.random()*2-1,a=Math.random()*6.283,r=40+Math.random()*20,s=Math.sqrt(1-u*u);ps.set([r*s*Math.cos(a),r*u,r*s*Math.sin(a)],i*3)}
+  const g=new T.BufferGeometry();g.setAttribute('position',new T.BufferAttribute(ps,3));sc.add(new T.Points(g,new T.PointsMaterial({color:L(0xbfc8ff),size:.09,transparent:true,opacity:.6,depthWrite:false})))}
+ /* les deux jumeaux */
+ const BL=L(0x7DB8FF),PK=L(0xF08FB0),AM=L(0xFFB547),VI=L(0xA99BFF);
+ const twin=(x,col,cA,cB,dir)=>{const g=new T.Group();g.position.set(x,0,0);const sh=shell(col,1.55,1);const gl=glow(col,4.6,.35);const core=glow(cA,1.1,.9);
+  const gx=new T.Group();gx.rotation.set(.55,0,dir*.25);const gal=galaxy(1400,1.25,cA,cB,dir);gx.add(gal);g.add(gl,sh,gx,core);sc.add(g);return{g,sh,gal,gx}};
+ const W=twin(-2.35,BL,L(0xFFF4D6),L(0x5E9BFF),1);
+ const U=twin(2.35,PK,L(0xE6FFF6),L(0xFF5FA2),-1);
+ /* lignes de forces entre les deux */
+ const F=new T.Group();sc.add(F);const curves=[];const tubeM=new T.MeshBasicMaterial({color:AM,transparent:true,opacity:.55,blending:T.AdditiveBlending,depthWrite:false});
+ for(let k=0;k<7;k++){const a=k/7*Math.PI*2,dy=Math.sin(a),dz=Math.cos(a),bulge=.35+.75*(k%3)/2;
+  const A=new T.Vector3(-2.35+1.5*.92,1.5*.38*dy,1.5*.38*dz),B=new T.Vector3(2.35-1.5*.92,1.5*.38*dy,1.5*.38*dz);
+  const cu=new T.CatmullRomCurve3([A,new T.Vector3(-.45,dy*(.55+bulge),dz*(.55+bulge)),new T.Vector3(.45,dy*(.55+bulge),dz*(.55+bulge)),B]);curves.push(cu);
+  F.add(new T.Mesh(new T.TubeGeometry(cu,60,.011,6,false),tubeM))}
+ const pulses=curves.map((cu,i)=>{const p1=glow(BL,.42,1),p2=glow(PK,.42,1);F.add(p1,p2);return{cu,p1,p2,ph:i*.37}});
+ /* le pluricosmos */
+ const M=new T.Group();sc.add(M);
+ const outer=shell(VI,6.6,.55);M.add(outer);
+ const rings=[];for(let i=0;i<3;i++){const r=new T.Mesh(new T.TorusGeometry(6.6,.012,6,160),new T.MeshBasicMaterial({color:VI,transparent:true,opacity:.35,blending:T.AdditiveBlending,depthWrite:false}));r.rotation.x=Math.PI/2+i*.5;r.rotation.y=i*1.1;M.add(r);rings.push(r)}
+ const dust=cloud(700,6.2,L(0x8f86d8));dust.material.size=.04;dust.material.opacity=.5;M.add(dust);
+ const others=[[0x5EE0D0,[-4.6,2.6,-1.5],.85,1],[0xFFB547,[4.7,2.4,-1.2],.7,.6],[0x7CFC9A,[-4.9,-2.4,.8],.75,1.6],[0xFF8F6B,[4.5,-2.6,1.2],.95,1],[0xC9D2FF,[.2,4.4,-2.6],.6,1],[0xE59BFF,[.6,-4.3,-2.2],.8,.5],[0x9FE8FF,[-1.2,1.2,-5.2],.55,1]].map(([h,p,r,sq],i)=>{
+  const col=L(h),g=new T.Group();g.position.set(...p);const sh=shell(col,r,.9);sh.scale.y=sq;const cl=cloud(220,r*.8,col,sq);const gl=glow(col,r*3.2,.25);g.add(gl,sh,cl);M.add(g);return{g,sh,cl,gl,base:new T.Vector3(...p),ph:i*1.3}});
+ /* étiquettes */
+ const tW=tag('WAAM · notre univers'),tU=tag('UWAAM · son jumeau','pk'),tM=tag('WAAMWAAM · le pluricosmos','am'),tO=tag('autres univers, autres lois');
+ const setO=(o,v)=>{o.traverse(x=>{const m=x.material;if(!m)return;if(m.uniforms&&m.uniforms.o)m.uniforms.o.value=v;else{if(m.userData.o==null)m.userData.o=m.opacity;m.opacity=m.userData.o*v}})};
+ let mix=0;const camT=new T.Vector3(),camA=new T.Vector3(0,1.1,8.4),camB=new T.Vector3(0,3.2,20);c.onSize=as=>{camB.z=as>1.45?24:20};
+ return(t,dt)=>{const want=el.dataset.multi==='1'?1:0;mix=dt===0?want:mix+(want-mix)*Math.min(1,dt*1.6);const e=mix*mix*(3-2*mix);
+  W.gal.rotation.y+=dt*.32;U.gal.rotation.y-=dt*.32;W.gx.rotation.z=.25+Math.sin(t*.3)*.05;U.gx.rotation.z=-.25-Math.sin(t*.3)*.05;
+  const br=1+.06*Math.sin(t*1.7);W.sh.scale.setScalar(br);U.sh.scale.setScalar(2-br);
+  pulses.forEach(({cu,p1,p2,ph})=>{const u=((t*.33+ph)%1+1)%1;p1.position.copy(cu.getPoint(u));p2.position.copy(cu.getPoint(1-u));const f=Math.sin(u*Math.PI);p1.material.opacity=p2.material.opacity=.25+.75*f});
+  M.visible=e>.01;setO(M,e);M.rotation.y=t*.03;rings.forEach((r,i)=>r.rotation.z=t*(.05+i*.02));
+  others.forEach(o=>{o.g.position.copy(o.base).addScaledVector(o.base,(1-e)*.6);o.g.position.y+=Math.sin(t*.6+o.ph)*.18;o.cl.rotation.y=t*(.2+o.ph*.05)});
+  camT.copy(camA).lerp(camB,e);const ang=Math.sin(t*.12)*.32;cam.position.set(camT.x*Math.cos(ang)+camT.z*Math.sin(ang),camT.y,camT.z*Math.cos(ang)-camT.x*Math.sin(ang));cam.lookAt(0,e*.2,0);
+  place(tW,new T.Vector3(-2.35,1.95,0));place(tU,new T.Vector3(2.35,1.95,0));
+  tW.textContent=e<.5?'WAAM · notre univers':'WAAM';tU.textContent=e<.5?'UWAAM · son jumeau':'UWAAM';place(tM,new T.Vector3(0,6.9,0));tM.style.opacity=e>.5?(e-.5)*2:0;place(tO,others[0].g.position.clone().add(new T.Vector3(0,1.2,0)));tO.style.opacity=e>.5?(e-.5)*2:0;
+  lab.innerHTML=e<.5?'Notre univers, le <b>WAAM</b>, et son jumeau de charge inverse, l’<b>UWAAM</b>, qui tourne en miroir. Les traits lumineux figurent les forces, encore inconnues de nos physiciens, qui les relient.':'Le <b>WAAMWAAM</b> : notre univers, son jumeau et d’autres univers possibles, régis par d’autres lois physiques, réunis dans le pluricosmos.'}}
+};
 function mhInit(){
+  try{if(!ET3B.waam)Object.assign(ET3B,MH3B);et3Mount()}catch(e){}
   const $m=s=>document.getElementById(s);
   const press=(sel,el)=>document.querySelectorAll(sel).forEach(b=>b.setAttribute('aria-pressed',String(b===el)));
   /* base 12 */
@@ -3388,7 +3447,7 @@ function mhInit(){
     const ff=e.target.closest('[data-mhf]');if(ff){const k=ff.dataset.mhf;flt.has(k)?flt.delete(k):flt.add(k);drawNet();return}
     const nd=e.target.closest('[data-n]');if(nd){const i=+nd.dataset.n;sel=sel===i?null:i;drawNet();return}
     const qv=e.target.closest('[data-mhq]');if(qv){setQ(+qv.dataset.mhq);return}
-    if(e.target.closest('#mhmu')){const b=$m('mhmu'),on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));b.textContent=on?'Masquer le pluricosmos':'Montrer le pluricosmos';$m('mhmulti').style.opacity=on?1:0;return}
+    if(e.target.closest('#mhmu')){const b=$m('mhmu'),on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));b.textContent=on?'Masquer le pluricosmos':'Montrer le pluricosmos';const st=$m('et3-waam');if(st){st.dataset.multi=on?'1':'';if(st._et3draw&&etRM())st._et3draw()}return}
     const a=e.target.closest('[data-mhat]');if(a){at=a.dataset.mhat;press('[data-mhat]',a);clear();gauge();nucleus();atNote();if(rm)still();return}
   };
   view.onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('[data-n]')){e.preventDefault();e.target.closest('[data-n]').dispatchEvent(new MouseEvent('click',{bubbles:true}))}};
@@ -12632,6 +12691,7 @@ function et3Run(T,el,build){
   tag:(txt,cls)=>{const d=document.createElement('span');d.className='et3-tag '+(cls||'');d.textContent=txt;el.appendChild(d);return d},
   place:(d,v)=>{const p=v.clone().project(cam);const cv=R.domElement,w=cv.clientWidth,h=cv.clientHeight;const hw=(d.offsetWidth||0)/2+6,x=Math.min(Math.max((p.x+1)/2*w,hw),w-hw);d.style.transform=`translate(-50%,-50%) translate(${x.toFixed(1)}px,${((1-p.y)/2*h).toFixed(1)}px)`;d.style.opacity=p.z<1?1:0}};
  const upd=build(ctx);
+ el._et3draw=()=>{upd(ctx.still||4,0);R.render(sc,cam)};
  let vis=true,raf=0,t0=performance.now(),tAcc=0,last=t0;
  const size=()=>{const cv=R.domElement,w=cv.clientWidth||el.clientWidth,h=cv.clientHeight||el.clientHeight;if(!w||!h)return;R.setSize(w,h,false);const as=w/h,ht=Math.tan(18*Math.PI/180)*16/9;cam.aspect=as;cam.fov=as<16/9?2*Math.atan(ht/as)*180/Math.PI:36;cam.updateProjectionMatrix();if(ctx.onSize)ctx.onSize(w/h)};
  size();const ro=new ResizeObserver(size);ro.observe(el);
