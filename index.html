@@ -1509,7 +1509,19 @@ a.gx.chl svg{width:.95em;height:.95em;margin-right:.18em;vertical-align:-.12em;f
 .tc-stats>div{padding:12px 14px;border:1px solid var(--line);border-radius:16px;background:var(--sheet)}
 .tc-stats b{display:block;font-family:var(--disp);font-size:30px;font-weight:500;color:var(--violet);line-height:1}.tc-stats span{font-size:13px;color:var(--ink2)}
 .tc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;align-items:start}
-.tc-img{margin:4px 0 4px}.tc-img img{display:block;width:100%;height:200px;object-fit:cover;border-radius:14px;background:#0e1330}.tc-img.sch img{object-fit:contain;background:#f3f1ea}.tc-img figcaption{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink2)}
+.tc-img{margin:4px 0 4px}.tc-img img{display:block;width:100%;height:200px;object-fit:cover;border-radius:14px;background:#0e1330}.tc-img.sch img{object-fit:contain;background:#f3f1ea}.tc-img.ph img{height:340px;object-fit:contain;background:linear-gradient(#1d1e1d,#3a393b 70%,#4d4c4e)}
+.b3d-st{position:relative;height:300px;border-radius:14px;overflow:hidden;background:#0e1330}.b3d-cv{display:block;width:100%;height:100%}
+.b3d-wait{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink2);font-size:13px;padding:16px;text-align:center}
+.b3d-full{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:rgba(16,22,49,.82);color:#E8E9F4;display:grid;place-items:center;cursor:pointer;padding:0}.b3d-full .i{width:18px;height:18px}
+.b3d-info{font-size:12.5px;line-height:1.45;color:var(--ink2);margin:6px 0 0}.b3d-info b{color:var(--ink)}
+.b3d-th{display:flex;gap:8px;margin:8px 0 4px}
+.b3d-tb{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:8px;padding:4px 8px 4px 4px;border:1px solid var(--line);border-radius:12px;background:transparent;color:var(--ink);cursor:pointer;font:600 12px/1.25 inherit;text-align:left}
+.b3d-tb:hover{border-color:var(--violet)}.b3d-tb:focus-visible,.b3d-full:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+.tc-img .b3d-tb img{width:52px;height:52px;flex:none;object-fit:cover;border-radius:8px;background:#f3f1ea}
+.b3d-ov{position:fixed;inset:0;z-index:90;background:rgba(10,11,22,.97);display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.b3d-ov .zbar{display:flex;align-items:center;justify-content:space-between;padding:6px 8px 6px 16px;color:#E8E9F4;font-size:14.5px}.b3d-ov .iconbtn{color:#E8E9F4}
+.b3d-ovst{flex:1;min-height:0}.b3d-ovinfo{padding:8px 16px 12px;color:#C9CBE0;max-width:720px}
+#zoom .zpic{max-width:96vw;max-height:calc(100vh - 90px);width:auto;height:auto;border-radius:6px;background:#f3f1ea}.tc-img figcaption{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink2)}
 .tc-card{padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:var(--sheet);display:flex;flex-direction:column;gap:6px}
 .tc-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .tc-cat{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
@@ -1632,7 +1644,12 @@ a.am-b{text-decoration:none;cursor:pointer}a.am-b:hover{filter:brightness(1.15)}
 .am-stage canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
 .am-side{display:flex;flex-direction:column;gap:10px}.am-d{margin:4px 0}
 .am-figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin-top:14px;align-items:start}
-.am-fig{margin:0}.am-fig figcaption{font-size:12.5px;color:var(--ink2);margin-top:6px;line-height:1.45}.am-fig .cite{font-size:10.5px}.ac-inl{display:inline-flex;align-items:center;gap:6px;min-height:0;padding:2px 10px 2px 3px;margin:1px 0;font-size:.92em;line-height:1.3;vertical-align:baseline;text-decoration:none}.ac-inl .ac-av{width:20px;height:20px;font-size:8.5px}.af-role .ac-inl{font-size:.85em}.anav{display:flex;align-items:center;gap:10px;margin:4px 0 18px}.anav-close{flex:none;width:44px;height:44px;border-radius:999px;border:0;background:var(--violet);color:var(--violet-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px color-mix(in srgb,var(--violet) 30%,transparent)}.anav-close svg.i{width:20px;height:20px;stroke-width:2.2}.anav-box{flex:1;min-width:0;max-width:560px;display:flex;align-items:center;gap:6px;padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--sheet)}.anav-arr{flex:none;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;text-decoration:none}.anav-arr:hover{border-color:var(--violet);color:var(--violet)}.anav-arr svg.i{width:18px;height:18px}.anav-ctx{flex:1;min-width:0;text-align:center;line-height:1.2}.anav-ctx b{display:block;font-size:14px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.anav-ctx small{display:block;font-size:12px;color:var(--ink2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.anav-ctx .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--bc,var(--c-U));margin-right:6px;vertical-align:1px}.af-head .ac-badge{border-radius:10px;line-height:1.35;max-width:100%}.mus-fig{margin:16px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:var(--sheet);max-width:640px}.mus-fig audio{width:100%;margin:4px 0 10px}.mus-t{margin:10px 0 0;font-weight:600;font-size:14px}.mus-k{margin:0;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--violet)}.mus-fig figcaption{font-size:13px;color:var(--ink2);line-height:1.5}.qz-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:18px 0 6px}.qz-prog{flex:1 1 220px;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.qz-prog span{display:block;height:100%;width:0;background:var(--violet);transition:width .4s}.qz-score{margin:0;color:var(--ink2);font-size:15px}.qz-score b{color:var(--ink)}.qz-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:14px;margin:14px 0 18px}.qz-card{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:var(--sheet);display:flex;flex-direction:column;gap:10px;min-width:0}.qz-card.ok{border-color:color-mix(in srgb,#3fbf7f 60%,var(--line))}.qz-card.ko{border-color:color-mix(in srgb,var(--violet) 60%,var(--line))}.qz-n{margin:0;font:600 12px/1 var(--ui);letter-spacing:.08em;color:var(--ink2)}.qz-card h3{margin:0;font-family:var(--disp);font-weight:500;font-size:20px;line-height:1.3}.qz-btns{display:flex;flex-wrap:wrap;gap:8px}.qz-b[disabled]{opacity:.55;cursor:default}.qz-b.right{opacity:1;border-color:#3fbf7f;color:#3fbf7f}.qz-b.wrong{opacity:1;border-color:var(--violet);color:var(--violet)}.qz-x p{margin:0 0 6px;font-size:15px;line-height:1.55}.qz-verdict{display:flex;align-items:center;gap:6px;font-weight:700}.qz-card.ok .qz-verdict{color:#3fbf7f}.qz-card.ko .qz-verdict{color:var(--violet)}.qz-verdict svg.i{width:18px;height:18px}.uw-art{margin:18px 0 0}.uw-art img{width:100%;display:block;border-radius:12px;border:1px solid var(--line, rgba(255,255,255,.12))}.uw-art figcaption{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}.am-art{margin:16px 0 0;max-width:360px}.am-art img{width:100%;display:block;border-radius:12px;border:1px solid var(--line, rgba(255,255,255,.12))}.am-art figcaption{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}
+.am-fig{margin:0}.am-fig figcaption{font-size:12.5px;color:var(--ink2);margin-top:6px;line-height:1.45}.am-fig .cite{font-size:10.5px}.ac-inl{display:inline-flex;align-items:center;gap:6px;min-height:0;padding:2px 10px 2px 3px;margin:1px 0;font-size:.92em;line-height:1.3;vertical-align:baseline;text-decoration:none}.ac-inl .ac-av{width:20px;height:20px;font-size:8.5px}.af-role .ac-inl{font-size:.85em}.anav{display:flex;align-items:center;gap:10px;margin:4px 0 18px}.anav-close{flex:none;width:44px;height:44px;border-radius:999px;border:0;background:var(--violet);color:var(--violet-ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px color-mix(in srgb,var(--violet) 30%,transparent)}.anav-close svg.i{width:20px;height:20px;stroke-width:2.2}.anav-box{flex:1;min-width:0;max-width:560px;display:flex;align-items:center;gap:6px;padding:5px;border:1px solid var(--line);border-radius:999px;background:var(--sheet)}.anav-arr{flex:none;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;text-decoration:none}.anav-arr:hover{border-color:var(--violet);color:var(--violet)}.anav-arr svg.i{width:18px;height:18px}.anav-ctx{flex:1;min-width:0;text-align:center;line-height:1.2}.anav-ctx b{display:block;font-size:14px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.anav-ctx small{display:block;font-size:12px;color:var(--ink2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.anav-ctx .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--bc,var(--c-U));margin-right:6px;vertical-align:1px}.af-head .ac-badge{border-radius:10px;line-height:1.35;max-width:100%}.mus-fig{margin:16px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:var(--sheet);max-width:640px}.mus-fig audio{width:100%;margin:4px 0 10px}.mus-t{margin:10px 0 0;font-weight:600;font-size:14px}.vo-fig audio{width:100%;margin-top:4px}.tc-card .vo-fig{margin:6px 0 2px;padding:12px 14px}
+.site-st{display:inline-grid;place-items:center;min-width:64px;padding:5px 10px;border:2px solid var(--violet);border-radius:10px;font-weight:700;font-size:13px;color:var(--violet);letter-spacing:.04em}.site-snip{display:block}.site-snip .sx{display:block}.site-snip .sx b{color:var(--ink);font-weight:600}#sitebox{margin-bottom:18px}
+@keyframes siteflash{0%{box-shadow:0 0 0 3px var(--violet)}100%{box-shadow:0 0 0 3px transparent}}.site-flash{animation:siteflash 2.4s ease-out}
+.wf{display:flex;align-items:center;gap:12px;margin-top:6px}.wf-play{flex:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--violet);color:var(--violet-ink);display:grid;place-items:center;cursor:pointer;padding:0}.wf-play svg{width:17px;height:17px}
+.wf-play:focus-visible,.wf-cv:focus-visible{outline:2px solid var(--violet);outline-offset:3px}.wf-tl{flex:1;min-width:0}.wf-cv{display:block;width:100%;height:52px;cursor:pointer;touch-action:pan-y;border-radius:6px}
+.wf-t{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums;margin-top:1px}.mus-k{margin:0;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--violet)}.mus-fig figcaption{font-size:13px;color:var(--ink2);line-height:1.5}.qz-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:18px 0 6px}.qz-prog{flex:1 1 220px;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.qz-prog span{display:block;height:100%;width:0;background:var(--violet);transition:width .4s}.qz-score{margin:0;color:var(--ink2);font-size:15px}.qz-score b{color:var(--ink)}.qz-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:14px;margin:14px 0 18px}.qz-card{border:1px solid var(--line);border-radius:18px;padding:16px 18px;background:var(--sheet);display:flex;flex-direction:column;gap:10px;min-width:0}.qz-card.ok{border-color:color-mix(in srgb,#3fbf7f 60%,var(--line))}.qz-card.ko{border-color:color-mix(in srgb,var(--violet) 60%,var(--line))}.qz-n{margin:0;font:600 12px/1 var(--ui);letter-spacing:.08em;color:var(--ink2)}.qz-card h3{margin:0;font-family:var(--disp);font-weight:500;font-size:20px;line-height:1.3}.qz-btns{display:flex;flex-wrap:wrap;gap:8px}.qz-b[disabled]{opacity:.55;cursor:default}.qz-b.right{opacity:1;border-color:#3fbf7f;color:#3fbf7f}.qz-b.wrong{opacity:1;border-color:var(--violet);color:var(--violet)}.qz-x p{margin:0 0 6px;font-size:15px;line-height:1.55}.qz-verdict{display:flex;align-items:center;gap:6px;font-weight:700}.qz-card.ok .qz-verdict{color:#3fbf7f}.qz-card.ko .qz-verdict{color:var(--violet)}.qz-verdict svg.i{width:18px;height:18px}.uw-art{margin:18px 0 0}.uw-art img{width:100%;display:block;border-radius:12px;border:1px solid var(--line, rgba(255,255,255,.12))}.uw-art figcaption{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}.am-art{margin:16px 0 0;max-width:360px}.am-art img{width:100%;display:block;border-radius:12px;border:1px solid var(--line, rgba(255,255,255,.12))}.am-art figcaption{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}
 .am-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px;align-items:start}
 .am-card{padding:16px 18px;border:1px solid var(--line);border-radius:20px;background:var(--sheet);scroll-margin-top:calc(var(--top-h) + 12px)}
 .am-ch{display:flex;gap:12px;align-items:center}.am-dot{width:14px;height:14px;border-radius:50%;background:hsl(var(--h) 60% 55%);flex:none}
@@ -3563,6 +3580,11 @@ function matchDoc(d,skipYear){
 let YMIN=1964,YMAX=2020;
 const SITE_MAJ='2026-11-17';
 const MAJ_LOG=[
+ ['2026-11-21','Recherche : un nouveau filtre « Le site » cherche aussi dans les chapitres, les fiches, la FAQ et le glossaire du site, et plus seulement dans les lettres ; un clic ouvre le chapitre à la bonne section.','#/search'],
+ ['2026-11-21','Lecteurs audio : une nouvelle ligne de temps dessine la forme du son ; la partie écoutée s’allume en ambre et les barres réagissent au volume, pour les voix et les musiques.',null],
+ ['2026-11-21','La voix des Oummites : une reconstitution sonore, voix terrienne puis voix oummite, d’après les témoins et la lettre sur le transducteur laryngé, dans « Vus par les Terriens », Technologies et Les coulisses du dossier.','#/regards'],
+ ['2026-11-21','Technologies : maquette 3D interactive du BUUTZ de GOONNIAOADOO, le moteur des véhicules décrit dans la lettre D41-6 ; on la fait tourner et on touche chaque organe pour connaître son rôle. L’image fixe et le schéma original s’agrandissent d’un clic.','#/technologies'],
+ ['2026-11-19','Version anglaise : toutes les lettres et tous les documents se lisent désormais en anglais, soit 174 lettres, les 21 documents NR, les 11 documents GR, les 27 conversations H et les 54 documents externes (série E).',null],
  ['2026-11-17','Spiritualité : la théorie des OEMMIIWOA, d’après la lettre D792 (WOA, un cerveau qui évolue par sauts, la limite du multicosmos, le quatrième stade) ; schéma du pluricosmos refait en 3D dans Mathématiques.','#/spiritualite'],
  ['2026-11-16','Nouveau chapitre « La société en réseau » : l’homme comme nœud d’un réseau, le langage « standardisé », la morale ajustée à chaque cerveau, le remodelage du cerveau abandonné, le plan IGIAAYUYISAA, le jeu OXUO et ses fosses, comparés avec la Terre.','#/reseau'],
  ['2026-11-14','Version anglaise du site : chapitres, légendes, glossaire et menus traduits ; choix de la langue avec un drapeau sur l’écran d’ouverture et dans la navigation. Les lettres restent en français.',null],
@@ -3904,18 +3926,43 @@ function viewSearch(q0){
   <div class="chips" id="sser" role="group" aria-label="Séries"></div>
   <div class="toolrow" style="margin-top:8px"><button class="chip" id="xchip" aria-pressed="${S.sq.x}">Expression exacte</button></div>
   <div id="sres"></div>`;
-  const draw=()=>{$('#sser').innerHTML=Object.keys(SER).map(k=>`<button class="chip" data-ser="${k}" aria-pressed="${S.sq.series.has(k)}">${SER[k][1]}</button>`).join('')};draw();
+  const draw=()=>{$('#sser').innerHTML=`<button class="chip" data-site aria-pressed="${!!S.sq.site}">Le site</button>`+Object.keys(SER).map(k=>`<button class="chip" data-ser="${k}" aria-pressed="${S.sq.series.has(k)}">${SER[k][1]}</button>`).join('')};draw();
   let t;const inp=$('#sq');
   const run=()=>{S.sq.q=inp.value;doSearch()};
   inp.oninput=()=>{clearTimeout(t);t=setTimeout(run,260)};
   inp.onkeydown=e=>{if(e.key==='Enter'){clearTimeout(t);run();inp.blur()}};
-  $('#sser').onclick=e=>{const b=e.target.closest('[data-ser]');if(!b)return;const k=b.dataset.ser;S.sq.series.has(k)?S.sq.series.delete(k):S.sq.series.add(k);draw();doSearch()};
+  $('#sser').onclick=e=>{if(e.target.closest('[data-site]')){S.sq.site=!S.sq.site;draw();doSearch();return}const b=e.target.closest('[data-ser]');if(!b)return;const k=b.dataset.ser;S.sq.series.has(k)?S.sq.series.delete(k):S.sq.series.add(k);draw();doSearch()};
   $('#xchip').onclick=e=>{S.sq.x=!S.sq.x;e.currentTarget.setAttribute('aria-pressed',S.sq.x);doSearch()};
-  $('#sres').onclick=e=>{const s=e.target.closest('[data-q]');if(s){inp.value=s.dataset.q;run();return}const m=e.target.closest('[data-more]');if(m){showMore(m)}const c=e.target.closest('[data-clear]');if(c){store.set('rs',[]);doSearch()}};
+  $('#sres').onclick=e=>{const g=e.target.closest('[data-sgo]');if(g){e.preventDefault();const it=SITE_RES[+g.dataset.sgo];if(it)siteGo(it);return}const s=e.target.closest('[data-q]');if(s){inp.value=s.dataset.q;run();return}const m=e.target.closest('[data-more]');if(m){showMore(m)}const c=e.target.closest('[data-clear]');if(c){store.set('rs',[]);doSearch()}};
   if(!S.sq.q)doSearch();else{idxReady().then(()=>{if($('#sq'))doSearch()});doSearch()}
 }
 let SR={res:null,shown:0,raw:''};
 function qForSearch(){const q=S.sq.q.trim();if(!q)return'';return S.sq.x&&!/^".+"$/.test(q)?'"'+q+'"':q}
+/* ── Recherche « Le site » : index des chapitres (img/site-fr.json, img/site-en.json, construit par crawl_site.js) ── */
+let SITE_IDX=null,SITE_RES=[];
+function siteIdx(){if(!SITE_IDX)SITE_IDX=fetch(document.documentElement.lang==='en'?'img/site-en.json':'img/site-fr.json').then(r=>r.json()).then(a=>{a.forEach(s=>{s.f=foldKeep(s.ch+'   '+s.h+'   '+s.x)});return a}).catch(()=>{SITE_IDX=null;return[]});return SITE_IDX}
+function siteSearch(raw){return siteIdx().then(A=>{
+  const q=parseQ(raw),re=hlRegex(raw);if(!re)return'';
+  let tests;if(q.exact)tests=[re];else{const ss=[...new Set(q.words.map(stem))].filter(s=>s.length>=2);tests=ss.map(s=>new RegExp('\\b'+(s.startsWith('umm')?'o?':'')+escRe(s)))}
+  const cnt=(t,r)=>{r.lastIndex=0;let n=0;while(r.exec(t)&&n<50)n++;return n};
+  const hits=[];A.forEach(s=>{if(!tests.every(t=>{t.lastIndex=0;return t.test(s.f)}))return;const n=cnt(s.f,re)+4*cnt(foldKeep(s.h),re)+3*cnt(foldKeep(s.ch),re);hits.push({s,n})});
+  hits.sort((a,b)=>b.n-a.n);SITE_RES=hits.map(h=>h.s);
+  if(!hits.length)return`<h2 class="h2">Dans le site</h2><p class="sum-line">Aucun passage du site ne contient ce mot.</p>`;
+  const by=new Map();hits.forEach((h,i)=>{const k=h.s.r;if(!by.has(k))by.set(k,[]);by.get(k).push(i)});
+  const snip=s=>{const f=foldKeep(s.x);re.lastIndex=0;const m=re.exec(f);const p=m?m.index:0,a=Math.max(0,p-80),b=Math.min(s.x.length,p+170);
+    return(a>0?'… ':'')+markHTML(s.x.slice(a,b),re)+(b<s.x.length?' …':'')};
+  let h=`<h2 class="h2">Dans le site</h2><p class="sum-line">${nf(hits.length)} passage${hits.length>1?'s':''} dans ${by.size} chapitre${by.size>1?'s':''}, classés par pertinence.</p>`;
+  [...by.values()].slice(0,25).forEach(ix=>{const s0=SITE_RES[ix[0]];
+    h+=`<article class="res site-res"><header><span class="site-st">Site</span><div><h3><a href="#/${s0.r}" data-sgo="${ix[0]}">${markHTML(s0.ch||s0.r,re)}</a></h3></div></header>`+
+      ix.slice(0,3).map(i=>{const s=SITE_RES[i];return`<a class="snip site-snip" href="#/${s.r}" data-sgo="${i}"><span class="sx">${s.h?`<b>${markHTML(s.h,re)}</b> · `:''}${snip(s)}</span></a>`}).join('')+
+      (ix.length>4?`<div class="more">et ${ix.length-3} autres passages dans ce chapitre</div>`:ix.length===4?'<div class="more">et 1 autre passage dans ce chapitre</div>':'')+`</article>`});
+  return h})}
+function siteGo(s){const go=()=>{const v=$('#view');if(!v)return;
+    const fin=()=>{const hs=v.querySelectorAll('h2,h3');const el=s.k<0?v:hs[s.k];if(!el)return;let d=el.closest('details');while(d){d.open=true;d=d.parentElement&&d.parentElement.closest('details')}
+      const y=el.getBoundingClientRect().top+scrollY-90;scrollTo({top:Math.max(0,y),behavior:'smooth'});[700,1300,2100,3200].forEach(t=>setTimeout(()=>{const d=el.getBoundingClientRect().top-90;if(Math.abs(d)>30)scrollBy({top:d,behavior:'auto'})},t));const box=el.closest('section,article,details')||el;box.classList.remove('site-flash');void box.offsetWidth;box.classList.add('site-flash')};
+    if(s.c){const b=v.querySelector(s.c);if(b)b.click();setTimeout(fin,450)}else setTimeout(fin,350)};
+  if(location.hash==='#/'+s.r)go();else{location.hash='#/'+s.r;let n=0;const w=()=>{if(location.hash==='#/'+s.r&&$('#view h1'))go();else if(++n<30)setTimeout(w,100)};setTimeout(w,150)}}
+let SITE_TOK=0;
 function doSearch(){
   const box=$('#sres');if(!box)return;const raw=qForSearch();
   if(!raw){
@@ -3923,13 +3970,15 @@ function doSearch(){
     box.innerHTML=`<h2 class="h2">Pistes de recherche</h2><div class="sugs">${SUGG.map(s=>`<button class="chip" data-q="${esc(s)}">${esc(s)}</button>`).join('')}</div>
     ${rs.length?`<h2 class="h2">Recherches récentes</h2><div class="sugs">${rs.map(s=>`<button class="chip" data-q="${esc(s)}">${esc(s)}</button>`).join('')}</div><p><button class="linkbtn" data-clear>Effacer l’historique</button></p>`:''}
     <p class="fine" style="margin-top:22px">Astuces : mettez une expression entre guillemets pour la chercher telle quelle ; tapez une référence comme <b>D57</b> pour aller directement au document ; les graphies Oummo et Oummo sont équivalentes.</p>`;return}
+  if(S.sq.site){const tok=++SITE_TOK;siteSearch(raw).then(h=>{const el=$('#sitebox');if(el&&tok===SITE_TOK)el.innerHTML=h})}
+  if(S.sq.site&&!S.sq.series.size){try{history.replaceState(null,'','#/search?q='+encodeURIComponent(S.sq.q))}catch(e){}box.innerHTML=`<div id="sitebox"><p class="sum-line">Recherche dans le site…</p></div>`;return}
   if(!S.idx){box.innerHTML=`<p class="sum-line">Indexation du texte en cours… ${Math.round(S.idxProg*100)} %</p>`;return}
   try{history.replaceState(null,'','#/search?q='+encodeURIComponent(S.sq.q))}catch(e){}
   const res=searchDocs(raw,S.sq.series);SR={res,shown:0,raw};
   if(res.docs.length&&S.sq.q.trim().length>2){const rs=store.get('rs',[]).filter(x=>x!==S.sq.q.trim());rs.unshift(S.sq.q.trim());store.set('rs',rs.slice(0,6))}
-  let html='';
+  let html=S.sq.site?'<div id="sitebox"></div>':'';
   if(res.idHits.length)html+=res.idHits.map(d=>`<a class="idhit" href="${hrefDoc(d.k)}">${stampOf(d)}<span style="flex:1;min-width:0">${esc(d.t)}</span>${ic('next')}</a>`).join('');
-  if(!res.docs.length&&!res.idHits.length){box.innerHTML=`<div class="empty"><b>Aucun passage trouvé</b>Essayez un seul mot, une autre graphie, ou désactivez « Expression exacte ».</div>`;return}
+  if(!res.docs.length&&!res.idHits.length){box.innerHTML=(S.sq.site?'<div id="sitebox"></div>':'')+`<div class="empty"><b>Aucun passage trouvé</b>Essayez un seul mot, une autre graphie, ou désactivez « Expression exacte ».</div>`;return}
   const np=res.docs.reduce((a,e)=>a+e.pages.length,0);
   html+=`<p class="sum-line">${nf(np)} page${np>1?'s':''} dans ${res.docs.length} document${res.docs.length>1?'s':''}, classés par pertinence.</p><div id="rlist"></div><div id="rmore"></div>`;
   box.innerHTML=html;showMore();
@@ -9506,11 +9555,153 @@ const TECR=[
  {n:'Lentilles de contact photochromes',l:2003,ps:[1394,1395],
   e:2018,x:'autorisation américaine (2018)',src:'American Academy of Ophthalmology',u:'https://www.aao.org/headline/fda-clears-first-light-adaptive-contact-lenses'}];
 const TECS={c:'tout',st:'tout',q:''};
+const TEC_IMG4={"buutz":"img/e-84f679ea867ee7.webp"};
 const TEC_IMG3={"titane":"img/e-62eded0e93bbe5.webp","uulaxaa":"img/e-10804cf4ae3729.webp","xoodinaa":"img/e-a45a4d6be8d1b3.webp","plasma":"img/e-d154bf23b16d28.webp","reseau":"img/e-fdff4443269194.webp"};
 const TEC_IMG2={"dome":"img/e-c265a3ab8bde63.webp","uuluuewaa":"img/e-30fc99cc905537.webp","oemmii":"img/e-f51a280e4a80a0.webp","toroides":"img/e-f5469c901c1fa6.webp","helium":"img/e-e782dc3cdeb73c.webp","xanmoo":"img/e-6483af3a644da6.webp"};
-function tecImg(x){let r=null;try{r=({
+/* ── BUUTZ de GOONNIAOADOO : maquette 3D (fiche Technologies) ── */
+function openPic(src,label,btn){closeZoom();
+  const el=document.createElement('div');el.id='zoom';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-label',label);
+  el.innerHTML=`<div class="zbar"><span>${esc(label)}</span><button class="iconbtn" data-z="x" aria-label="Fermer">${ic('x')}</button></div><div class="zbody" data-z="x"><img class="zpic" src="${src}" alt="${esc(label)}"></div>`;
+  el.addEventListener('click',e=>{if(e.target.closest('[data-z]')&&!e.target.closest('.zpic'))closeZoom()});
+  const key=e=>{if(e.key==='Escape')closeZoom()};document.addEventListener('keydown',key);
+  document.body.appendChild(el);document.body.style.overflow='hidden';ZOOM={el,key,back:btn};$('.iconbtn',el).focus();
+}
+function b3dFig(){
+  const th=[[TEC_IMG4.buutz,'Interprétation d’artiste du BUUTZ de GOONNIAOADOO (image fixe)','Image fixe'],[UW_VEH[1][2],'Schéma original du BUUTZ de GOONNIAOADOO, lettre D41-6 (image 17)','Schéma original']];
+  return `<figure class="tc-img b3d"><div class="b3d-st" data-b3d><div class="b3d-wait">Chargement de la maquette 3D…</div>
+   <button class="b3d-full" type="button" data-b3dfull aria-label="Agrandir la maquette 3D">${ic('fsin')}</button></div>
+   <p class="b3d-info" aria-live="polite">Faites tourner la maquette du doigt ou à la souris ; touchez un organe pour connaître son rôle.</p>
+   <div class="b3d-th">${th.map(t=>`<button type="button" class="b3d-tb" data-pic="${t[0]}" data-lab="${esc(t[1])}"><img src="${t[0]}" alt="${esc(t[1])}" loading="lazy"><span>${esc(t[2])}</span></button>`).join('')}</div>
+   <figcaption>Maquette 3D interactive, d’après le schéma original de la lettre D41-6 (image 17) ${citeLink(114)} · chapitre <a href="#/uewa">Vaisseaux</a></figcaption></figure>`;
+}
+document.addEventListener('click',e=>{const t=e.target.closest('.b3d-tb');if(t){openPic(t.dataset.pic,t.dataset.lab,t);return}
+  const f=e.target.closest('[data-b3dfull]');if(f){const st=f.closest('[data-b3d]');if(st&&st._b3d)st._b3d.full(true)}});
+let B3D_IO=null;
+new MutationObserver(()=>{document.querySelectorAll('[data-b3d]:not(.b3d-on)').forEach(el=>{el.classList.add('b3d-on');
+  if(!B3D_IO)B3D_IO=new IntersectionObserver(es=>es.forEach(x=>{const el=x.target;el._vis=x.isIntersecting;if(x.isIntersecting&&!el._b3d&&!el._load){el._load=1;
+    loadThree().then(T=>{try{el._b3d=b3dInit(el,T)}catch(err){el.querySelector('.b3d-wait').textContent='La maquette 3D ne peut pas s’afficher sur cet appareil.'}}).catch(()=>{el.querySelector('.b3d-wait').textContent='La maquette 3D ne peut pas s’afficher sur cet appareil.'})}}),{rootMargin:'200px'});
+  B3D_IO.observe(el)})}).observe(document.body,{childList:true,subtree:true});
+function b3dInit(el,T){
+const V=(x,y,z=0)=>new T.Vector3(x,y,z),P=(px,py,z=0)=>V((px-280)/100,(360-py)/100,z);
+const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=T.sRGBEncoding;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=.8;
+R.shadowMap.enabled=true;R.shadowMap.type=T.PCFSoftShadowMap;el.insertBefore(R.domElement,el.firstChild);el.querySelector('.b3d-wait').remove();
+const cv=R.domElement;cv.className='b3d-cv';
+const S=new T.Scene();
+{const sc=new T.Scene(),bx=new T.BoxGeometry(),room=new T.Mesh(bx,new T.MeshStandardMaterial({side:T.BackSide}));room.position.set(-.757,13.219,.717);room.scale.set(31.7,28.3,28.6);sc.add(room);
+ const pl=new T.PointLight(0xffffff,5,28,2);pl.position.set(.418,16.2,.3);sc.add(pl);const bm=new T.MeshStandardMaterial();
+ [[-10.9,2,-12.3,2.5,4,1.8],[-5.5,1,-10,1,2,1],[7.2,2.4,-6,3,5,2.5]].forEach(b=>{const m=new T.Mesh(bx,bm);m.position.set(b[0],b[1],b[2]);m.scale.set(b[3],b[4],b[5]);sc.add(m)});
+ const L=i=>new T.MeshBasicMaterial({color:new T.Color(i,i,i)});
+ [[50,-16.1,14.4,8.2,.1,2.43,2.74],[50,-16.1,18,-8.2,.1,2.43,2.75],[17,14.9,12.2,-1.8,.15,4.27,6.33],[43,-.46,8.9,14.5,4.38,5.44,.09],[20,3.2,11.5,-12.5,2.5,2,.1],[100,0,20,0,1,.1,1]].forEach(l=>{const m=new T.Mesh(bx,L(l[0]));m.position.set(l[1],l[2],l[3]);m.scale.set(l[4],l[5],l[6]);sc.add(m)});
+ const pm=new T.PMREMGenerator(R);S.environment=pm.fromScene(sc,.04).texture;pm.dispose()}
+S.background=new T.Color(0x0e1330);
+const cam=new T.PerspectiveCamera(34,1,.1,100);
+const key=new T.DirectionalLight(0xfff1e0,1.5);key.position.set(-5,8,7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);Object.assign(key.shadow.camera,{left:-6,right:6,top:6,bottom:-6,near:1,far:30});key.shadow.bias=-.0004;S.add(key);
+const rim=new T.DirectionalLight(0xbcd0ff,1.1);rim.position.set(6,3,-6);S.add(rim);S.add(new T.HemisphereLight(0x8890b0,0x1a1a22,.35));
+const gnd=new T.Mesh(new T.PlaneGeometry(40,40),new T.ShadowMaterial({opacity:.35}));gnd.rotation.x=-Math.PI/2;gnd.receiveShadow=true;S.add(gnd);
+function noise(kind){const n=128,c=document.createElement('canvas');c.width=c.height=n;const g=c.getContext('2d'),im=g.createImageData(n,n);
+ for(let y=0;y<n;y++)for(let x=0;x<n;x++){const v=kind?128+60*Math.sin(y*.9+Math.sin(x*.05)*3)*Math.random():128+(Math.random()-.5)*70,i=(y*n+x)*4;im.data[i]=im.data[i+1]=im.data[i+2]=v;im.data[i+3]=255}
+ g.putImageData(im,0,0);const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(3,3);return t}
+const grain=noise(0),brush=noise(1);
+const M={ivory:new T.MeshPhysicalMaterial({color:0xd9ceb4,roughness:.55,envMapIntensity:.7,clearcoat:.35,clearcoatRoughness:.45,bumpMap:grain,bumpScale:.003}),
+ olive:new T.MeshPhysicalMaterial({color:0x8c8453,metalness:.85,roughness:.34,roughnessMap:brush}),copper:new T.MeshStandardMaterial({color:0xc07a42,metalness:1,roughness:.28}),
+ nickel:new T.MeshStandardMaterial({color:0xc4c1ba,metalness:1,roughness:.26,roughnessMap:brush}),pink:new T.MeshPhysicalMaterial({color:0xc97a9c,metalness:.75,roughness:.3,clearcoat:.6,clearcoatRoughness:.3}),
+ violet:new T.MeshStandardMaterial({color:0x837d96,metalness:.85,roughness:.32,roughnessMap:brush}),yellow:new T.MeshPhysicalMaterial({color:0xc99a1c,roughness:.25,envMapIntensity:.8,clearcoat:1,clearcoatRoughness:.12,side:T.DoubleSide}),
+ blue:new T.MeshStandardMaterial({color:0x7a92b4,metalness:1,roughness:.24,side:T.DoubleSide}),bronze:new T.MeshStandardMaterial({color:0xa07a52,metalness:1,roughness:.3}),
+ steel:new T.MeshStandardMaterial({color:0x9da0a6,metalness:1,roughness:.3,roughnessMap:brush}),enamel:new T.MeshPhysicalMaterial({color:0x2453a8,roughness:.25,clearcoat:1}),
+ dark:new T.MeshStandardMaterial({color:0x17171a,roughness:.55,metalness:.2}),glass:new T.MeshPhysicalMaterial({color:0x2a1c24,roughness:.05,clearcoat:1,transparent:true,opacity:.55}),
+ glow:new T.MeshStandardMaterial({color:0xff6a2a,emissive:0xff4a14,emissiveIntensity:2.4}),wire:new T.MeshStandardMaterial({color:0x222224,roughness:.6})};
+const root=new T.Group();S.add(root);
+function part(name,info,i){const g=new T.Group();g.userData={name,info,i};root.add(g);return g}
+function add(g,geo,mat,pos,rot){const m=new T.Mesh(geo,mat);if(pos)m.position.copy(pos);if(rot)m.rotation.set(rot[0],rot[1],rot[2]);m.castShadow=m.receiveShadow=true;g.add(m);return m}
+function caps(r,len){const p=[];for(let i=0;i<=8;i++){const a=-Math.PI/2+i*Math.PI/16;p.push(new T.Vector2(Math.cos(a)*r+1e-4,-len/2+Math.sin(a)*r))}for(let i=0;i<=8;i++){const a=i*Math.PI/16;p.push(new T.Vector2(Math.cos(a)*r+1e-4,len/2+Math.sin(a)*r))}return new T.LatheGeometry(p,24)}
+function pipe(g,pts,r,mat,bend=.12){const path=new T.CurvePath();let prev=pts[0].clone();
+ for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];
+  if(i<pts.length-1){const c=pts[i+1],d1=b.clone().sub(a).normalize(),d2=c.clone().sub(b).normalize(),bb=Math.min(bend,b.distanceTo(a)/2,c.distanceTo(b)/2),p1=b.clone().addScaledVector(d1,-bb),p2=b.clone().addScaledVector(d2,bb);
+   path.add(new T.LineCurve3(prev,p1));path.add(new T.QuadraticBezierCurve3(p1,b.clone(),p2));prev=p2}else path.add(new T.LineCurve3(prev,b.clone()))}
+ add(g,new T.TubeGeometry(path,Math.max(24,pts.length*24),r,14,false),mat);[pts[0],pts[pts.length-1]].forEach(p=>add(g,new T.SphereGeometry(r*1.02,14,10),mat,p))}
+function cyl(g,a,b,r1,r2,mat){const d=b.clone().sub(a),L=d.length(),m=add(g,new T.CylinderGeometry(r2,r1,L,28),mat);m.position.copy(a).addScaledVector(d,.5);m.quaternion.setFromUnitVectors(V(0,1,0),d.normalize());return m}
+const I=['Réacteur toroïdal','La chambre à plasma, l’« expanseur » : elle transforme le xénon en GOONNIAOADOO, un état de la matière qui n’est ni solide, ni liquide, ni gaz. Au centre du courant en anneau, un filament de 3 microns atteint 1 600 000 °C.',
+ 'Activateur nucléaire (interprétation)','Il déclenche la formation du GOONNIAOADOO par autorésonance. Son emplacement sur le schéma est une interprétation.',
+ 'Sortie à bobine (interprétation)','Tube de sortie du réacteur, entouré d’une bobine. Son rôle exact sur le schéma est une interprétation.',
+ 'Module à quatre fils (interprétation)','Petit boîtier relié au réacteur, avec trois boutons et quatre fils. Sa fonction n’est pas décrite dans la lettre.',
+ 'Préchauffeur du xénon','Le xénon libéré des cristaux est chauffé ici avant d’entrer dans le réacteur en anneau.',
+ 'Chambre perforée','Le fluor y arrive. La lettre signale que les repères de deux chambres semblent inversés entre le texte et le schéma.',
+ 'Réserve de tétrafluorure de xénon','Le seul combustible : des cristaux de F₄Xe, obtenus en chauffant à 400° un mélange de fluor et de xénon dans une chambre en nickel.',
+ 'Régénérateur de fluor','Le fluor séparé du xénon y est recombiné. À l’arrêt, le xénon est récupéré et resynthétisé en tétrafluorure.',
+ 'Circuit du fluor sous pression','Le fluor est stocké à forte pression avant d’être canalisé vers le régénérateur.',
+ 'Conduit du fluor','Le fluor issu de la décomposition des cristaux rejoint le régénérateur par ce conduit.',
+ 'Retour du xénon','À l’arrêt du moteur, le xénon est récupéré par ce conduit pour être resynthétisé.',
+ 'Conduit d’énergie','« Energía » sur le schéma : l’énergie créée par la chambre à plasma descend jusqu’à la tuyère.',
+ 'Tuyère','L’air liquéfié y reçoit l’énergie, se détend violemment et est projeté vers le sol : ce souffle tient le véhicule en équilibre.',
+ 'Entrée d’air et liquéfacteur','L’air est aspiré, liquéfié et stocké avant d’être envoyé vers la tuyère.'];
+const pt=k=>part(I[k*2],I[k*2+1]);
+const tor=pt(0),tc=P(215,140),TR=.62,Tr=.34;const tm=add(tor,new T.TorusGeometry(TR,Tr,40,80),M.ivory,tc);tm.rotation.set(.12,-.32,0);const tq=tm.quaternion;
+const onRing=(a,o=1)=>V(Math.cos(a)*TR,Math.sin(a)*TR,Tr*o*.95).applyQuaternion(tq).add(tc);
+const ga=add(tor,new T.TorusGeometry(TR+Tr*.55,.035,12,60,1.6),M.glow);ga.position.copy(tc);ga.quaternion.copy(tq);ga.rotateZ(-.8);ga.translateZ(Tr*.8);ga.castShadow=false;
+{const g=new T.Group();g.position.copy(onRing(2.55));g.quaternion.copy(tq);pt(1).add(g);add(g,new T.CylinderGeometry(.15,.17,.12,36),M.dark,null,[Math.PI/2,0,0]);add(g,new T.TorusGeometry(.16,.018,10,36),M.nickel,V(0,0,.06));add(g,new T.SphereGeometry(.06,20,14),M.glow,V(0,0,.05)).castShadow=false}
+{const c=pt(2),a=onRing(-1.05,.4),dir=V(.55,-.55,.75).normalize(),b=a.clone().addScaledVector(dir,.62);cyl(c,a,b,.085,.085,M.ivory);add(c,new T.TorusGeometry(.095,.02,10,28),M.ivory,b).quaternion.setFromUnitVectors(V(0,0,1),dir);
+ const hp=[];for(let i=0;i<=160;i++){const t=i/160,an=t*Math.PI*13;hp.push(V(Math.cos(an)*.125,t*.42,Math.sin(an)*.125))}const h=add(c,new T.TubeGeometry(new T.CatmullRomCurve3(hp),320,.016,6,false),M.copper);h.quaternion.setFromUnitVectors(V(0,1,0),dir);h.position.copy(a).addScaledVector(dir,.08)}
+{const g=pt(3),c=P(68,42,.1);add(g,caps(.14,.26),M.ivory,c);[-.14,0,.14].forEach(y=>add(g,new T.SphereGeometry(.035,14,10),M.dark,c.clone().add(V(-.06,y,.12))));
+ for(let i=0;i<4;i++){const s=c.clone().add(V(.12,.12-i*.07,0));add(g,new T.TubeGeometry(new T.CatmullRomCurve3([s,s.clone().add(V(.18,.08,0)),s.clone().add(V(.34,.22+i*.02,.05)),s.clone().add(V(.5,.42+i*.03,.08))]),30,.008,5,false),M.wire)}
+ pipe(g,[c.clone().add(V(0,-.3,0)),P(70,95,.1),P(140,95,.1),P(160,82,0)],.03,M.nickel,.06)}
+const l0=P(272,128,.05),cb=P(345,162,.05),pf=P(428,203,.05),pk=P(495,232,.05),dX=cb.clone().sub(l0).normalize();
+{const g=pt(4);cyl(g,l0,l0.clone().lerp(cb,.55),.11,.11,M.olive);cyl(g,l0.clone().lerp(cb,.55),l0.clone().lerp(cb,.72),.11,.065,M.olive);add(g,new T.BoxGeometry(.46,.42,.42),M.olive,cb).quaternion.setFromUnitVectors(V(1,0,0),dX);
+ for(let i=0;i<5;i++)add(g,new T.TorusGeometry(.2,.022,10,36),M.copper,cb.clone().addScaledVector(dX,-.14+i*.07)).quaternion.setFromUnitVectors(V(0,0,1),dX);
+ [-.1,.1].forEach(o=>{const s=cb.clone().addScaledVector(dX,o).add(V(0,-.2,.12));add(g,new T.TubeGeometry(new T.CatmullRomCurve3([s,s.clone().add(V(0,-.18,0)),s.clone().add(V(.06,-.22,0))]),12,.012,6,false),M.copper)});cyl(g,cb,pf,.055,.055,M.olive)}
+{const g=pt(5);add(g,new T.CylinderGeometry(.15,.15,.26,36),M.nickel,pf,[Math.PI/2,0,0]);add(g,new T.CylinderGeometry(.135,.135,.01,36),M.steel,pf.clone().add(V(0,0,.131)),[Math.PI/2,0,0]);
+ for(let i=0;i<19;i++){const a=i*2.399,r=.057*Math.sqrt(i);add(g,new T.CylinderGeometry(.009,.009,.012,8),M.dark,pf.clone().add(V(Math.cos(a)*r,Math.sin(a)*r,.136)),[Math.PI/2,0,0])}}
+{const g=pt(6);cyl(g,pf,pk,.055,.055,M.pink);add(g,new T.CylinderGeometry(.33,.33,.2,48),M.pink,pk,[Math.PI/2,0,0]);add(g,new T.TorusGeometry(.27,.03,12,44),M.pink,pk.clone().add(V(0,0,.1)));add(g,new T.CircleGeometry(.26,44),M.glass,pk.clone().add(V(0,0,.105)));
+ [-.09,.09].forEach(x=>{const c=pk.clone().add(V(x,0,.02));add(g,new T.CylinderGeometry(.03,.03,.2,14),M.nickel,c);[-.1,.1].forEach(y=>add(g,new T.SphereGeometry(.055,14,10),M.nickel,c.clone().add(V(0,y,0))))})}
+const rc=P(238,392,0);
+{const g=pt(7);add(g,new T.BoxGeometry(.62,.56,.4),M.ivory,rc);add(g,new T.SphereGeometry(.33,28,18),M.ivory,rc.clone().add(V(0,0,.06))).scale.set(1,.85,.75);
+ for(let i=0;i<3;i++)add(g,new T.BoxGeometry(.34,.07,.5),M.bronze,rc.clone().add(V(-.02,-.17+i*.17,.05)),[0,0,(i-1)*.25]);add(g,new T.BoxGeometry(.18,.62,.18),M.bronze,rc.clone().add(V(.18,0,.08)),[0,0,-.3]);
+ cyl(g,rc.clone().add(V(-.05,.25,0)),P(242,318,0),.05,.05,M.ivory);add(g,new T.BoxGeometry(.16,.07,.1),M.pink,P(248,316,0));add(g,new T.CylinderGeometry(.03,.03,.12,12),M.nickel,P(236,305,0))}
+pipe(pt(8),[P(256,316,0),P(500,385,0),P(500,262,.05)],.045,M.pink,.14);
+{const g=pt(9);pipe(g,[P(428,222,.05),P(428,440,.05)],.04,M.nickel);pipe(g,[P(428,440,.05),P(410,455,.05),P(285,412,0)],.042,M.violet,.1)}
+pipe(pt(10),[P(150,232,0),P(150,330,0),P(205,385,0)],.055,M.olive,.12);
+{const g=pt(11);pipe(g,[P(180,175,0),P(75,175,0),P(75,215,0)],.05,M.ivory,.12);add(g,caps(.13,.85),M.ivory,P(75,288,0));[250,285,320].forEach(py=>add(g,caps(.04,.08),M.ivory,P(53,py,0),[0,0,Math.PI/2]));cyl(g,P(75,355,0),P(75,470,0),.03,.03,M.nickel)}
+{const g=pt(12),x=P(75,0).x,pr=[[.1,-.82],[.32,-.98],[.52,-1.3],[.52,-1.72],[.3,-2.18],[.22,-2.38],[.3,-2.72],[.5,-3.1],[.6,-3.38]];
+ const out=pr.map(p=>new T.Vector2(p[0],p[1])),inn=pr.map(p=>new T.Vector2(Math.max(.03,p[0]-.06),p[1])),p0=Math.PI*.25,pL=Math.PI*1.5;
+ add(g,new T.LatheGeometry(out,56,p0,pL),M.yellow,V(x,0,0));add(g,new T.LatheGeometry(inn,56,p0,pL),M.blue,V(x,0,0));
+ [0,1].forEach(k=>{const sh=new T.Shape();sh.moveTo(inn[0].x,inn[0].y);inn.forEach(p=>sh.lineTo(p.x,p.y));for(let j=out.length-1;j>=0;j--)sh.lineTo(out[j].x,out[j].y);add(g,new T.ShapeGeometry(sh),M.yellow,V(x,0,0)).rotation.y=p0+(k?pL:0)-Math.PI/2});
+ const dr=[];for(let k=0;k<=24;k++){const t=k/24;dr.push(new T.Vector2(Math.sin(Math.PI*t)*.16*Math.pow(1-t,.55)+1e-4,-1.05-t*.62))}add(g,new T.LatheGeometry(dr,40),M.bronze,V(x,0,0));
+ for(let k=0;k<3;k++)add(g,new T.TorusGeometry(.33,.03,10,24,Math.PI*.5),M.yellow,V(x,-2.62-k*.12,0),[Math.PI/2,0,Math.PI*.75]);[-1.2,-1.45].forEach(y=>add(g,new T.SphereGeometry(.05,14,10),M.yellow,V(x-.53,y,0)))}
+{const g=pt(13);pipe(g,[P(430,528,0),P(205,528,0),P(205,470,0),P(124,470,0)],.05,M.steel,.1);const h1=P(300,528,0),h2=P(372,528,0);
+ add(g,caps(.24,.16),M.steel,h1,[0,0,Math.PI/2]);add(g,caps(.15,.1),M.steel,h2,[0,0,Math.PI/2]);
+ [[h1,.25,.2],[h2,.16,.14]].forEach(([h,r,dx])=>[-1,1].forEach(s=>add(g,new T.TorusGeometry(r*.55,.014,8,28),M.enamel,h.clone().add(V(s*(dx+.06),0,0)),[0,Math.PI/2,0])))}
+const box=new T.Box3().setFromObject(root),ctr=box.getCenter(V());root.position.x-=ctr.x;gnd.position.y=box.min.y-.04;
+const sph=box.getBoundingSphere(new T.Sphere()),CY=(box.min.y+box.max.y)/2;
+let yaw=0,pitch=.03,zoom=1,auto=!matchMedia('(prefers-reduced-motion: reduce)').matches,isFull=false,vis=true;const t0=performance.now();
+function place(){const w=cv.clientWidth||300,h=cv.clientHeight||300,fv=cam.fov*Math.PI/360,fh=Math.atan(Math.tan(fv)*w/h),d=sph.radius*(isFull?.98:.84)/Math.sin(Math.min(fv,fh))/zoom;
+ cam.position.set(Math.sin(yaw)*Math.cos(pitch)*d,CY+Math.sin(pitch)*d,Math.cos(yaw)*Math.cos(pitch)*d);cam.lookAt(0,CY,0)}
+function size(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+const ro=new ResizeObserver(size);ro.observe(cv);
+const info=el.parentNode.querySelector('.b3d-info');const ptrs=new Map();let pinch=0,moved=0,start=null;
+const ray=new T.Raycaster(),mp=new T.Vector2();
+function pick(e){const r=cv.getBoundingClientRect();mp.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mp,cam);const h=ray.intersectObjects(root.children,true)[0];let o=h&&h.object;while(o&&!o.userData.name)o=o.parent;return o}
+cv.addEventListener('pointerdown',e=>{ptrs.set(e.pointerId,[e.clientX,e.clientY]);start=[e.clientX,e.clientY];moved=0;if(ptrs.size===2){const a=[...ptrs.values()];pinch=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])}});
+cv.addEventListener('pointermove',e=>{const p=ptrs.get(e.pointerId);if(!p)return;const dx=e.clientX-p[0],dy=e.clientY-p[1];ptrs.set(e.pointerId,[e.clientX,e.clientY]);
+ if(ptrs.size===2&&isFull){const a=[...ptrs.values()],d=Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1]);if(pinch)zoom=Math.min(3,Math.max(.6,zoom*d/pinch));pinch=d;return}
+ if(Math.hypot(e.clientX-start[0],e.clientY-start[1])>6)moved=1;if(!moved)return;auto=false;yaw-=dx*.008;if(isFull||e.pointerType==='mouse')pitch=Math.min(1.2,Math.max(-.4,pitch+dy*.006))});
+const up=e=>{if(ptrs.has(e.pointerId)&&!moved&&ptrs.size===1){const o=pick(e);if(o){info.innerHTML=`<b>${esc(o.userData.name)}.</b> ${esc(o.userData.info)}`;if(isFull)fullInfo.innerHTML=info.innerHTML}}ptrs.delete(e.pointerId);if(ptrs.size<2)pinch=0};
+cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',e=>{ptrs.delete(e.pointerId)});
+cv.addEventListener('wheel',e=>{if(!isFull)return;e.preventDefault();zoom=Math.min(3,Math.max(.6,zoom*Math.exp(-e.deltaY*.001)))},{passive:false});
+let ov=null,fullInfo=null,keyF=null;
+function full(on){if(on===isFull)return;isFull=on;
+ if(on){ov=document.createElement('div');ov.className='b3d-ov';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label','Maquette 3D du BUUTZ de GOONNIAOADOO');
+  ov.innerHTML=`<div class="zbar"><span>BUUTZ de GOONNIAOADOO · maquette 3D</span><button class="iconbtn" type="button" aria-label="Fermer">${ic('x')}</button></div><div class="b3d-ovst"></div><p class="b3d-info b3d-ovinfo" aria-live="polite">${info.innerHTML}</p>`;
+  document.body.appendChild(ov);document.body.style.overflow='hidden';ov.querySelector('.b3d-ovst').appendChild(cv);fullInfo=ov.querySelector('.b3d-ovinfo');
+  ov.querySelector('.iconbtn').onclick=()=>full(false);keyF=e=>{if(e.key==='Escape')full(false)};document.addEventListener('keydown',keyF);ov.querySelector('.iconbtn').focus()}
+ else{el.insertBefore(cv,el.firstChild);ov.remove();ov=null;document.body.style.overflow='';document.removeEventListener('keydown',keyF);zoom=1}
+ cv.style.touchAction=on?'none':'pan-y';requestAnimationFrame(size)}
+cv.style.touchAction='pan-y';
+(function loop(t){requestAnimationFrame(loop);if(!document.contains(cv)){ro.disconnect();R.dispose();return}if(!(el._vis||isFull))return;
+ const s=(t-t0)/1000;if(auto)yaw=Math.sin(s*.25)*.6;M.glow.emissiveIntensity=2.2+Math.sin(s*2.2)*.6;place();R.render(S,cam)})(t0);
+size();return {full};
+}
+function tecImg(x){if(x.id==='goonni'&&window.IntersectionObserver&&window.ResizeObserver)return b3dFig();let r=null;try{r=({
  goonioadoo:()=>[GOON_IMG,'Interprétation d’artiste du GOONIIOADOO UEWA, glissant au ras d’une prairie','Interprétation d’artiste, d’après le dessin de la lettre D41-6','uewa','Vaisseaux',[111],0],
- goonni:()=>[UW_VEH[1][2],'Schéma original du BUUTZ de GOONNIAOADOO, lettre D41-6','Schéma original de la lettre D41-6 (image 17)','uewa','Vaisseaux',[114],1],
+ goonni:()=>[TEC_IMG4.buutz,'Interprétation d’artiste du BUUTZ de GOONNIAOADOO : le réacteur toroïdal, la réserve de tétrafluorure de xénon, le régénérateur de fluor et la tuyère','Interprétation d’artiste, d’après le schéma original de la lettre D41-6 (image 17)','uewa','Vaisseaux',[114],2],
  xaabi:()=>[UQ_IMG.ext,'Interprétation d’artiste d’une maison-tour XAABI','Interprétation d’artiste','journee','Une journée',[],0],
  dome:()=>[TEC_IMG2.dome,'Interprétation d’artiste d’une pièce-écran UULODAXAABI : la paroi voûtée affiche un paysage lointain','Interprétation d’artiste','journee','Une journée',[85],0],
  uuluuewaa:()=>[TEC_IMG2.uuluuewaa,'Interprétation d’artiste de petites sphères-espionnes volant dans un bureau, près d’une bibliothèque et d’une machine à écrire','Interprétation d’artiste',null,null,[946,1058],0],
@@ -9525,12 +9716,12 @@ function tecImg(x){let r=null;try{r=({
  reseau:()=>[TEC_IMG3.reseau,'Interprétation d’artiste du réseau XANMOO AYUBAA : des centres de calcul reliés entre eux et à chaque foyer','Interprétation d’artiste','xanmoo','XANMOO',[178],0],
  uewa:()=>[UW_ART_IMG,'Interprétation d’artiste d’un UEWA en vol stationnaire au-dessus d’une plaine','Vue d’artiste','uewa','Vaisseaux',[],0]}[x.id]||(()=>null))()}catch(e){r=null}
  if(!r||!r[0])return'';const[src,alt,cap,rt,rl,ps,sch]=r;
- return`<figure class="tc-img${sch?' sch':''}"><img src="${src}" alt="${esc(alt)}" loading="lazy"><figcaption>${esc(cap)}${ps.length?' '+ps.map(citeLink).join(' '):''}${rt?` · chapitre <a href="#/${rt}">${esc(rl)}</a>`:''}</figcaption></figure>`}
+ return`<figure class="tc-img${sch===2?' ph':sch?' sch':''}"><img src="${src}" alt="${esc(alt)}" loading="lazy"><figcaption>${esc(cap)}${ps.length?' '+ps.map(citeLink).join(' '):''}${rt?` · chapitre <a href="#/${rt}">${esc(rl)}</a>`:''}</figcaption></figure>`}
 function tecCard(x){
   const st=TEC_ST[x.t.st],cat=(TEC_CATS.find(c=>c[0]===x.c)||[,''])[1];
   let chip='';if(x.gi!==undefined){const r=gapCompute(GAPS.nn).rows[x.gi];chip=`<span class="tc-gap" title="Écart entre la date oummite convertie et la date terrestre, d’après le calcul du chapitre Histoire">avance d’Oummo : + ${nf(Math.round(r.gap/10)*10)} ans</span>`}
   return `<article class="tc-card" data-id="${x.id}"><div class="tc-top"><span class="tc-cat">${esc(cat)}</span><span class="tc-st st-${st[1]}">${esc(st[0])}</span></div>
-   ${tecImg(x)}<h3>${esc(x.n)}</h3><p class="tc-fr">${esc(x.fr)}</p><p class="tc-s">${esc(x.s)}</p>${chip}
+   ${tecImg(x)}<h3>${esc(x.n)}</h3><p class="tc-fr">${esc(x.fr)}</p><p class="tc-s">${esc(x.s)}</p>${chip}${x.id==='larynx'?voComp():''}
    <details><summary>Comment ça marche, et sur Terre</summary><ul class="tc-h">${x.h.map(h=>`<li>${esc(h)}</li>`).join('')}</ul><div class="tc-earth"><b>Sur Terre.</b> ${esc(x.t.x)}</div>${x.link?`<a class="btn" href="#/${x.link[0]}" style="margin-top:8px">${esc(x.link[1])}</a>`:''}</details>
    <div class="tc-src">${x.ps.map(citeLink).join(' ')}</div></article>`}
 function tecList(){
@@ -12385,8 +12576,54 @@ const CL_PR=[
 function clPreuvesHTML(){const n=k=>CL_PR.filter(p=>p[2]===k).length;
  return `<div class="tv-score">${Object.entries(CL_VD).map(([k,[l,c]])=>`<div class="tv-sc ${c}"><b>${n(k)}</b><span>${l}</span></div>`).join('')}</div>
  <div class="tv-pred">${CL_PR.map(([t,ps,v,s],i)=>`<article class="tv-pc ${CL_VD[v][1]}" style="--d:${(i*.06).toFixed(2)}s"><header><b>${t}</b><span class="tv-vd ${CL_VD[v][1]}">${CL_VD[v][0]}</span></header><p>${s} ${SPP(ps)}</p></article>`).join('')}</div>`}
+/* ── Lecteurs audio : forme d’onde (remplace les contrôles natifs de tous les <audio controls>) ── */
+const WF={list:[],ac:null,run:false,io:null};
+const WF_IC={play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l12-7.5z"/></svg>',pause:'<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 4h4.5v16H6zM13.5 4H18v16h-4.5z"/></svg>'};
+function wfFmt(t){t=Math.max(0,t||0);return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0')}
+function wfPeaks(P){if(P.pk||P.ld)return;P.ld=1;const src=P.a.currentSrc||P.a.getAttribute('src');
+  fetch(src).then(r=>r.arrayBuffer()).then(b=>{const OC=window.OfflineAudioContext||window.webkitOfflineAudioContext;const oc=new OC(1,2,44100);return new Promise((res,rej)=>{const p=oc.decodeAudioData(b,res,rej);if(p&&p.catch)p.catch(rej)})})
+  .then(buf=>{const d=buf.getChannelData(0),n=300,st=Math.max(1,Math.floor(d.length/n)),p=[];for(let i=0;i<n;i++){let m=0;for(let j=i*st;j<(i+1)*st&&j<d.length;j+=6){const v=Math.abs(d[j]);if(v>m)m=v}p.push(m)}
+    const mx=Math.max(...p)||1;P.pk=p.map(v=>Math.pow(v/mx,.8));if(!P.a.duration)P.t1.textContent=wfFmt(buf.duration);P.dur=buf.duration;wfKick()}).catch(()=>{P.pk=[];wfKick()})}
+function wfInit(a){a.dataset.wf='1';a.removeAttribute('controls');a.preload='metadata';
+  const w=document.createElement('div');w.className='wf';
+  w.innerHTML=`<button class="wf-play" type="button" aria-label="Lire">${WF_IC.play}</button><div class="wf-tl"><canvas class="wf-cv" tabindex="0" role="slider" aria-label="Position dans le son" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></canvas><div class="wf-t"><span>0:00</span><span>–:––</span></div></div>`;
+  a.after(w);const P={a,w,cv:w.querySelector('canvas'),btn:w.querySelector('.wf-play'),t0:w.querySelector('.wf-t span'),t1:w.querySelectorAll('.wf-t span')[1],lv:0,level:0,pk:null,an:null,vis:false,dur:0};WF.list.push(P);
+  const setBtn=()=>{const p=a.paused;P.btn.innerHTML=p?WF_IC.play:WF_IC.pause;P.btn.setAttribute('aria-label',p?'Lire':'Pause');P.w.classList.toggle('on',!p)};
+  a.addEventListener('loadedmetadata',()=>{P.t1.textContent=wfFmt(a.duration);wfKick()});
+  ['play','pause','ended'].forEach(ev=>a.addEventListener(ev,()=>{setBtn();wfKick()}));a.addEventListener('timeupdate',wfKick);
+  P.btn.onclick=()=>{if(!a.paused){a.pause();return}
+    WF.list.forEach(q=>{if(q!==P&&!q.a.paused)q.a.pause()});
+    try{if(!WF.ac){const AC=window.AudioContext||window.webkitAudioContext;WF.ac=new AC()}if(WF.ac.state==='suspended')WF.ac.resume();
+      if(!P.an){const s=WF.ac.createMediaElementSource(a);P.an=WF.ac.createAnalyser();P.an.fftSize=1024;s.connect(P.an);P.an.connect(WF.ac.destination);P.data=new Uint8Array(P.an.fftSize)}}catch(e){}
+    const pr=a.play();if(pr&&pr.catch)pr.catch(()=>{})};
+  const dur=()=>a.duration||P.dur||0;
+  let drag=false;const seek=e=>{const r=P.cv.getBoundingClientRect(),f=Math.min(1,Math.max(0,(e.clientX-r.left-6)/(r.width-12)));if(dur()){try{a.currentTime=f*dur()}catch(x){}wfKick()}};
+  P.cv.addEventListener('pointerdown',e=>{drag=true;try{P.cv.setPointerCapture(e.pointerId)}catch(x){}seek(e)});P.cv.addEventListener('pointermove',e=>{if(drag)seek(e)});
+  P.cv.addEventListener('pointerup',()=>drag=false);P.cv.addEventListener('pointercancel',()=>drag=false);
+  P.cv.addEventListener('keydown',e=>{if(!dur())return;if(e.key==='ArrowRight'){a.currentTime=Math.min(dur(),a.currentTime+5);e.preventDefault()}if(e.key==='ArrowLeft'){a.currentTime=Math.max(0,a.currentTime-5);e.preventDefault()}if(e.key===' '||e.key==='Enter'){e.preventDefault();P.btn.click()}wfKick()});
+  if(!WF.io)WF.io=new IntersectionObserver(es=>es.forEach(x=>{const q=WF.list.find(p=>p.w===x.target);if(q){q.vis=x.isIntersecting;if(q.vis){wfPeaks(q);wfKick()}}}),{rootMargin:'300px'});
+  WF.io.observe(w)}
+function wfDraw(P,t){const r=P.cv.getBoundingClientRect();if(!r.width)return;const d=Math.min(devicePixelRatio||1,2),W=Math.round(r.width*d),H=Math.round(r.height*d);
+  if(P.cv.width!==W||P.cv.height!==H){P.cv.width=W;P.cv.height=H}const g=P.cv.getContext('2d');g.setTransform(d,0,0,d,0,0);g.clearRect(0,0,r.width,r.height);
+  const acc=getComputedStyle(document.documentElement).getPropertyValue('--violet').trim()||'#FFB547',bg=getComputedStyle(document.body).backgroundColor.match(/\d+/g)||[0,0,0],light=(+bg[0]*.3+ +bg[1]*.59+ +bg[2]*.11)>140,pale=light?acc:'#FFE2A8',trk=light?'rgba(40,44,70,.2)':'rgba(169,174,203,.3)';
+  const w=r.width,h=r.height,x0=6,x1=w-6,du=P.a.duration||P.dur||0,f=du?Math.min(1,P.a.currentTime/du):0,xp=x0+(x1-x0)*f,mid=h/2,bw=3,gap=2,n=Math.max(8,Math.floor((x1-x0)/(bw+gap))),pk=P.pk;
+  g.lineCap='round';g.lineWidth=bw;
+  for(let i=0;i<n;i++){const x=x0+i*(bw+gap)+bw/2,v=pk&&pk.length?pk[Math.floor(i/n*pk.length)]:(.18+.12*Math.sin(i*.7)*Math.sin(i*.13)),near=Math.max(0,1-Math.abs(x-xp)/34),b=near*P.lv*(.6+.4*Math.sin(t*14+i)),hh=Math.max(1.5,(v*.85+b*.5)*(mid-5)),pl=x<=xp;
+    g.strokeStyle=pl?(near>0&&P.lv>.02?pale:acc):trk;g.beginPath();g.moveTo(x,mid-hh);g.lineTo(x,mid+hh);g.stroke()}
+  if(f>0||!P.a.paused){g.save();g.shadowColor=acc;g.shadowBlur=8+P.lv*22;g.strokeStyle=pale;g.lineWidth=2;g.beginPath();g.moveTo(xp,3);g.lineTo(xp,h-3);g.stroke();g.restore()}
+  P.t0.textContent=wfFmt(P.a.currentTime);P.cv.setAttribute('aria-valuenow',Math.round(f*100))}
+function wfKick(){if(WF.run)return;WF.run=true;requestAnimationFrame(wfLoop)}
+function wfLoop(ts){const t=matchMedia('(prefers-reduced-motion: reduce)').matches?0:ts/1000;let live=false;
+  WF.list=WF.list.filter(P=>document.contains(P.w)||!P.a.paused);
+  WF.list.forEach(P=>{if(!document.contains(P.w))return;const play=!P.a.paused;
+    if(P.an&&play){P.an.getByteTimeDomainData(P.data);let s=0;for(let i=0;i<P.data.length;i++){const v=(P.data[i]-128)/128;s+=v*v}P.level=Math.min(1,Math.sqrt(s/P.data.length)*4.5)}else P.level*=.85;
+    P.lv+=(P.level-P.lv)*.2;if(play||P.lv>.01)live=true;if(P.vis)wfDraw(P,t)});
+  if(live)requestAnimationFrame(wfLoop);else WF.run=false}
+new MutationObserver(()=>{document.querySelectorAll('audio[controls]:not([data-wf])').forEach(wfInit)}).observe(document.documentElement,{childList:true,subtree:true});
+function voComp(){return `<figure class="mus-fig vo-fig"><p class="mus-k">${ic('sound')}Écouter : une phrase, deux voix</p><p class="mus-t">Voix terrienne</p><audio controls preload="none" src="img/vo-terrien.mp3"></audio><p class="mus-t">Voix oummite (reconstitution)</p><audio controls preload="none" src="img/vo-oummite.mp3"></audio><figcaption>« Nous ne venons pas de votre planète, mais nous vous ressemblons beaucoup. » Ce n’est pas un enregistrement mais une reconstitution : une voix de synthèse ramenée sur une seule note, rendue nasillarde, privée de ses graves et de ses harmoniques, et égalisée syllabe par syllabe. Elle suit les témoins, qui décrivent une voix « douce », « monocorde, sans inflexion », « nasillarde », et la lettre sur le transducteur laryngé : « les graves et les harmoniques ne sont pas émis ». ${SPP([1146,1003,59])}</figcaption></figure>`}
 function clVoixHTML(){const src=(id,f)=>{const el=document.getElementById(id);return el?'data:audio/mpeg;base64,'+el.textContent.trim():f};
  return `<figure class="mus-fig"><p class="mus-k">${ic('sound')}Écouter</p><p class="mus-t">« La voix », 36 secondes : l’original</p><audio controls preload="none" src="${src('clvoix','img/clvoix.mp3')}"></audio><p class="mus-t">La même, nettoyée du ronflement électrique</p><audio controls preload="none" src="${src('clvoix2','img/clvoix-net.mp3')}"></audio><figcaption>Enregistrement mis en ligne par le site Ummo-Sciences dans sa rubrique « La voix », sans indication de date, de locuteur ni de provenance. Le site prévient que ses documents « peuvent être apocryphes ». L’analyse du son révèle un ronflement de secteur à 50 Hz et une voix brève, syllabe par syllabe, qu’un logiciel de transcription ne rattache à aucune langue connue. La version nettoyée retire ce ronflement ; elle est un traitement du site. L’enregistrement est reproduit ici comme pièce du dossier, sans attribution.</figcaption></figure>
+${voComp()}
  <details class="cl-meth"><summary>${ic('sound')}Comment le son a été analysé</summary><ul>
   <li><b>Spectrogramme.</b> Le son, découpé en tranches de quelques millisecondes, est décomposé en fréquences (transformée de Fourier). Il est coupé net à 12 kHz et ses deux canaux diffèrent légèrement : signes d’une copie analogique.</li>
   <li><b>Ronflement.</b> Des pics constants à 99, 148, 248 et 297 Hz, multiples de 49,5 Hz : la signature du courant secteur européen à 50 Hz, sur une bande qui tourne environ 1 % trop lentement.</li>
@@ -12910,6 +13147,7 @@ function viewRegards(){
    ['Le berger de Piedralaves, cité dans l’entretien de Peña, parle d’étrangers à la voix « comme artificielle, comme si elle sortait de la gorge ».',[1210]],
    ['Plusieurs visiteurs ne disent pas un mot de la soirée ; l’un reste assis les yeux fermés, « comme s’il était hypnotisé ».',[960]]])}</ul>
   ${vtEcho('Les lettres expliquent cette voix : vers seize ans, l’épiglotte et le muscle thyroïdien s’atrophient ; un petit transducteur de la taille d’une lentille, posé sur le larynx à deux ans, amplifie la voix qui reste. Voir le transducteur laryngé dans <a href="#/technologies">Technologies</a> et la parole silencieuse dans <a href="#/telepathie">Télépathie</a>.',[59,82,595])}
+  ${voComp()}
   ${vtGap('Le dactylo reconnaît lui-même que la voix « ne prouve pas qu’ils soient d’une autre planète, car des gens opérés de la gorge prononcent de la même manière ». L’enregistrement de 1987 et son analyse sont présentés dans <a href="#/coulisses">Les coulisses du dossier</a>. '+SPP([999]))}
  </section>
 
