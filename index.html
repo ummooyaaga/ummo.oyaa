@@ -2591,6 +2591,14 @@ a.gx:hover,a.gx:focus-visible{color:var(--acc,#FFB547)}
 @media (max-width:899px){.jr-step{align-items:flex-end;padding-bottom:calc(var(--nav-h,56px) + 24px)}.jr-card{padding:16px 17px}.jr-x{font-size:15px}}
 @media (prefers-reduced-motion:reduce){.jr-bg{transition:opacity .3s}.jr-card{transition:none}}
 
+.fm-promo{margin:26px 0 0;padding:22px 22px 18px;border-radius:20px;border:1px solid rgba(255,181,71,.45);background:radial-gradient(120% 140% at 100% 0%,rgba(255,181,71,.10),transparent 55%),var(--sheet);box-shadow:0 0 0 1px rgba(255,181,71,.08),0 10px 40px -18px rgba(255,181,71,.35)}
+.fm-promo .jr-pk{margin:0 0 6px}.fm-promo .jr-pk i{font-style:normal}
+.fm-promo h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(26px,3.6vw,36px);color:var(--ink);text-wrap:balance}
+.fm-sub{margin:2px 0 0;font-style:italic;color:var(--ink2);font-size:15px}
+.fm-lede{margin:10px 0 14px;max-width:70ch;color:var(--ink2);font-size:15px;line-height:1.6}
+.fm-vid{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:1568/672;max-width:100%}
+.fm-vid video{display:block;width:100%;height:100%;object-fit:cover}
+.fm-note{margin:10px 0 0;font-size:12.5px;color:var(--ink2)}
 .jr-promo{position:relative;display:flex;flex-direction:column;gap:6px;justify-content:flex-end;min-height:200px;margin:26px 0 0;padding:20px 22px;border-radius:20px;overflow:hidden;color:#f3eee6;background:linear-gradient(0deg,rgba(5,6,15,.92),rgba(5,6,15,.25) 70%),var(--jr-img) center 40%/cover;border:1px solid var(--line);text-decoration:none}
 .jr-promo b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(26px,3.6vw,36px)}
 .jr-promo small{font-size:14px;color:rgba(243,238,230,.8);max-width:46ch}
@@ -3580,6 +3588,7 @@ function matchDoc(d,skipYear){
 let YMIN=1964,YMAX=2020;
 const SITE_MAJ='2026-11-17';
 const MAJ_LOG=[
+ ['2026-11-25','Le film « Expédition Oummo » : trois minutes, du signal capté sur Oummo à l’atterrissage du 28 mars 1950 près de Digne, en passant par la traversée de l’UWAAM ; à voir en tête de l’accueil.',null],
  ['2026-11-21','Recherche : un nouveau filtre « Le site » cherche aussi dans les chapitres, les fiches, la FAQ et le glossaire du site, et plus seulement dans les lettres ; un clic ouvre le chapitre à la bonne section.','#/search'],
  ['2026-11-21','Lecteurs audio : une nouvelle ligne de temps dessine la forme du son ; la partie écoutée s’allume en ambre et les barres réagissent au volume, pour les voix et les musiques.',null],
  ['2026-11-21','La voix des Oummites : une reconstitution sonore, voix terrienne puis voix oummite, d’après les témoins et la lettre sur le transducteur laryngé, dans « Vus par les Terriens », Technologies et Les coulisses du dossier.','#/regards'],
@@ -3727,6 +3736,7 @@ function viewExplorer(){
     </div>
     ${orbitHTML()}
   </section>
+  <section class="fm-promo" id="film" aria-label="Le film Expédition Oummo"><span class="jr-pk"><i aria-hidden="true">▶</i>Nouveau · Le film</span><h2>Expédition Oummo</h2><p class="fm-sub">vers la Terre, 1950 · 3 min · sous-titré en français</p><p class="fm-lede">D’après les lettres : un signal capté sur Oummo, le départ des trois nefs, la traversée de l’UWAAM, puis l’atterrissage du 28 mars 1950 près de Digne et la rencontre avec un jeune berger.</p><div class="fm-vid"><video controls playsinline preload="none" poster="img/expedition-oummo.webp" src="img/expedition-oummo.mp4" width="1568" height="672" aria-label="Film Expédition Oummo, 3 minutes, sous-titré en français"></video></div><p class="fm-note">Interprétation d’artiste · musique originale de l’auteur</p></section>
   ${cjHTML()}
   <a class="jr-promo" href="#/journee" style="--jr-img:url(${UQ_IMG.ext})"><span class="jr-pk">${ic('clock')}Récit illustré</span><b>Une journée sur Oummo</b><small>De l’aube à la nuit, à l’heure oummite, avec la famille décrite dans les lettres.</small><span class="jr-pgo">Commencer ›</span></a>
   ${listenHTML()}
