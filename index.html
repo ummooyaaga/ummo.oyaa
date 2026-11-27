@@ -2598,7 +2598,50 @@ a.gx:hover,a.gx:focus-visible{color:var(--acc,#FFB547)}
 .fm-lede{margin:10px 0 14px;max-width:70ch;color:var(--ink2);font-size:15px;line-height:1.6}
 .fm-vid{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:1568/672;max-width:100%}
 .fm-vid video{display:block;width:100%;height:100%;object-fit:cover}
+.fm-aud{margin:12px 0 0;padding:6px 12px 4px;border:1px solid var(--line);border-radius:14px;background:var(--paper,transparent)}.fm-aud .wf{margin-top:0;gap:10px}.fm-aud .wf-play{width:32px;height:32px}.fm-aud .wf-play svg{width:14px;height:14px}.fm-aud .wf-cv{height:28px}.fm-aud .wf-t{font-size:11px;margin-top:0}
+.fm-bo{margin:2px 0 0;font-size:12.5px;color:var(--ink2)}.fm-bo b{color:var(--ink);font-weight:600}
 .fm-note{margin:10px 0 0;font-size:12.5px;color:var(--ink2)}
+.fm-src{margin:6px 0 0;font-size:13.5px;line-height:1.6;color:var(--ink2)}.fm-src a{color:var(--violet);text-decoration:underline;text-underline-offset:2px}.fm-src a:hover{color:var(--ink)}
+
+.fb-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.fb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:16px;margin:14px 0 0}
+.fb-wg{position:relative;display:flex;flex-direction:column;gap:8px;min-height:230px;padding:0;border:1px solid var(--line);border-radius:20px;background:var(--sheet);overflow:hidden;text-align:left;color:var(--ink);cursor:pointer;font:inherit;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.fb-wg:hover{transform:translateY(-3px);border-color:var(--violet);box-shadow:0 12px 30px -18px rgba(255,181,71,.6)}
+.fb-vis{height:118px;position:relative;overflow:hidden;flex:none}
+.fb-tx{padding:0 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.fb-tg{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--violet);font-weight:600}
+.fb-wg b{font-family:var(--disp);font-weight:500;font-size:21px;line-height:1.15}
+.fb-wg small{color:var(--ink2);font-size:14px}
+.fb-new{position:absolute;top:10px;right:10px;padding:3px 9px;border-radius:999px;background:var(--violet);color:var(--violet-ink);font-size:11px;font-weight:700;letter-spacing:.06em}
+.fb-wg.fb-soon{cursor:default;opacity:.62}.fb-wg.fb-soon:hover{transform:none;border-color:var(--line);box-shadow:none}
+.fb-wg.fb-soon .fb-new{background:transparent;color:var(--ink2);border:1px dashed var(--line)}
+.fb-wg.fb-add{border-style:dashed;align-items:center;justify-content:center;text-align:center;cursor:default;opacity:.8}.fb-wg.fb-add:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.fb-plus{font-size:34px;color:var(--violet);line-height:1}
+.fb-vis-soon{background:repeating-linear-gradient(135deg,#0e1430 0 12px,#111838 12px 24px);display:grid;place-items:center;font-size:40px;color:var(--line)}
+.fb-vis-hz{background:#04060f}.fb-vis-hz canvas{position:absolute;inset:0;width:100%;height:100%}.fb-hzt{position:absolute;left:12px;top:8px;font:600 13px ui-monospace,Menlo,monospace;color:#F4EFE6;text-shadow:0 1px 6px #000}
+.fb-vis-ot{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:radial-gradient(90% 120% at 50% 0%,#1b2147,#070a18 75%)}
+.fb-ot-board{display:flex;gap:3px;justify-content:center;max-width:94%}
+.fb-ot-board b{width:17px;height:25px;border-radius:4px;background:linear-gradient(#1b2142 50%,#141936 50%);box-shadow:inset 0 -1px 0 rgba(0,0,0,.6),0 2px 5px rgba(0,0,0,.5);display:grid;place-items:center;font:600 14px ui-monospace,Menlo,monospace;color:#F4EFE6;position:relative}
+.fb-ot-board b::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.7)}
+.fb-ot-board b.on{color:#FFB547;text-shadow:0 0 8px rgba(255,181,71,.6)}
+.fb-ot-chips{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}.fb-ot-chips span{padding:1px 8px;border-radius:999px;border:1px solid var(--line);font-size:10.5px;color:var(--ink2);transition:all .4s}.fb-ot-chips span.on{border-color:var(--violet);color:var(--violet)}
+.fb-ot-t{font-size:11.5px;font-style:italic;color:var(--ink2);min-height:1.2em}
+.fb-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fb-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.fb-crumb{margin:18px 0 0;font-size:14px;color:var(--ink2)}.fb-crumb a{color:var(--ink2)}.fb-crumb a:hover{color:var(--violet)}
+.fb-sky{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#000;touch-action:pan-y;cursor:grab;margin-top:12px}
+.fb-sky canvas{display:block;width:100%;height:min(58vh,520px)}
+.fb-clock{position:absolute;left:14px;top:12px;font-family:var(--disp);font-size:clamp(22px,3vw,32px);text-shadow:0 1px 6px #000}
+.fb-clock small{display:block;font-family:var(--ui);font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+.fb-ev{position:absolute;right:14px;top:14px;max-width:46%;text-align:right;font-size:14px;color:var(--violet);text-shadow:0 1px 6px #000;min-height:1.4em}
+.fb-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 0}
+.fb-ctl input[type=range]{flex:1 1 320px;min-width:0;accent-color:var(--violet)}
+.fb-ctl .btn[aria-pressed=true]{background:var(--violet);color:var(--violet-ink);border-color:var(--violet)}
+.fb-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin:22px 0 0}
+.fb-card{background:var(--sheet);border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+.fb-card b{display:block;font-family:var(--disp);font-weight:500;font-size:19px;margin-bottom:4px}
+.fb-card p{margin:0;color:var(--ink2);font-size:14.5px}.fb-k{color:var(--violet);font-weight:600}
+.fb-src{margin:18px 0 0;font-size:13px;color:var(--ink2)}
 .jr-promo{position:relative;display:flex;flex-direction:column;gap:6px;justify-content:flex-end;min-height:200px;margin:26px 0 0;padding:20px 22px;border-radius:20px;overflow:hidden;color:#f3eee6;background:linear-gradient(0deg,rgba(5,6,15,.92),rgba(5,6,15,.25) 70%),var(--jr-img) center 40%/cover;border:1px solid var(--line);text-decoration:none}
 .jr-promo b{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(26px,3.6vw,36px)}
 .jr-promo small{font-size:14px;color:rgba(243,238,230,.8);max-width:46ch}
@@ -2856,6 +2899,7 @@ const I={
  archive:'<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10h14V9M10 13h4"/>',
  tag:'<path d="M4 4h7l9 9-7 7-9-9z"/><circle cx="8.5" cy="8.5" r="1.2"/>',
  search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>',
+ fablab:'<rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.6"/><path d="M16.75 3.2l1 2.55 2.55 1-2.55 1-1 2.55-1-2.55-2.55-1 2.55-1z"/>',
  spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/>',
  star:'<path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8z"/>',
  back:'<path d="M19 12H5M11 6l-6 6 6 6"/>', prv:'<path d="M15 5l-7 7 7 7"/>', next:'<path d="M9 5l7 7-7 7"/>',
@@ -3020,7 +3064,7 @@ function toggleFav(k){S.favs.has(k)?S.favs.delete(k):S.favs.add(k);saveFavs()}
 /* ───────── routeur ───────── */
 const view=$('#view');
 const NAV=[['explore','#/','Explorer','archive'],['histoire','#/histoire','Histoire','book'],['ummo','#/ummo','Oummo','globe'],['search','#/search','Recherche','search']];
-const NAV_RAIL=[['_h','','I · L’affaire'],['histoire','#/histoire','Histoire','book'],['acteurs','#/acteurs','Acteurs','people'],['lieux','#/lieux','Carte des lieux','pin'],['galaxie','#/galaxie','Galaxie des lettres','spark'],['coulisses','#/coulisses','Les coulisses','coulisses'],['_h','','II · Oummo selon les lettres'],['_s','','La planète'],['ummo','#/ummo','Encyclopédie','globe'],['ciel','#/ciel','Le ciel d’Oummo','star'],['journee','#/journee','Une journée','clock'],['_s','','Les êtres'],['bio','#/biologie','Méta-biologie','dna'],['evo','#/evolution','Évolution','evo'],['sante','#/sante','Santé','sante'],['tele','#/telepathie','Télépathie','tele'],['_s','','La société'],['edu','#/education','Éducation','edu'],['couple','#/couple','Couple et sexualité','couple'],['travail','#/travail','Travail et économie','travail'],['justice','#/justice','Justice','justice'],['spirit','#/spiritualite','Spiritualité','soul'],['reseau','#/reseau','La société en réseau','reseau'],['_s','','Les savoirs'],['cosmos','#/cosmologie','Cosmologie','cosmos'],['espt','#/espace-temps','Espace, temps et logique','espt'],['maths','#/maths','Mathématiques','sigma'],['tech','#/technologies','Technologies','chip'],['xanmoo','#/xanmoo','XANMOO','cryst'],['uewa','#/uewa','Vaisseaux','ship'],['_s','','La langue'],['ecriture','#/ecriture','Écriture','glyph'],['mots','#/mots','La fabrique des mots','fab'],['_h','','III · Regards croisés'],['terre','#/terre','La Terre vue d’Oummo','regard'],['regards','#/regards','Vus par les Terriens','regards'],['jesus','#/jesus','Jésus selon les lettres','jesus'],['parapsy','#/parapsy','Parapsychologie','parapsy'],['autres','#/autres-mondes','Autres mondes','planet'],['_h','','Outils'],['explore','#/','Explorer','archive'],['search','#/search','Recherche','search'],['parcours','#/parcours','Parcours','archive'],['faq','#/faq','FAQ','gloss'],['quiz','#/quiz','Vrai ou faux ?','check'],['galerie','#/galerie','Galerie','image'],['gloss','#/glossaire','Glossaire','gloss'],['labo','#/labo','Laboratoire du style','lab'],['_h','','Divers'],['maj','#/maj','Mises à jour','clock']];
+const NAV_RAIL=[['_h','','I · L’affaire'],['histoire','#/histoire','Histoire','book'],['acteurs','#/acteurs','Acteurs','people'],['lieux','#/lieux','Carte des lieux','pin'],['galaxie','#/galaxie','Galaxie des lettres','spark'],['coulisses','#/coulisses','Les coulisses','coulisses'],['_h','','II · Oummo selon les lettres'],['_s','','La planète'],['ummo','#/ummo','Encyclopédie','globe'],['ciel','#/ciel','Le ciel d’Oummo','star'],['journee','#/journee','Une journée','clock'],['_s','','Les êtres'],['bio','#/biologie','Méta-biologie','dna'],['evo','#/evolution','Évolution','evo'],['sante','#/sante','Santé','sante'],['tele','#/telepathie','Télépathie','tele'],['_s','','La société'],['edu','#/education','Éducation','edu'],['couple','#/couple','Couple et sexualité','couple'],['travail','#/travail','Travail et économie','travail'],['justice','#/justice','Justice','justice'],['spirit','#/spiritualite','Spiritualité','soul'],['reseau','#/reseau','La société en réseau','reseau'],['_s','','Les savoirs'],['cosmos','#/cosmologie','Cosmologie','cosmos'],['espt','#/espace-temps','Espace, temps et logique','espt'],['maths','#/maths','Mathématiques','sigma'],['tech','#/technologies','Technologies','chip'],['xanmoo','#/xanmoo','XANMOO','cryst'],['uewa','#/uewa','Vaisseaux','ship'],['_s','','La langue'],['ecriture','#/ecriture','Écriture','glyph'],['mots','#/mots','La fabrique des mots','fab'],['_h','','III · Regards croisés'],['terre','#/terre','La Terre vue d’Oummo','regard'],['regards','#/regards','Vus par les Terriens','regards'],['jesus','#/jesus','Jésus selon les lettres','jesus'],['parapsy','#/parapsy','Parapsychologie','parapsy'],['autres','#/autres-mondes','Autres mondes','planet'],['_h','','Outils'],['fablab','#/fablab','FabLab','fablab'],['explore','#/','Explorer','archive'],['search','#/search','Recherche','search'],['parcours','#/parcours','Parcours','archive'],['faq','#/faq','FAQ','gloss'],['quiz','#/quiz','Vrai ou faux ?','check'],['galerie','#/galerie','Galerie','image'],['gloss','#/glossaire','Glossaire','gloss'],['labo','#/labo','Laboratoire du style','lab'],['_h','','Divers'],['maj','#/maj','Mises à jour','clock']];
 function drawNav(){
   $('#bnav').innerHTML=NAV.map(([k,h,l,i])=>`<a href="${h}" data-nav="${k}">${ic(i)}<span>${l}</span></a>`).join('')+`<button class="bmore" data-act="more" data-nav="more" aria-haspopup="dialog">${ic('more')}<span>Plus</span></button>`;
   $('#railnav').innerHTML=railHTML();
@@ -3544,6 +3588,7 @@ function route(){
   else if(parts[0]==='xanmoo')viewXanmoo();
   else if(parts[0]==='ciel')viewCiel();
   else if(parts[0]==='galaxie')viewGalaxie();
+  else if(parts[0]==='fablab')viewFablab(parts[1]);
   else if(parts[0]==='labo')viewLabo();
   else if(parts[0]==='evolution')viewEvolution();
   else if(parts[0]==='mots')viewMots();
@@ -3588,6 +3633,7 @@ function matchDoc(d,skipYear){
 let YMIN=1964,YMAX=2020;
 const SITE_MAJ='2026-11-17';
 const MAJ_LOG=[
+ ['2026-11-26','Nouveau dans les Outils : le FabLab, un laboratoire de petits outils interactifs. Premier outil : « La nuit du 28 mars 1950 », le vrai ciel au-dessus de La Javie, avec l’apparition des trois nefs et la direction d’IUMMA ; l’OummoTron y est aussi.','#/fablab'],
  ['2026-11-25','Le film « Expédition Oummo » : trois minutes, du signal capté sur Oummo à l’atterrissage du 28 mars 1950 près de Digne, en passant par la traversée de l’UWAAM ; à voir en tête de l’accueil.',null],
  ['2026-11-21','Recherche : un nouveau filtre « Le site » cherche aussi dans les chapitres, les fiches, la FAQ et le glossaire du site, et plus seulement dans les lettres ; un clic ouvre le chapitre à la bonne section.','#/search'],
  ['2026-11-21','Lecteurs audio : une nouvelle ligne de temps dessine la forme du son ; la partie écoutée s’allume en ambre et les barres réagissent au volume, pour les voix et les musiques.',null],
@@ -3598,7 +3644,8 @@ const MAJ_LOG=[
  ['2026-11-16','Nouveau chapitre « La société en réseau » : l’homme comme nœud d’un réseau, le langage « standardisé », la morale ajustée à chaque cerveau, le remodelage du cerveau abandonné, le plan IGIAAYUYISAA, le jeu OXUO et ses fosses, comparés avec la Terre.','#/reseau'],
  ['2026-11-14','Version anglaise du site : chapitres, légendes, glossaire et menus traduits ; choix de la langue avec un drapeau sur l’écran d’ouverture et dans la navigation. Les lettres restent en français.',null],
  ['2026-11-13','Nouveau chapitre « Espace, temps et logique » : le raisonnement des lettres sur l’espace, la dimension, le mouvement, le temps et le nombre d’univers ; deux sections ajoutées à Spiritualité sur le cosmos comme organisme.','#/espace-temps'],
- ['2026-11-09','Mise en ligne du site',null]];
+ ['2026-11-09','Mise en ligne du site',null],
+ ['2026-10-14','Développement du site',null]];
 function majFmt(d){const[y,m,j]=d.split('-').map(Number);return`${j===1?'1er':j} ${['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'][m-1]} ${y}`}
 function ummoMot(){
   if(document.querySelector('.motov'))return;
@@ -3736,7 +3783,7 @@ function viewExplorer(){
     </div>
     ${orbitHTML()}
   </section>
-  <section class="fm-promo" id="film" aria-label="Le film Expédition Oummo"><span class="jr-pk"><i aria-hidden="true">▶</i>Nouveau · Le film</span><h2>Expédition Oummo</h2><p class="fm-sub">vers la Terre, 1950 · 3 min · sous-titré en français</p><p class="fm-lede">D’après les lettres : un signal capté sur Oummo, le départ des trois nefs, la traversée de l’UWAAM, puis l’atterrissage du 28 mars 1950 près de Digne et la rencontre avec un jeune berger.</p><div class="fm-vid"><video controls playsinline preload="none" poster="img/expedition-oummo.webp" src="img/expedition-oummo.mp4" width="1568" height="672" aria-label="Film Expédition Oummo, 3 minutes, sous-titré en français"></video></div><p class="fm-note">Interprétation d’artiste · musique originale de l’auteur</p></section>
+  <section class="fm-promo" id="film" aria-label="Le film Expédition Oummo"><span class="jr-pk"><i aria-hidden="true">▶</i>Nouveau · Le film</span><h2>Expédition Oummo</h2><p class="fm-sub">vers la Terre, 1950 · 3 min · sous-titré en français</p><p class="fm-lede">D’après les lettres : un signal capté sur Oummo, le départ des trois nefs, la traversée de l’UWAAM, puis l’atterrissage du 28 mars 1950 près de Digne et la rencontre avec un jeune berger.</p><div class="fm-vid"><video controls playsinline preload="none" poster="img/expedition-oummo.webp" src="img/expedition-oummo.mp4" width="1568" height="672" aria-label="Film Expédition Oummo, 3 minutes, sous-titré en français"></video></div><p class="fm-note">Interprétation d’artiste</p><p class="fm-src">D’après les lettres <a href="${hrefDoc('D57-1')}">D57-1</a>, <a href="${hrefDoc('D57-2')}">D57-2</a>, <a href="${hrefDoc('D57-3')}">D57-3</a>, <a href="${hrefDoc('D57-4')}">D57-4</a>, <a href="${hrefDoc('D57-5')}">D57-5</a> et <a href="${hrefDoc('D59-1')}">D59-1</a>, envoyées en 1967 à Enrique Villagrasa.</p><div class="fm-aud"><p class="fm-bo">Bande originale du court métrage, composée par l’auteur du site · <b>« Deep Space Traversal »</b></p><audio controls preload="none" src="img/expedition-oummo-musique.mp3" aria-label="Musique du film Expédition Oummo"></audio></div></section>
   ${cjHTML()}
   <a class="jr-promo" href="#/journee" style="--jr-img:url(${UQ_IMG.ext})"><span class="jr-pk">${ic('clock')}Récit illustré</span><b>Une journée sur Oummo</b><small>De l’aube à la nuit, à l’heure oummite, avec la famille décrite dans les lettres.</small><span class="jr-pgo">Commencer ›</span></a>
   ${listenHTML()}
@@ -9856,6 +9903,139 @@ function viewMots(){
   otInit();
 }
 
+
+/* ───────── FabLab ───────── */
+
+const FB_STARS=[["Acamar",44.089,-40.505,2.88],["Achernar",23.96,-57.491,0.45],["Acrux",185.959,-62.824,0.77],["Adara",104.167,-28.905,1.5],["Adhara",104.167,-28.905,1.5],["Agena",210.078,-60.134,0.61],["Albereo",292.176,27.847,3.05],["Albireo",292.176,27.847,3.05],["Alcaid",206.405,49.557,1.85],["Alcor",200.821,55.244,3.99],["Alcyone",56.125,23.954,2.85],["Aldebaran",68.262,16.412,0.87],["Alderamin",319.336,62.368,2.45],["Alfirk",321.989,70.336,3.23],["Algenib",2.661,14.905,2.83],["Algieba",154.313,20.094,2.01],["Algol",46.223,40.768,2.09],["Alhena",98.71,16.446,1.93],["Alioth",192.974,56.228,1.76],["Alkaid",206.405,49.557,1.85],["Almach",30.199,42.093,2.1],["Alnair",331.272,-47.204,1.73],["Alnilam",83.42,-1.232,1.69],["Alnitak",84.56,-1.967,1.74],["Alphard",141.288,-8.443,1.99],["Alphecca",233.149,26.875,2.22],["Alpheratz",1.445,28.813,2.07],["Alshain",298.215,6.276,3.71],["Altair",297.086,8.73,0.76],["Ankaa",5.952,-42.578,2.4],["Antares",246.59,-26.326,1.06],["Arcturus",213.353,19.437,-0.05],["Arkab Posterior",289.905,-44.896,4.27],["Arkab Prior",289.765,-44.555,3.96],["Arneb",82.632,-17.858,2.58],["Atlas",56.545,23.904,3.62],["Atria",250.847,-68.938,1.91],["Avior",125.376,-59.352,1.86],["Bellatrix",80.613,6.307,1.64],["Betelgeuse",88.118,7.401,0.45],["Canopus",95.711,-52.671,-0.62],["Capella",78.249,45.954,0.08],["Caph",1.612,58.874,2.28],["Castor",112.858,32.003,1.58],["Cebalrai",265.254,4.581,2.76],["Deneb",309.927,45.095,1.25],["Denebola",176.636,14.849,2.14],["Diphda",10.268,-18.261,2.04],["Dubhe",165.184,62.021,1.81],["Electra",55.474,23.96,3.72],["Elnath",80.783,28.57,1.65],["Eltanin",268.863,51.486,2.24],["Enif",325.43,9.641,2.38],["Etamin",268.863,51.486,2.24],["Fomalhaut",343.722,-29.888,1.17],["Formalhaut",343.722,-29.888,1.17],["Gacrux",187.103,-56.836,1.59],["Gienah Corvi",183.315,-17.268,2.58],["Gienah",183.315,-17.268,2.58],["Hadar",210.078,-60.134,0.61],["Hamal",31.084,23.228,2.01],["Izar",220.709,27.278,2.35],["Kaus Australis",275.217,-34.412,1.79],["Kochab",222.729,74.354,2.07],["Maia",55.71,24.215,3.87],["Markab",345.564,14.934,2.49],["Megrez",183.256,57.308,3.32],["Menkalinan",88.968,44.949,1.9],["Menkar",44.914,3.895,2.54],["Menkent",210.94,-36.128,2.06],["Merak",164.725,56.651,2.34],["Merope",55.837,23.796,4.14],["Miaplacidus",138.17,-69.514,1.67],["Mimosa",191.205,-59.418,1.25],["Minkar",181.894,-22.345,3.02],["Mintaka",82.364,-0.334,2.25],["Mirach",16.726,35.357,2.07],["Mirfak",50.181,49.689,1.79],["Mirzam",95.126,-17.931,1.98],["Mizar",200.493,55.182,2.23],["Naos",120.46,-39.864,2.21],["Nihal",81.526,-20.799,2.81],["Nunki",283.044,-26.363,2.05],["Peacock",305.428,-56.896,1.94],["Phecda",177.817,53.971,2.41],["Polaris",26.802,89.033,1.97],["Pollux",115.57,28.151,1.16],["Procyon",114.176,5.355,0.4],["Rasalgethi",258.096,14.44,2.78],["Rasalhague",263.157,12.589,2.08],["Regulus",151.435,12.211,1.36],["Rigel",78.034,-8.258,0.18],["Rigil Kentaurus",219.059,-60.627,-0.01],["Rukbat",290.109,-40.712,3.96],["Sabik",256.881,-15.668,2.43],["Sadalmelik",330.802,-0.566,2.95],["Sadr",305.105,40.089,2.23],["Saiph",86.347,-9.686,2.07],["Scheat",345.332,27.809,2.44],["Schedar",9.403,56.264,2.24],["Shaula",262.557,-37.071,1.62],["Sheliak",282.059,33.296,3.52],["Sirius",100.739,-16.647,-1.44],["Sirrah",1.445,28.813,2.07],["Spica",200.646,-10.905,0.98],["Suhail",136.543,-43.233,2.23],["Sulafat",284.269,32.613,3.25],["Tarazed",295.971,10.485,2.72],["Taygeta",55.555,24.314,4.3],["Thuban",210.776,64.609,3.67],["Unukalhai",235.457,6.576,2.63],["Vega",278.812,38.729,0.03],["Vindemiatrix",194.93,11.223,2.85],["Wezen",106.592,-26.315,1.83],["Zaurak",58.923,-13.65,2.97],["Zubenelgenubi",222.034,-15.839,2.75]];const FB_BODIES={"Moon":[[3.0,113.872,25.994,-10.72],[3.5,114.222,25.913,-10.72],[4.0,114.58,25.834,-10.73],[4.5,114.946,25.759,-10.74],[5.0,115.319,25.686,-10.75],[5.5,115.698,25.617,-10.76],[6.0,116.08,25.552,-10.76],[6.5,116.466,25.491,-10.77],[7.0,116.853,25.433,-10.78]],"Venus":[[3.0,322.995,-12.034,-4.36],[3.5,323.013,-12.031,-4.36],[4.0,323.031,-12.028,-4.36],[4.5,323.049,-12.025,-4.36],[5.0,323.067,-12.022,-4.36],[5.5,323.085,-12.019,-4.36],[6.0,323.103,-12.016,-4.36],[6.5,323.12,-12.013,-4.36],[7.0,323.138,-12.01,-4.36]],"Mars":[[3.0,181.435,2.983,-1.29],[3.5,181.427,2.985,-1.29],[4.0,181.42,2.988,-1.29],[4.5,181.412,2.99,-1.28],[5.0,181.404,2.993,-1.28],[5.5,181.397,2.996,-1.28],[6.0,181.389,2.998,-1.28],[6.5,181.381,3.001,-1.28],[7.0,181.374,3.004,-1.28]],"Jupiter":[[3.0,328.888,-13.4,-1.89],[3.5,328.893,-13.398,-1.89],[4.0,328.897,-13.397,-1.89],[4.5,328.901,-13.395,-1.89],[5.0,328.905,-13.394,-1.89],[5.5,328.909,-13.392,-1.89],[6.0,328.914,-13.391,-1.89],[6.5,328.918,-13.39,-1.89],[7.0,328.922,-13.388,-1.89]],"Saturn":[[3.0,166.541,8.175,0.54],[3.5,166.54,8.176,0.54],[4.0,166.539,8.176,0.54],[4.5,166.537,8.177,0.54],[5.0,166.536,8.177,0.54],[5.5,166.534,8.178,0.54],[6.0,166.533,8.178,0.54],[6.5,166.532,8.179,0.54],[7.0,166.53,8.179,0.54]],"Mercury":[[3.0,6.799,1.652,-1.8],[3.5,6.837,1.671,-1.8],[4.0,6.875,1.691,-1.8],[4.5,6.912,1.71,-1.8],[5.0,6.95,1.729,-1.8],[5.5,6.987,1.748,-1.8],[6.0,7.025,1.767,-1.81],[6.5,7.063,1.787,-1.81],[7.0,7.1,1.806,-1.81]],"Sun":[[3.0,6.311,2.728,-26.8],[3.5,6.33,2.736,-26.8],[4.0,6.349,2.744,-26.8],[4.5,6.368,2.752,-26.8],[5.0,6.387,2.76,-26.8],[5.5,6.406,2.768,-26.8],[6.0,6.425,2.777,-26.8],[6.5,6.444,2.785,-26.8],[7.0,6.463,2.793,-26.8]]};const FB_IUMMA=[187.696, 9.293];const FB_BNAME={"Moon": "Lune", "Venus": "Vénus", "Mars": "Mars", "Jupiter": "Jupiter", "Saturn": "Saturne", "Mercury": "Mercure", "Sun": "Soleil"};
+
+const FB_SHIP=new Image();FB_SHIP.src='img/e-bb34cb14067b70.webp';
+function fbMountNuit(root){root.innerHTML=`<p class="lede">Le vrai ciel de cette nuit-là, recalculé pour le contrefort près de La Javie (Basses-Alpes). Faites défiler l’heure : à <b>4 h 16 min 42 s TMG</b>, d’après la lettre D57-3, trois nefs apparaissent à 7,338 km d’altitude, puis touchent terre à 4 h 17 min 03 s.</p><div class="fb-sky" id="fb-sky"><canvas id="fb-cv" aria-label="Ciel panoramique au-dessus de La Javie"></canvas>
+<div class="fb-clock" id="fb-clk"></div><div class="fb-ev" id="fb-ev" aria-live="polite"></div></div>
+<div class="fb-ctl">
+<button class="btn" id="fb-play" type="button">▶ Lecture</button>
+<input type="range" id="fb-t" min="3.5" max="6.5" step="any" value="4.15" aria-label="Heure TMG">
+<button class="btn" id="fb-go" type="button">⏱ Aller à 4 h 16</button>
+<button class="btn" id="fb-ium" type="button" aria-pressed="false">✦ Où est IUMMA ?</button>
+<button class="btn" id="fb-cld" type="button" aria-pressed="false">☁ Ciel selon la lettre</button>
+</div>
+<div class="fb-cards">
+<div class="fb-card"><b>Vénus, l’étoile du matin</b><p>À l’est-sud-est, très basse et très brillante (magnitude <span class="fb-k">−4,4</span>), avec <span class="fb-k">Jupiter</span> juste à côté. Elles se lèvent pendant la descente des nefs.</p></div>
+<div class="fb-card"><b>Mars montre la direction</b><p>À l’ouest, Mars brille à 13° au-dessus de l’horizon. L’étoile <span class="fb-k">Wolf 424</span>, que les lettres rapprochent d’IUMMA, se trouve juste au-dessus, à 22° : invisible à l’œil nu (magnitude 13).</p></div>
+<div class="fb-card"><b>Une nuit sans Lune</b><p>La Lune est couchée et l’aube commence à peine : le Soleil est à 13° sous l’horizon. Mais la lettre précise qu’« une grande nébulosité » cachait les alentours.</p></div>
+</div>
+<p class="fb-src">Positions calculées pour 44,15° N, 6,30° E (ciel apparent, sans le relief des montagnes). Récit : lettre D57-3 du 12 février 1967. Étoiles : les 116 étoiles principales ; planètes et Lune recalculées pour la nuit.</p>
+`;
+const LAT=44.15*Math.PI/180, LON=6.30, D=Math.PI/180;
+const cv=document.getElementById('fb-cv'),ctx=cv.getContext('2d'),T=document.getElementById('fb-t');
+let az0=180, iumOn=false, cldOn=false, playing=false, W=0,H=0, dpr=1;
+function jd(h){return Date.UTC(1950,2,28,0,0,0)/864e5+2440587.5+h/24}
+function lst(h){const d=jd(h)-2451545;return ((280.46061837+360.98564736629*d+LON)%360+360)%360}
+function altaz(ra,dec,h){const H=(lst(h)-ra)*D,de=dec*D;const sa=Math.sin(LAT)*Math.sin(de)+Math.cos(LAT)*Math.cos(de)*Math.cos(H);const alt=Math.asin(sa);
+ const az=Math.atan2(-Math.sin(H)*Math.cos(de),Math.cos(LAT)*Math.sin(de)-Math.sin(LAT)*Math.cos(de)*Math.cos(H));return [alt/D,((az/D)+360)%360]}
+function body(k,h){const a=FB_BODIES[k];let i=0;while(i<a.length-2&&a[i+1][0]<h)i++;const p=a[i],q=a[i+1],f=(h-p[0])/(q[0]-p[0]);let dra=q[1]-p[1];if(dra>180)dra-=360;if(dra<-180)dra+=360;return [p[1]+dra*f,p[2]+(q[2]-p[2])*f,p[3]]}
+const FOV=()=>W<600?120:170;
+function proj(alt,az){let dx=((az-az0+540)%360)-180;const f=FOV();if(Math.abs(dx)>f/2+5)return null;return [W/2+dx/f*W, H-34*dpr-(alt/75)*(H-50*dpr)]}
+const ridge=[];for(let i=0;i<=360;i+=3)ridge.push(1.2+1.6*Math.sin(i*D*3+.7)+1.1*Math.sin(i*D*7+2)+0.6*Math.sin(i*D*17));
+function size(){if(!document.getElementById('fb-cv'))return;dpr=Math.min(2,devicePixelRatio||1);const r=cv.getBoundingClientRect();W=cv.width=r.width*dpr;H=cv.height=r.height*dpr}
+function fmt(h){const s=Math.round(h*3600);const hh=Math.floor(s/3600),mm=Math.floor(s%3600/60),ss=s%60;return hh+' h '+String(mm).padStart(2,'0')+' min '+String(ss).padStart(2,'0')+' s'}
+const card=['N','NE','E','SE','S','SO','O','NO'];
+function draw(){const h=+T.value;const sun=body('Sun',h);const [sa]=altaz(sun[0],sun[1],h);
+ const k=Math.max(0,Math.min(1,(sa+18)/18));
+ const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,`rgb(${4+20*k},${6+30*k},${18+60*k})`);g.addColorStop(1,`rgb(${10+90*k*k},${12+50*k},${30+70*k})`);
+ ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ const vis=1-k*0.85;
+ for(const [n,ra,dec,m] of FB_STARS){const [al,az]=altaz(ra,dec,h);if(al<-1)continue;const p=proj(al,az);if(!p)continue;const r=Math.max(.6,(3.2-m)*.9)*dpr;const tw=.75+.25*Math.sin(h*900+ra);
+  ctx.globalAlpha=Math.max(0,Math.min(1,(3.6-m)/3))*vis*tw;ctx.fillStyle='#e8ecff';ctx.beginPath();ctx.arc(p[0],p[1],r,0,7);ctx.fill();
+  if(m<1.3&&vis>.35){ctx.globalAlpha=.55*vis;ctx.font=`${11*dpr}px Figtree`;ctx.fillStyle='#A9AECB';ctx.fillText(n,p[0]+5*dpr,p[1]-4*dpr)}}
+ ctx.globalAlpha=1;
+ for(const kk of ['Venus','Jupiter','Mars','Saturn','Mercury','Moon']){const [ra,dec,m]=body(kk,h);const [al,az]=altaz(ra,dec,h);if(al<-1)continue;const p=proj(al,az);if(!p)continue;
+  const r=Math.max(2,(1.5-m)*1.6)*dpr;const col=kk=='Mars'?'#ff9b6b':kk=='Venus'?'#fff4d6':'#ffe7b8';
+  const gl=ctx.createRadialGradient(p[0],p[1],0,p[0],p[1],r*5);gl.addColorStop(0,col);gl.addColorStop(1,'rgba(255,220,160,0)');ctx.fillStyle=gl;ctx.beginPath();ctx.arc(p[0],p[1],r*5,0,7);ctx.fill();
+  ctx.fillStyle=col;ctx.beginPath();ctx.arc(p[0],p[1],r,0,7);ctx.fill();ctx.font=`600 ${12.5*dpr}px Figtree`;ctx.fillStyle='#FFB547';ctx.fillText(FB_BNAME[kk],p[0]+r+6*dpr,p[1]+4*dpr)}
+ if(iumOn){const [al,az]=altaz(FB_IUMMA[0],FB_IUMMA[1],h);const p=proj(al,az);if(p&&al>-1){const pu=1+.15*Math.sin(Date.now()/250);ctx.strokeStyle='#FFB547';ctx.lineWidth=1.5*dpr;ctx.beginPath();ctx.arc(p[0],p[1],14*dpr*pu,0,7);ctx.stroke();
+  ctx.setLineDash([4*dpr,5*dpr]);ctx.beginPath();ctx.arc(p[0],p[1],26*dpr,0,7);ctx.stroke();ctx.setLineDash([]);ctx.font=`600 ${13*dpr}px Figtree`;ctx.fillStyle='#FFB547';ctx.fillText('IUMMA ? (Wolf 424)',p[0]+30*dpr,p[1]-6*dpr);
+  ctx.font=`${11.5*dpr}px Figtree`;ctx.fillStyle='#EDEBFF';ctx.fillText('environ 14 années-lumière · invisible à l’œil nu',p[0]+30*dpr,p[1]+10*dpr)}}
+ // ships: appear 4:16:42 near zenith-west, descend until 4:17:03
+ const t0=4+16/60+42/3600,t1=4+17/60+3/3600;let ev='';
+ if(h>=t0){const f=Math.max(0,Math.min(1,(h-t0)/(t1-t0)));const flash=Math.max(0,1-(h-t0)*3600/2.5);
+  for(let i=0;i<3;i++){const al=55-53*f*f+(i-1)*2.2*(1-f)+(f>=1?0:0),az=200+(i-1)*(7-1.5*f);const p=proj(al,az);if(!p)continue;
+   if(f<1){const q=proj(55+(i-1)*2.2,200+(i-1)*7);if(q){const tr=ctx.createLinearGradient(q[0],q[1],p[0],p[1]);tr.addColorStop(0,'rgba(255,181,71,0)');tr.addColorStop(1,'rgba(255,181,71,.55)');ctx.strokeStyle=tr;ctx.lineWidth=2*dpr;ctx.beginPath();ctx.moveTo(q[0],q[1]);ctx.lineTo(p[0],p[1]);ctx.stroke()}}
+   const R=(f<1?40:16)*dpr*(1+flash*2);const gl=ctx.createRadialGradient(p[0],p[1],0,p[0],p[1],R);gl.addColorStop(0,`rgba(255,236,200,${f<1?.55:.18})`);gl.addColorStop(1,'rgba(255,181,71,0)');ctx.fillStyle=gl;ctx.beginPath();ctx.arc(p[0],p[1],R,0,7);ctx.fill();
+   const sw=(f<1?34+30*f:58)*dpr*(i==1?1.08:1),sh=sw*57/200;ctx.save();ctx.translate(p[0],p[1]);ctx.rotate((f<1?(i-1)*.05*(1-f)+.04*Math.sin(h*9000+i):0));ctx.filter='brightness('+(f<1?.95:.7)+')';if(FB_SHIP.complete)ctx.drawImage(FB_SHIP,-sw/2,-sh/2,sw,sh);ctx.filter='none';if(f>=1){ctx.globalAlpha=.35;ctx.fillStyle='#000';ctx.beginPath();ctx.ellipse(0,sh*.55,sw*.45,sh*.18,0,0,7);ctx.fill();ctx.globalAlpha=1}ctx.restore()}
+  const lp=proj(f<1?55-53*f*f+6:6,200);if(lp){ctx.font=`600 ${13*dpr}px Figtree`;ctx.fillStyle='#FFB547';ctx.textAlign='center';ctx.fillText(f<1?'Les trois nefs':'Les nefs posées',lp[0],lp[1]-14*dpr);ctx.textAlign='left'}
+  if(h<=t1+0.004)ev=f<1?'4 h 16 min 42 s : trois nefs apparaissent à 7,338 km d’altitude…':'4 h 17 min 03 s : les nefs touchent terre.'}
+ else if(h>t1+0.004&&h<4.6) ev='Une heure d’attente : personne ne sort.';
+ if(cldOn){const cg=ctx.createLinearGradient(0,0,0,H);cg.addColorStop(0,'rgba(40,44,60,.92)');cg.addColorStop(.85,'rgba(30,34,48,.75)');cg.addColorStop(1,'rgba(20,22,34,.6)');ctx.fillStyle=cg;ctx.fillRect(0,0,W,H);
+  if(!ev)ev='« Une grande nébulosité empêchait […] la vision directe » (D57-3)'}
+ // ground
+ ctx.fillStyle='#05070f';ctx.beginPath();ctx.moveTo(0,H);
+ for(let x=0;x<=W;x+=4*dpr){const az=(az0+(x/W-.5)*FOV()+720)%360;const r=ridge[Math.round(az/3)%ridge.length];const p=proj(r,az);ctx.lineTo(x,p?p[1]:H-34*dpr)}
+ ctx.lineTo(W,H);ctx.fill();
+ ctx.font=`600 ${12*dpr}px Figtree`;ctx.fillStyle='#A9AECB';ctx.textAlign='center';
+ for(let i=0;i<8;i++){const p=proj(0,i*45);if(p)ctx.fillText(card[i],p[0],H-12*dpr)}ctx.textAlign='left';
+ document.getElementById('fb-clk').innerHTML=fmt(h)+' TMG<small>28 mars 1950 · soleil à '+Math.abs(Math.round(sa))+'° sous l’horizon</small>';
+ document.getElementById('fb-ev').textContent=ev;}
+let last=0;function loop(ts){if(playing){const dt=(ts-last)/1000;let v=+T.value;const h=v;
+ const near=Math.abs(h-(4+16.9/60))<0.01;v+=dt*(near?0.0005:0.012);if(v>6.5){v=6.5;playing=false;document.getElementById('fb-play').textContent='▶ Lecture'}T.value=v}
+ last=ts;if(!document.getElementById('fb-cv'))return;draw();requestAnimationFrame(loop)}
+document.getElementById('fb-play').onclick=e=>{playing=!playing;e.currentTarget.textContent=playing?'❚❚ Pause':'▶ Lecture'};
+document.getElementById('fb-go').onclick=()=>{T.value=4+16/60+34/3600;az0=215;playing=true;document.getElementById('fb-play').textContent='❚❚ Pause'};
+document.getElementById('fb-ium').onclick=e=>{iumOn=!iumOn;e.currentTarget.setAttribute('aria-pressed',iumOn);if(iumOn)az0=255};
+document.getElementById('fb-cld').onclick=e=>{cldOn=!cldOn;e.currentTarget.setAttribute('aria-pressed',cldOn)};
+let drag=null;const sky=document.getElementById('fb-sky');
+sky.addEventListener('pointerdown',e=>{drag=[e.clientX,az0];sky.setPointerCapture(e.pointerId)});
+sky.addEventListener('pointermove',e=>{if(!drag)return;az0=(drag[1]-(e.clientX-drag[0])/sky.clientWidth*FOV()+360)%360});
+sky.addEventListener('pointerup',()=>drag=null);
+addEventListener('resize',size);size();az0=180;requestAnimationFrame(loop);
+
+}
+const FB_HZ={LAT:44.15*Math.PI/180,D:Math.PI/180};
+function fbAltaz(ra,dec,h){const D=FB_HZ.D,L=FB_HZ.LAT;const ls=((280.46061837+360.98564736629*(Date.UTC(1950,2,28)/864e5+2440587.5+h/24-2451545)+6.30)%360+360)%360;const H=(ls-ra)*D,de=dec*D;const a=Math.asin(Math.sin(L)*Math.sin(de)+Math.cos(L)*Math.cos(de)*Math.cos(H));const z=Math.atan2(-Math.sin(H)*Math.cos(de),Math.cos(L)*Math.sin(de)-Math.sin(L)*Math.cos(de)*Math.cos(H));return[a/D,(z/D+360)%360]}
+function fbBody(k,h){const a=FB_BODIES[k];let i=0;while(i<a.length-2&&a[i+1][0]<h)i++;const p=a[i],q=a[i+1],f=(h-p[0])/(q[0]-p[0]);let d=q[1]-p[1];if(d>180)d-=360;if(d<-180)d+=360;return[p[1]+d*f,p[2]+(q[2]-p[2])*f]}
+let FB_HZRAF=0,FB_HZT0=0;
+function fbHzRun(){cancelAnimationFrame(FB_HZRAF);const cv=document.querySelector('.fb-hzc');if(!cv)return;const c=cv.getContext('2d'),lab=cv.parentNode.querySelector('.fb-hzt');FB_HZT0=performance.now();
+ const T0=4+16/60+42/3600,T1=4+17/60+3/3600;
+ const ry=(x,w,b,a,s)=>b-a*(.5+.3*Math.sin(x/w*7+s)+.2*Math.sin(x/w*19+s*3)+.1*Math.sin(x/w*43+s));
+ function f(now){if(!document.body.contains(cv))return;const dpr=Math.min(2,devicePixelRatio||1),w=cv.clientWidth,h=cv.clientHeight;if(cv.width!==Math.round(w*dpr)){cv.width=w*dpr;cv.height=h*dpr}c.setTransform(dpr,0,0,dpr,0,0);
+  const s=((now-FB_HZT0)/1000)%14;const hrs=3.3+s/14*2.5;const sun=fbBody('Sun',hrs);const k=Math.max(0,Math.min(1,(fbAltaz(sun[0],sun[1],hrs)[0]+18)/18));
+  const g=c.createLinearGradient(0,0,0,h);g.addColorStop(0,`rgb(${3+25*k},${5+45*k},${14+90*k})`);g.addColorStop(.8,`rgb(${12+150*k*k},${14+80*k},${32+60*k})`);c.fillStyle=g;c.fillRect(0,0,w,h);
+  const X=az=>w/2+((az-180+540)%360-180)/200*w,Y=al=>h*.74-al/38*h*.72;
+  for(const [n,ra,dec,mg] of FB_STARS){if(mg>2.6)continue;const [al,az]=fbAltaz(ra,dec,hrs);if(al<0)continue;c.globalAlpha=(1-k)*.9;c.fillStyle='#e8ecff';c.fillRect(X(az),Y(al),1.3,1.3)}c.globalAlpha=1;
+  for(const kk of ['Venus','Jupiter','Mars']){const [ra,dec]=fbBody(kk,hrs);const [al,az]=fbAltaz(ra,dec,hrs);if(al<-2)continue;const x=X(az),y=Y(al);const gl=c.createRadialGradient(x,y,0,x,y,9);gl.addColorStop(0,kk=='Mars'?'#ff9b6b':'#fff3d6');gl.addColorStop(1,'rgba(255,220,160,0)');c.fillStyle=gl;c.beginPath();c.arc(x,y,9,0,7);c.fill()}
+  if(hrs>=T0){const fr=Math.min(1,(hrs-T0)/(T1-T0+.03));for(let i=0;i<3;i++){const x=w*.5+(i-1)*w*.07,y=h*.08+h*.58*fr,sw=16+12*fr;const gl=c.createRadialGradient(x,y,0,x,y,sw);gl.addColorStop(0,`rgba(255,226,180,${fr<1?.55:.15})`);gl.addColorStop(1,'rgba(255,181,71,0)');c.fillStyle=gl;c.beginPath();c.arc(x,y,sw,0,7);c.fill();if(FB_SHIP.complete)c.drawImage(FB_SHIP,x-sw/2,y-sw*57/400,sw,sw*57/200)}}
+  [['#0c1028',h*.76,h*.16,.4],['#080b1c',h*.85,h*.14,2.1],['#04060f',h*.95,h*.12,3.7]].forEach(([col,b,a,sd],j)=>{c.fillStyle=col;c.beginPath();c.moveTo(0,h);for(let x=0;x<=w;x+=5)c.lineTo(x,ry(x,w,b,a,sd));c.lineTo(w,h);c.fill();
+   const my=b-a*.25+Math.sin(now/2000+j)*3;const mg=c.createLinearGradient(0,my-9,0,my+9);mg.addColorStop(0,'rgba(180,190,220,0)');mg.addColorStop(.5,`rgba(180,190,220,${.06+.06*k})`);mg.addColorStop(1,'rgba(180,190,220,0)');c.fillStyle=mg;c.fillRect(0,my-9,w,18)});
+  lab.textContent=`${Math.floor(hrs)} h ${String(Math.floor(hrs*60%60)).padStart(2,'0')} TMG`;
+  FB_HZRAF=requestAnimationFrame(f)}FB_HZRAF=requestAnimationFrame(f)}
+const FB_OTEX=[{r:[['UAMII','repas'],['XAABII','maison']],w:'UAMIIXAABII',t:'cuisine et salle à manger'},{r:[['UMMO','Oummo'],['AELEWE','conseil']],w:'UMMOAELEWE',t:'conseil général de la planète'},{r:[['EESE','pensée'],['OEMII','humain']],w:'EESEOEMII',t:'être pensant'},{r:[['OOLGA','science'],['WAAM','cosmos']],w:'OOLGAWAAM',t:'physique et cosmologie'},{r:[['UU','enfant'],['GEE','homme'],['YIE','femme']],w:'UUGEEYIE',t:'enfants, filles et garçons'}];
+let FB_OTK=0,FB_OTTIMER=null;function fbFlap(){const v=document.querySelector('.fb-vis-ot');if(!v){FB_OTTIMER=null;return}const e=FB_OTEX[FB_OTK++%FB_OTEX.length];const bd=v.querySelector('.fb-ot-board'),ch=v.querySelector('.fb-ot-chips'),tt=v.querySelector('.fb-ot-t');const L='AEIOUMXBGYWLOANSEU';
+ bd.innerHTML=[...e.w].map(()=>'<b></b>').join('');ch.innerHTML=e.r.map(r=>`<span>${r[0]} · ${r[1]}</span>`).join('');tt.textContent='';const fl=[...bd.children];
+ fl.forEach((f,i)=>{let n=0;const stop=6+i*2;const iv=setInterval(()=>{if(++n>=stop){clearInterval(iv);f.textContent=e.w[i];f.classList.add('on');if(i===fl.length-1){[...ch.children].forEach((c,j)=>setTimeout(()=>c.classList.add('on'),j*220));setTimeout(()=>tt.textContent='« '+e.t+' »',e.r.length*220+150)}}else f.textContent=L[(Math.random()*L.length)|0]},60)});
+ FB_OTTIMER=setTimeout(fbFlap,6000)}
+
+let FB_HEAD='';
+function fbMountOT(root){viewMots();const sec=$('#m-otron');view.onclick=null;view.innerHTML=FB_HEAD;const bx=$('#fbbox');if(sec&&bx){const n=sec.querySelector('h2 .n');if(n)n.remove();bx.appendChild(sec)}otInit()}
+const FB_W=[
+ {id:'nuit',tag:'Reconstitution',cat:'Ciel',title:'La nuit du 28 mars 1950',desc:'Le vrai ciel au-dessus de La Javie, l’apparition des trois nefs et la direction d’IUMMA.',isnew:1,vis:'hz',mount:fbMountNuit},
+ {id:'oummotron',tag:'Générateur',cat:'Langue',title:'L’OummoTron',desc:'Assembler des racines oummites pour fabriquer des mots, avec leur traduction tirée des lettres.',vis:'ot',mount:fbMountOT},
+ {id:'temps',tag:'Calcul',cat:'Mesures',title:'L’heure oummite',desc:'Convertir heures, jours et années terrestres en UIW, XEE et XII.',soon:1},
+ {id:'lettre',tag:'Expérience',cat:'Lettres',title:'La lettre qui arrive',desc:'Recevoir une lettre comme en 1967 : enveloppe, cachet, machine à écrire.',soon:1},
+ {id:'distance',tag:'Simulation',cat:'Ciel',title:'Le trajet vers OYAGAA',desc:'Distances et durées : la lumière, une sonde terrestre, une UEWA.',soon:1}];
+const FB_ALL='Tous';let fbCat=FB_ALL;
+function fbVis(w){if(w.vis==='hz')return '<div class="fb-vis fb-vis-hz"><canvas class="fb-hzc" aria-hidden="true"></canvas><span class="fb-hzt"></span></div>';if(w.vis==='ot')return '<div class="fb-vis fb-vis-ot" aria-hidden="true"><div class="fb-ot-chips"></div><div class="fb-ot-board"></div><div class="fb-ot-t"></div></div>';return '<div class="fb-vis fb-vis-soon" aria-hidden="true">✦</div>'}
+function fbHub(){const cats=[FB_ALL,...new Set(FB_W.map(w=>w.cat))];
+ view.innerHTML=`<header class="chaphead"><p class="kicker">Outils · Laboratoire interactif</p><h1>${chIc('fablab')}FabLab</h1><p class="lede">De petits outils à manipuler, chacun construit à partir des lettres : calculs, simulations, reconstitutions. Ils s’ajoutent au fil des mises à jour.</p></header>
+ <div class="fb-filters" id="fbflt" role="group" aria-label="Filtrer les outils">${cats.map(c=>`<button class="chip" type="button" data-fbc="${c}" aria-pressed="${c===fbCat}">${c}</button>`).join('')}</div>
+ <div class="fb-grid">${FB_W.filter(w=>fbCat===FB_ALL||w.cat===fbCat).map(w=>w.soon?`<div class="fb-wg fb-soon" aria-disabled="true">${fbVis(w)}<span class="fb-new">Bientôt</span><span class="fb-tx"><span class="fb-tg">${w.tag}</span><b>${w.title}</b><small>${w.desc}</small></span></div>`:`<a class="fb-wg" href="#/fablab/${w.id}">${fbVis(w)}${w.isnew?'<span class="fb-new">Nouveau</span>':''}<span class="fb-tx"><span class="fb-tg">${w.tag}</span><b>${w.title}</b><small>${w.desc}</small></span></a>`).join('')}
+ <div class="fb-wg fb-add"><span class="fb-tx" style="padding:18px;align-items:center"><span class="fb-plus">+</span><b>Prochain outil</b><small>Un emplacement libre : chaque nouvel outil vient se glisser ici.</small></span></div></div>`;
+ $('#fbflt').onclick=e=>{const b=e.target.closest('[data-fbc]');if(b){fbCat=b.dataset.fbc;fbHub()}};
+ clearTimeout(FB_OTTIMER);FB_OTTIMER=setTimeout(fbFlap,200);fbHzRun()}
+function viewFablab(id){setNav('fablab');clearTimeout(FB_OTTIMER);cancelAnimationFrame(FB_HZRAF);
+ const w=FB_W.find(x=>x.id===id&&!x.soon);if(!w){fbHub();return}
+ const r=FB_W.filter(x=>!x.soon),i=r.indexOf(w),pv=r[(i-1+r.length)%r.length],nx=r[(i+1)%r.length];
+ const head=`<p class="fb-crumb"><a href="#/fablab">FabLab</a> › ${w.title}</p><div class="fb-head"><header class="chaphead" style="padding-top:6px"><p class="kicker">${w.tag} · ${w.cat}</p><h1>${chIc('fablab')}${w.title}</h1></header><div class="fb-nav"><a class="btn" href="#/fablab">‹ Tous les outils</a><a class="btn" href="#/fablab/${pv.id}">‹ Précédent</a><a class="btn" href="#/fablab/${nx.id}">Suivant ›</a></div></div>`;
+ FB_HEAD=head+'<div id="fbbox"></div>';view.onclick=null;view.innerHTML=FB_HEAD;w.mount($('#fbbox'));setNav('fablab');scrollTo(0,0)}
+
 /* ───────── OummoTron ───────── */
 let OTB=null;const OTS={n:2,h:[]};
 function otData(){if(OTB)return OTB;try{OTB=JSON.parse(document.getElementById('otdata').textContent).B}catch(e){OTB=[]}return OTB}
@@ -11965,7 +12145,7 @@ ${rsCmp([['La société comme réseau de nœuds et d’arcs',[209,204],[['Leonha
 }
 
 /* ── liens automatiques « chapitre X » vers le chapitre cité ── */
-const XREF=[['La société en réseau','reseau'],['Jésus selon les lettres','jesus'],['Parapsychologie','parapsy'],['Couple et sexualité','couple'],['Les coulisses du dossier','coulisses'],['Les Oummites vus par les Terriens','regards'],['La Terre vue d’Oummo','terre'],['La galaxie des lettres','galaxie'],['Le BAAYIODUU et l’évolution','evolution'],['Les XANMOO','xanmoo'],['Mathématiques et pensée logique','maths'],['Parcours guidés','parcours'],['Questions fréquentes','faq'],['La fabrique des mots','mots'],['Le ciel d’Oummo','ciel'],['Vaisseaux d’Oummo','uewa'],['Carte des lieux','lieux'],['Autres mondes','autres-mondes'],['Laboratoire du style','labo'],['Une journée','journee'],['Travail et économie','travail'],['Santé et médecine','sante'],['Justice et peines','justice'],['Méta-biologie','biologie'],['Biologie','biologie'],['Mathématiques','maths'],['Écriture','ecriture'],['Vaisseaux','uewa'],['UEWA','uewa'],['vaisseaux','uewa'],['Lieux','lieux'],['Télépathie','telepathie'],['Justice','justice'],['Santé','sante'],['Travail','travail'],['Éducation','education'],['Histoire','histoire'],['Cosmologie','cosmologie'],['Spiritualité','spiritualite'],['XANMOO','xanmoo'],['Technologies','technologies'],['Évolution','evolution'],['Encyclopédie','ummo'],['Glossaire','glossaire'],['Prononcer','ecriture?t=prononcer'],['Parcours','parcours'],['Acteurs','acteurs'],['FAQ','faq'],['Galerie','galerie']];
+const XREF=[['La société en réseau','reseau'],['Jésus selon les lettres','jesus'],['Parapsychologie','parapsy'],['Couple et sexualité','couple'],['Les coulisses du dossier','coulisses'],['Les Oummites vus par les Terriens','regards'],['La Terre vue d’Oummo','terre'],['La galaxie des lettres','galaxie'],['Le BAAYIODUU et l’évolution','evolution'],['Les XANMOO','xanmoo'],['Mathématiques et pensée logique','maths'],['Parcours guidés','parcours'],['Questions fréquentes','faq'],['La fabrique des mots','mots'],['Le ciel d’Oummo','ciel'],['Vaisseaux d’Oummo','uewa'],['Carte des lieux','lieux'],['Autres mondes','autres-mondes'],['FabLab','fablab'],['Laboratoire du style','labo'],['Une journée','journee'],['Travail et économie','travail'],['Santé et médecine','sante'],['Justice et peines','justice'],['Méta-biologie','biologie'],['Biologie','biologie'],['Mathématiques','maths'],['Écriture','ecriture'],['Vaisseaux','uewa'],['UEWA','uewa'],['vaisseaux','uewa'],['Lieux','lieux'],['Télépathie','telepathie'],['Justice','justice'],['Santé','sante'],['Travail','travail'],['Éducation','education'],['Histoire','histoire'],['Cosmologie','cosmologie'],['Spiritualité','spiritualite'],['XANMOO','xanmoo'],['Technologies','technologies'],['Évolution','evolution'],['Encyclopédie','ummo'],['Glossaire','glossaire'],['Prononcer','ecriture?t=prononcer'],['Parcours','parcours'],['Acteurs','acteurs'],['FAQ','faq'],['Galerie','galerie']];
 const XS='[\\s\\u00a0\\u202f]';const XREF_RX=new RegExp('(?:chapitres?|page)'+XS+'(?:sur'+XS+'(?:les'+XS+'|le'+XS+'|la'+XS+'|l’)?)?(?:«'+XS+'?)?('+XREF.map(x=>x[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/ /g,XS)).join('|')+')(?![\\p{L}\\p{N}])(?:'+XS+'?»)?','u');
 const XREF_SKIP=new Set(['d','search','ask']);
 function xrefSweep(root){
@@ -12603,7 +12783,7 @@ function wfInit(a){a.dataset.wf='1';a.removeAttribute('controls');a.preload='met
   ['play','pause','ended'].forEach(ev=>a.addEventListener(ev,()=>{setBtn();wfKick()}));a.addEventListener('timeupdate',wfKick);
   P.btn.onclick=()=>{if(!a.paused){a.pause();return}
     WF.list.forEach(q=>{if(q!==P&&!q.a.paused)q.a.pause()});
-    try{if(!WF.ac){const AC=window.AudioContext||window.webkitAudioContext;WF.ac=new AC()}if(WF.ac.state==='suspended')WF.ac.resume();
+    if(location.protocol!=='file:')try{if(!WF.ac){const AC=window.AudioContext||window.webkitAudioContext;WF.ac=new AC()}if(WF.ac.state==='suspended')WF.ac.resume();
       if(!P.an){const s=WF.ac.createMediaElementSource(a);P.an=WF.ac.createAnalyser();P.an.fftSize=1024;s.connect(P.an);P.an.connect(WF.ac.destination);P.data=new Uint8Array(P.an.fftSize)}}catch(e){}
     const pr=a.play();if(pr&&pr.catch)pr.catch(()=>{})};
   const dur=()=>a.duration||P.dur||0;
@@ -13339,7 +13519,8 @@ const PARTS={
  sav:{r:'II',t:'Les savoirs',top:'Oummo selon les lettres',c:'#B39CFF'},
  lan:{r:'II',t:'La langue',top:'Oummo selon les lettres',c:'#E6C67E'},
  reg:{r:'III',t:'Regards croisés',top:'Regards croisés',c:'#FFB547'},
- out:{r:'',t:'Outils',top:'Outils',c:'#A9AECB'}};
+ out:{r:'',t:'Outils',top:'Outils',c:'#C8E66B'},
+ div:{r:'',t:'Divers',top:'Divers',c:'#FF7A6B'}};
 /* [clé de menu, route, libellé du menu, icône, partie, description] */
 const CH=[
  ['histoire','histoire','Histoire','book','aff','Le récit du dossier, des origines d’Oummo aux dernières lettres'],
@@ -13373,6 +13554,7 @@ const CH=[
  ['parapsy','parapsy','Parapsychologie','parapsy','reg','Médiums, fakirs, guérisseurs : les fraudes démasquées'],
  ['autres','autres-mondes','Autres mondes','planet','reg','Contacts, planètes, visiteurs : les autres peuples']];
 const TOOLS=[
+ ['fablab','fablab','FabLab','fablab','Petits outils interactifs : le ciel du 28 mars 1950, l’OummoTron…'],
  ['explore','','Explorer','archive','Tous les documents, par série, thème et année'],
  ['search','search','Recherche','search','Chercher un mot dans toute la compilation'],
  ['parcours','parcours','Parcours','archive','Six itinéraires de lecture guidés, étape par étape'],
@@ -13404,8 +13586,8 @@ function railHTML(){let o='',lp='',ls='';
   o+=`<a href="#/${c[1]}" data-nav="${c[0]}" style="--pc:${P.c}"><span class="rno">${i+1}</span>${ic(c[3])}<span>${c[2]}</span></a>`});
  o+=`<p class="railh" style="--pc:${PARTS.out.c}">Outils</p>`;
  TOOLS.forEach(c=>{o+=`<a href="#/${c[1]}" data-nav="${c[0]}" style="--pc:${PARTS.out.c}"><span class="rno"></span>${ic(c[3])}<span>${c[2]}</span></a>`});
- o+=`<p class="railh" style="--pc:${PARTS.out.c}">Divers</p>`;
- DIVERS.forEach(c=>{o+=c[1]?`<a href="#/${c[1]}" data-nav="${c[0]}" style="--pc:${PARTS.out.c}"><span class="rno"></span>${ic(c[3])}<span>${c[2]}</span></a>`:`<a href="#" data-div="${c[0]}" role="button" style="--pc:${PARTS.out.c}"><span class="rno"></span>${ic(c[3])}<span>${c[2]}</span></a>`});
+ o+=`<p class="railh" style="--pc:${PARTS.div.c}">Divers</p>`;
+ DIVERS.forEach(c=>{o+=c[1]?`<a href="#/${c[1]}" data-nav="${c[0]}" style="--pc:${PARTS.div.c}"><span class="rno"></span>${ic(c[3])}<span>${c[2]}</span></a>`:`<a href="#" data-div="${c[0]}" role="button" style="--pc:${PARTS.div.c}"><span class="rno"></span>${ic(c[3])}<span>${c[2]}</span></a>`});
  return o}
 function moreHTML(){let o='',lp='',ls='';
  CH.forEach((c,i)=>{const P=PARTS[c[4]];
@@ -13414,8 +13596,8 @@ function moreHTML(){let o='',lp='',ls='';
   o+=`<a href="#/${c[1]}" class="mrow" data-mclose style="--pc:${P.c}"><span class="mno">${i+1}</span>${ic(c[3])}<span><b>${c[2]}</b><small>${c[5]}</small></span></a>`});
  o+=`<p class="mgrp ctx-mg" style="--pc:${PARTS.out.c}">Outils</p>`;
  TOOLS.forEach(c=>{o+=`<a href="#/${c[1]}" class="mrow" data-mclose style="--pc:${PARTS.out.c}"><span class="mno"></span>${ic(c[3])}<span><b>${c[2]}</b><small>${c[4]}</small></span></a>`});
- o+=`<p class="mgrp ctx-mg" style="--pc:${PARTS.out.c}">Divers</p>`;
- DIVERS.forEach(c=>{o+=`<a href="${c[1]?'#/'+c[1]:'#'}" class="mrow" data-mclose${c[1]?'':` data-div="${c[0]}" role="button"`} style="--pc:${PARTS.out.c}"><span class="mno"></span>${ic(c[3])}<span><b>${c[2]}</b><small>${c[4]}</small></span></a>`});
+ o+=`<p class="mgrp ctx-mg" style="--pc:${PARTS.div.c}">Divers</p>`;
+ DIVERS.forEach(c=>{o+=`<a href="${c[1]?'#/'+c[1]:'#'}" class="mrow" data-mclose${c[1]?'':` data-div="${c[0]}" role="button"`} style="--pc:${PARTS.div.c}"><span class="mno"></span>${ic(c[3])}<span><b>${c[2]}</b><small>${c[4]}</small></span></a>`});
  return o}
 /* teinte de l’icône des liens vers un chapitre */
 (function(){try{const st=document.createElement('style');st.id='ctx-tint';st.textContent=CH.map(c=>`a.gx.chl[href="#/${c[1]}"] svg,a.gx.chl[href^="#/${c[1]}?"] svg{stroke:${PARTS[c[4]].c}}`).join('\n');document.head.appendChild(st)}catch(e){}})();
